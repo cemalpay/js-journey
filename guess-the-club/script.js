@@ -18,6 +18,19 @@ var clubsArray = [
   "shaktar",
   "strasbourg",
   "valencia",
+  //------ NEW UPDATE -------------//
+  "almeria",
+  "altay",
+  "birmingham",
+  "bournemouth",
+  "bursaspor",
+  "everton",
+  "fiorentina",
+  "girona",
+  "hamburg",
+  "liverpool",
+  "newcastle",
+  "tottenham",
 ];
 let secretTeam = clubsArray[Math.floor(Math.random() * clubsArray.length)];
 console.log(secretTeam);
