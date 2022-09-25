@@ -66,6 +66,7 @@ h1 {
 }
 .club-img {
   width: 15rem;
+  filter: blur(5px) grayscale(1);
 }
 .between {
   font-size: 1.4rem;
