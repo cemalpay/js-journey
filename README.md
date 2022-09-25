@@ -1,0 +1,2 @@
+# myJavaScriptJourney
+zero to one
