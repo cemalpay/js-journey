@@ -42,7 +42,7 @@ document.querySelector(".check").addEventListener("click", function () {
     document.getElementById("club-img").src = `logos/${secretTeam}.jpg`;
     displayMessage("Congrats!");
     document.querySelector("body").style.backgroundColor = "#60b347";
-
+    document.getElementById("club-img").style.filter = `blur(0px)`;
     //highscore fonksiyonu
     if (score > highscore) {
       highscore = score;
@@ -55,6 +55,7 @@ document.querySelector(".check").addEventListener("click", function () {
       displayMessage("Wrong Answer!");
       score--;
       document.querySelector(".score").textContent = score;
+      document.getElementById("club-img").style.filter = `blur(3px)`;
     } else {
       displayMessage("Game over!");
       document.querySelector(".score").textContent = 0;
@@ -72,4 +73,5 @@ document.querySelector(".again").addEventListener("click", function () {
   // document.querySelector(".number").textContent = "?";
   document.querySelector(".guess").value = "";
   document.querySelector("body").style.backgroundColor = "#222";
+  document.getElementById("club-img").style.filter = `blur(5px) grayscale(1)`;
 });
