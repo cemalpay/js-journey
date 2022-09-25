@@ -39,25 +39,37 @@ document.querySelector(".check").addEventListener("click", function () {
 
     // doğru bilindiği zaman
   } else if (guess === secretTeam) {
-    document.getElementById("club-img").src = "secretTeam";
+    document.getElementById("club-img").src = `logos/${secretTeam}.jpg`;
     displayMessage("Congrats!");
     document.querySelector("body").style.backgroundColor = "#60b347";
 
     //highscore fonksiyonu
     if (score > highscore) {
       highscore = score;
-      document.querySelector(".highscore").text = highscore;
+      document.querySelector(".highscore").textContent = highscore;
+    }
 
-      // yanlış bilindiği zaman
-    } else if (guess !== secretTeam) {
-      if (score > 1) {
-        displayMessage("Wrong Answer!");
-        score--;
-        document.querySelector(".score").textContent = score;
-      } else {
-        displayMessage("Game over!");
-        document.querySelector(".score").textContent = 0;
-      }
+    // yanlış bilindiği zaman
+  } else if (guess !== secretTeam) {
+    if (score > 1) {
+      displayMessage("Wrong Answer!");
+      score--;
+      document.querySelector(".score").textContent = score;
+    } else {
+      displayMessage("Game over!");
+      document.querySelector(".score").textContent = 0;
     }
   }
+});
+
+document.querySelector(".again").addEventListener("click", function () {
+  score = 20;
+  secretTeam = clubsArray[Math.floor(Math.random() * clubsArray.length)];
+  console.log(secretTeam);
+  displayMessage("Start guessing...");
+  document.querySelector(".score").textContent = score;
+  document.getElementById("club-img").src = `logos/${secretTeam}.jpg`;
+  // document.querySelector(".number").textContent = "?";
+  document.querySelector(".guess").value = "";
+  document.querySelector("body").style.backgroundColor = "#222";
 });
