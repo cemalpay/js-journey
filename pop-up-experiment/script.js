@@ -24,3 +24,10 @@ for (let i = 0; i < btnOpenModal.length; i++)
 // click edildiği zaman closeModal fonksiyonu çalışıyor.
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
+
+// 'Escape' tuşuna (esc) basıldığında ve && eğer modal classı hidden style'ına sahipse closeModal fonksiyonunu execute ettirdik.
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
