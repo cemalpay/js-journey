@@ -6,6 +6,16 @@ body
     background-color: #f3dbff
     display: flex
     justify-content: center
+    height: 100%
+    margin: 0
+    padding: 0
+
+.flex-col
+    align-items: center
+    display: flex
+    flex-direction: column
+    margin-top: 54px
+    width: 775px
 
 .overlap-group-2
     height: 400px
@@ -17,7 +27,6 @@ body
     background-color: $new-black 
     border-radius: 0px 30px 30px 0px
     height: 174px
-    left: 0
     position: absolute
     top:226px
     width: 56px
@@ -26,9 +35,10 @@ body
     height: 320px
     left: 36px
     position: absolute
-    top: 0
     width: 84px
-
+.lever-active
+    transform: rotate(180deg)
+    top:310px
 .rectangle-5 
     background-color: $new-black
     border-radius: 0px 10px 10px 0px
@@ -38,15 +48,10 @@ body
     top: 300px
     width: 46px
 
-.flex-col
-    align-items: center
-    display: flex
-    flex-direction: column
-    margin-top: 108px
-    min-height: 916px
-    width: 775px
 
 .overlap-group-1
+    display: flex
+    justify-content: center
     height: 775px
     position: relative
     width:775px
@@ -58,7 +63,6 @@ body
     display: flex
     height: 400px
     justify-content: center
-    left: 0
     min-width: 775px
     position: absolute
     top: 140px
@@ -69,14 +73,14 @@ body
     border-color: $golden-yellow
     height: 300px
     width:180px
+    margin-left: 10px
+    margin-right: 10px
 
-.rectangle-1
+.sm-body
     background-color: $new-black
     border-radius: 30px 30px 0px 0px
-    height: 775px
+    height: 100%
     left: 92px
-    position: absolute
-    top: 0
     width: 600px
 
 .rectangle-6 
