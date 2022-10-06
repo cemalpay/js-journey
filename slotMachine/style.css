@@ -1,4 +1,4 @@
-@import 'https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap';
+@import "https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap";
 body {
   background-color: #f3dbff;
   display: flex;
@@ -9,7 +9,7 @@ body {
 }
 
 p {
-  font-family: 'Press Start 2P', sans-serif;
+  font-family: "Press Start 2P", sans-serif;
   font-size: 1.5rem;
   color: rgb(255, 255, 255);
   text-align: center;
@@ -44,7 +44,6 @@ p {
   left: 36px;
   position: absolute;
   width: 84px;
-  cursor: pointer;
 }
 
 .lever-active {
@@ -118,4 +117,4 @@ p {
   border-radius: 50px 50px 0px 0px;
   height: 90px;
   width: 135px;
-} /*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
