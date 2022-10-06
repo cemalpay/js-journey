@@ -1,3 +1,5 @@
+@import https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap
+
 $new-black: rgba(30, 30, 30, 1)
 $golden-yellow: rgba(255, 197, 84, 1)
 $white: rgba(255, 255, 255, 1)
@@ -9,6 +11,12 @@ body
     height: 100%
     margin: 0
     padding: 0
+
+p 
+    font-family: 'Press Start 2P', sans-serif
+    font-size: 1.5rem
+    color: $white
+    text-align: center
 
 .flex-col
     align-items: center
@@ -71,10 +79,16 @@ body
     background-color: $white
     border: 5px solid
     border-color: $golden-yellow
-    height: 300px
+    height: 280px
     width:180px
     margin-left: 10px
     margin-right: 10px
+    display: flex
+    justify-content: center
+    align-items: center
+    img 
+        
+        height: 150px
 
 .sm-body
     background-color: $new-black

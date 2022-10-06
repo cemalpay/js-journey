@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap';
 body {
   background-color: #f3dbff;
   display: flex;
@@ -5,6 +6,13 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+p {
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  text-align: center;
 }
 
 .flex-col {
@@ -36,6 +44,7 @@ body {
   left: 36px;
   position: absolute;
   width: 84px;
+  cursor: pointer;
 }
 
 .lever-active {
@@ -77,10 +86,16 @@ body {
   background-color: rgb(255, 255, 255);
   border: 5px solid;
   border-color: rgb(255, 197, 84);
-  height: 300px;
+  height: 280px;
   width: 180px;
   margin-left: 10px;
   margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rectangle-mid img {
+  height: 150px;
 }
 
 .sm-body {
@@ -103,4 +118,4 @@ body {
   border-radius: 50px 50px 0px 0px;
   height: 90px;
   width: 135px;
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */
