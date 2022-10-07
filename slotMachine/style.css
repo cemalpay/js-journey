@@ -11,7 +11,7 @@ body {
 p {
   font-family: "Press Start 2P", sans-serif;
   font-size: 1.5rem;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   text-align: center;
 }
 
@@ -31,7 +31,7 @@ p {
 }
 
 .rectangle-3 {
-  background-color: rgb(30, 30, 30);
+  background-color: #1e1e1e;
   border-radius: 0px 30px 30px 0px;
   height: 174px;
   position: absolute;
@@ -52,7 +52,7 @@ p {
 }
 
 .rectangle-5 {
-  background-color: rgb(30, 30, 30);
+  background-color: #1e1e1e;
   border-radius: 0px 10px 10px 0px;
   height: 37px;
   left: 55px;
@@ -74,7 +74,7 @@ p {
   background-color: #ffcf54;
   border-radius: 10px;
   display: flex;
-  height: 400px;
+  height: 360px;
   justify-content: center;
   min-width: 775px;
   position: absolute;
@@ -82,9 +82,9 @@ p {
 }
 
 .rectangle-mid {
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   border: 5px solid;
-  border-color: rgb(255, 197, 84);
+  border-color: #ffc554;
   height: 280px;
   width: 180px;
   margin-left: 10px;
@@ -98,11 +98,14 @@ p {
 }
 
 .sm-body {
-  background-color: rgb(30, 30, 30);
+  background-color: #1e1e1e;
   border-radius: 30px 30px 0px 0px;
   height: 100%;
   left: 92px;
   width: 600px;
+}
+.sm-body p {
+  padding: 5px;
 }
 
 .rectangle-6 {
@@ -113,8 +116,18 @@ p {
 }
 
 .rectangle-7 {
-  background-color: rgb(255, 255, 255);
+  background-color: #ffffff;
   border-radius: 50px 50px 0px 0px;
   height: 90px;
   width: 135px;
+}
+
+.prize-table {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.prize-table img {
+  height: 180px;
 }/*# sourceMappingURL=style.css.map */

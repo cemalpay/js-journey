@@ -1,5 +1,7 @@
 'use strict';
 
+// KAYBETMEK İÇİN ÇOK ŞANSSIZ OLMANIZ GEREKEN BİR SLOT MAKİNESİ
+
 //gecikme fonksiyonu
 function delay(milliseconds) {
   return new Promise(resolve => {
@@ -18,6 +20,7 @@ let currentBalance = 140;
 leverPressed.addEventListener('click', async function () {
   console.log('tiklaniyor.');
   leverPressed.classList.add('lever-active');
+  document.querySelector('.rectangle-7').style.backgroundColor = '#fff';
   //Random number
   const randomNumber1 = Math.trunc(Math.random() * 4) + 1;
   const randomNumber2 = Math.trunc(Math.random() * 4) + 1;
@@ -28,14 +31,34 @@ leverPressed.addEventListener('click', async function () {
   slotImage3.src = `img/slot-image-${randomNumber3}.png`;
   //kazanma kosullari
   // *** Kazanma durumu ***
+  // 3 sembolün eşleşme durumu
   if (randomNumber1 == randomNumber2 && randomNumber2 == randomNumber3) {
-    currentBalance += 100;
-    console.log('Kazanma durumu');
+    //sembollere göre kazançların belirlenmesi
+    if (randomNumber1 == 4) {
+      currentBalance += 50;
+    } else if (randomNumber1 == 3) {
+      currentBalance += 70;
+    } else if (randomNumber1 == 2) {
+      currentBalance += 100;
+    } else if (randomNumber1 == 1) {
+      currentBalance += 200;
+      document.querySelector('.rectangle-7').style.backgroundColor = '#C70039';
+    }
+  }
+  // 2 sembolün eşleşme durumu
+  else if (randomNumber1 == randomNumber2) {
+    if (randomNumber1 == 4) {
+      currentBalance += 10;
+    } else if (randomNumber1 == 3) {
+      currentBalance += 20;
+    } else if (randomNumber1 == 2) {
+      currentBalance += 50;
+    } else if (randomNumber1 == 1) {
+      currentBalance += 100;
+    }
   } // ** bakiye sıfırlanırsa **
   else if (currentBalance <= 1) {
     console.log('Game over!');
-  } else if (randomNumber1 == randomNumber2) {
-    currentBalance += 5;
   }
   // *** Kaybetme durumu ***
   else {
