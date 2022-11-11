@@ -6,6 +6,9 @@ module.exports = {
       fontFamily: {
         'press-start': ['"Press Start 2P"', 'cursive'],
       },
+      colors: {
+        'cursor-fill':'rgb(138,175,255)',
+      }
     },
   },
   plugins: [],
