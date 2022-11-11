@@ -5,12 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/dist/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <title>New Project</title>
   </head>
-  <body>
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+  <button>View the Expreience</button>
+  <body class="bg-blue-700 font-press-start m-0 h-screen grid place-items-center overflow-hidden">
+    <svg class=" w-24 absolute" xmlns="http://www.w3.org/2000/svg" xml:lang="en"
+    xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+    <title>Circular Text Path</title>
+    <defs>
+        <path id="textcircle"
+              d="M250,400
+                 a150,150 0 0,1 0,-300a150,150 0 0,1 0,300Z"
+              transform="rotate(12,250,250)"/>
+    </defs>
+    <rect width="100%" height="100%" fill="none" />
+    <text class=" ">
+        <textPath class="text-8x1 font-press-start font-bold" xlink:href="#textcircle"
+                  aria-label="VIEW THE EXPERIENCE."
+                  textLength="942"></textPath>
+    </text>
+</svg>
     <script src="script.js"></script>
   </body>
 </html>
