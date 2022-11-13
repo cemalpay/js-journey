@@ -30,3 +30,16 @@ const mouseMove = () => {
 
 }
 mouseMove()
+
+
+// Button functionality with GSAP 
+
+var tl = gsap.timeline({defaults: {ease: "power2.inOut"}})
+
+tl.to(circleSvg, {width:0, opacity:0})
+tl.to('body, button', {background: 'white'})
+tl.pause()
+
+btn.addEventListener('click', () => {
+    tl.play()
+});
