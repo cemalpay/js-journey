@@ -8,6 +8,9 @@ module.exports = {
       },
       colors: {
         'cursor-fill':'rgb(138,175,255)',
+      },
+      animation: {
+        'spin-slow' : 'spin 4s linear infinite'
       }
     },
   },
