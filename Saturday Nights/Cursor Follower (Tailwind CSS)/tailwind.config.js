@@ -11,6 +11,9 @@ module.exports = {
       },
       animation: {
         'spin-slow' : 'spin 4s linear infinite'
+      },
+      transitionProperty: {
+        'cursor-follower' : 'top 1s, left 1s'
       }
     },
   },
