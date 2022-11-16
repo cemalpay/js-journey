@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Sen:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #101E29;
+  font-family: "Sen", sans-serif;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+h1 {
+  color: #fff;
+  font-size: 4rem;
+}
+
+.cursor {
+  width: 4rem;
+  pointer-events: none;
+  position: absolute;
+  transform: rotate(40deg);
+}
+
+.planet {
+  width: 8rem;
+  height: 8rem;
+  position: absolute;
+}
+
+.group {
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+  display: grid;
+  place-items: center;
+}
+
+.purples {
+  left: 70%;
+  top: 20%;
+}
+
+.reds {
+  left: 20%;
+  top: 10%;
+}
+.reds .astronaut {
+  width: 4rem;
+  z-index: 1;
+  transform: translateY(-130%);
+}
+.reds .astronaut.show {
+  display: "";
+}
+
+.blues {
+  left: 80%;
+  top: 80%;
+}
+.blues .alien {
+  transform: translateY(-130%);
+  width: 4rem;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50px;
+  -webkit-animation: move;
+          animation: move;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.type-1 {
+  width: 1px;
+  height: 1px;
+}
+
+.type-2 {
+  width: 2px;
+  height: 2px;
+}
+
+.type-3 {
+  width: 3px;
+  height: 3px;
+}
+
+@-webkit-keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1000px);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-1000px);
+  }
+}/*# sourceMappingURL=style.css.map */
