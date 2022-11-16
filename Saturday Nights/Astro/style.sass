@@ -12,6 +12,7 @@ body
     height: 100vh
     overflow: hidden
     margin: 0
+    cursor: none
 h1
     color: #fff
     font-size: 4rem
@@ -21,6 +22,7 @@ h1
     pointer-events: none
     position: absolute
     transform: rotate(40deg)
+    transition: top 0.3s ease-out, left 0.3s ease-out
 .planet
     width: 8rem
     height: 8rem
@@ -43,13 +45,13 @@ h1
         width: 4rem
         z-index: 1
         transform: translateY(-130%)
-        &.show
-            display: ''
+        &.hide
+            display: none
 .blues
     left: 80%
     top: 80%
     .alien
-        transform: translateY(-130%)
+        //transform: translateY(-130%)
         width: 4rem
         z-index: -1
 
