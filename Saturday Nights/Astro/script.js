@@ -47,6 +47,14 @@ const labels = document.querySelectorAll('.label')
 labels.forEach(label => {
     label.innerHTML = label.innerText 
     .split('')
-    .map((letter, idx) => `<span style="z-index:${idx }">${letter}</span>`)
+    .map((letter, idx) => `<span style="z-index:${idx % 2};">${letter}</span>`)
     .join('')
 })
+
+//When clicked mars
+
+const astronaut = document.querySelectorAll('.astronaut')
+
+astronaut.addEventListener('click', (i) => {
+    astronaut.classList.remove('.hide')
+} );
