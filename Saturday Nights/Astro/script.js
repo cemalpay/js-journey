@@ -32,11 +32,12 @@ window.addEventListener('mousemove', (event) => {
     mouseX = (event.clientX / 16) - (45 / 16) + 'rem'
 } )
 
+
 const mouseMove = () => {
     cursor.style.top = mouseY
     cursor.style.left = mouseX
-
     window.requestAnimationFrame(mouseMove)
+
 }
 mouseMove()
 
