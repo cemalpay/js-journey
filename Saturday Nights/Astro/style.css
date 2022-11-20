@@ -46,6 +46,7 @@ h1 {
 .purples {
   left: 70%;
   top: 20%;
+  z-index: 22;
 }
 
 .reds {
@@ -56,6 +57,7 @@ h1 {
   width: 4rem;
   z-index: 1;
   transform: translateY(-130%);
+  transition: display 0.4s ease-out;
 }
 .reds .astronaut.hide {
   display: none;
@@ -66,8 +68,12 @@ h1 {
   top: 80%;
 }
 .blues .alien {
+  transform: translateY(-130%);
   width: 4rem;
   z-index: -1;
+}
+.blues .alien.hide {
+  display: none;
 }
 
 .star {

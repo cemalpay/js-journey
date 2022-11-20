@@ -39,6 +39,7 @@ h1
 .purples
     left: 70%
     top: 20%
+    z-index: 22
 .reds
     left: 20%
     top: 10%
@@ -46,15 +47,19 @@ h1
         width: 4rem
         z-index: 1
         transform: translateY(-130%)
+        transition: display 0.4s ease-out
         &.hide
             display: none
+
 .blues
     left: 80%
     top: 80%
     .alien
-        //transform: translateY(-130%)
+        transform: translateY(-130%)
         width: 4rem
         z-index: -1
+        &.hide
+            display: none
 
 // Background stars
 .star

@@ -53,8 +53,17 @@ labels.forEach(label => {
 
 //When clicked mars
 
-const astronaut = document.querySelectorAll('.astronaut')
+const alien = document.querySelector('.alien')
+const astronaut = document.querySelector('.astronaut')
+const mars = document.getElementById('mars')
+const blue = document.getElementById('blue')
 
-astronaut.addEventListener('click', (i) => {
-    astronaut.classList.remove('.hide')
-} );
+mars.addEventListener('click', () => {
+    astronaut.classList.toggle('hide')
+    console.log('mars clicked')
+});
+
+blue.addEventListener('click', () => {
+    alien.classList.toggle('hide')
+    console.log('blue clicked')
+});
