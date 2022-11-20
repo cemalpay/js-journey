@@ -51,12 +51,15 @@ labels.forEach(label => {
     .join('')
 })
 
-//When clicked mars
+//When clicked planets
 
 const alien = document.querySelector('.alien')
 const astronaut = document.querySelector('.astronaut')
 const mars = document.getElementById('mars')
 const blue = document.getElementById('blue')
+const curs = document.getElementById('curs')
+const reds = document.querySelector('.reds')
+const blues = document.querySelector('.blues')
 
 mars.addEventListener('click', () => {
     astronaut.classList.toggle('hide')
@@ -66,4 +69,24 @@ mars.addEventListener('click', () => {
 blue.addEventListener('click', () => {
     alien.classList.toggle('hide')
     console.log('blue clicked')
+});
+
+//while hovering planets
+
+reds.addEventListener('mouseover', () => {
+    curs.src = "src/astronaut.png"
+    curs.style.width = "2rem"
+});
+reds.addEventListener('mouseout', () => {
+    curs.src = "src/spaceship.png"
+    curs.style.width = "4rem"
+});
+
+blues.addEventListener('mouseover', () => {
+    curs.src = "src/astronaut.png"
+    curs.style.width = "2rem"
+});
+blues.addEventListener('mouseout', () => {
+    curs.src = "src/spaceship.png"
+    curs.style.width = "4rem"
 });
