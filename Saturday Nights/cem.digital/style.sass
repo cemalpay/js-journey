@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap')
+
+*
+    box-sizing: border-box
+
+$bg-color: #0A0E17
+$gradient: linear-gradient(145deg, rgba(69,255,143,1) 0%, rgba(255,224,246,1) 25%, rgba(255,216,199,1) 50%, rgba(126,152,158,1) 75%, rgba(90,132,195,1) 100%)
+
+body
+    background-color: $bg-color
+    color: white
+    font-family: 'Inter', sans-serif
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    height: 100vh
+    overflow: hidden
+    margin: 0
+
+ul
+    padding: 0
+    margin: 0
+    list-style: none
+    display: inline-block
+    li
+        display: inline-block
+
+.browser
+    z-index: 2
+    width: 1100px
+    height: 700px
+    background: $gradient
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
+    .bar
+        height: 65px
+        ul
+            margin: 25px 15px 15px 15px
+            li
+                margin-left: 5px
+    .square
+        display: inline-block
+        width: 20px
+        height: 20px
+        border: 3px $bg-color solid
+    .tab
+        display: inline-block
+        border: 3px $bg-color solid
+        padding: 5px 15px
+        color: $bg-color
+        font-weight: bold
+        margin-left: 10px
+        i
+            margin-left: 10px
+
+    .content
+        background-color: $bg-color
+        margin: auto
+        width: 99%
+        height: 90%
+        display: flex
+        align-items: center
+        flex-wrap: wrap
+        flex-direction: column
+        ul
+            padding: 12px 30px
+            li
+                margin-left: 4px
+        .top
+            width: 70%
+            justify-content: space-between
+            margin: auto
+            display: flex
+            img
+                width: 180px
+
+        .bottom
+            text-align: center
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            ul
+                li
+                    font-size: 30px
+                    color: $bg-color
+                    background: white
+                    font-weight: bold
+                    -webkit-background-clip: text
+                    -webkit-text-stroke: 1px transparent
+                    padding: 26px
+
+header
+    color: $bg-color
+    font-size: 80px
+    stroke-width: 6px
+    background: white
+    -webkit-background-clip: text
+    -webkit-text-stroke: 6px transparent
+footer
+    position: absolute
+    bottom: 0
+    color: white
+    opacity: 0.4
