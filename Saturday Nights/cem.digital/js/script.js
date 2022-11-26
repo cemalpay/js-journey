@@ -9,7 +9,8 @@ const twitter = document.getElementById('btn-twitter')
 const github = document.getElementById('btn-github')
 const tabEl = document.querySelector('.tab-el')
 const header = document.querySelector('header')
-
+const mid = document.querySelector('.mid')
+const bottom = document.querySelector('.bottom')
 var menuItems = [
     webDev, 
     uxUi, 
@@ -39,5 +40,6 @@ menuItems[index].addEventListener('click', () => {
 }
 
 webDev.addEventListener('click', () => {
-
+    mid.classList.toggle('active')
+    bottom.style.display="flex"
 })

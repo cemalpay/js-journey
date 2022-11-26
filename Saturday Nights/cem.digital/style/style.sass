@@ -25,11 +25,10 @@ ul
     display: inline-block
     li
         display: inline-block
-
 .browser
     z-index: 2
-    width: 1100px
-    height: 700px
+    width: 1366px
+    height: 768px
     background: $gradient
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
     .bar
@@ -71,16 +70,54 @@ ul
             li
                 margin-left: 4px
         .top
-            width: 70%
+            width: 80%
             justify-content: space-between
             margin: auto
             display: flex
             img
                 width: 180px
+        .mid
+            display: none
+            width: 80%
+            margin: auto
+            justify-content: center
+            transition: height 1s ease
+            &.active
+                display: flex
+            .project-list
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
+                .project-item
+                    width: 240px
+                    height: 240px
+                    border: 1px solid #ffffff21
+                    overflow: hidden
+                    margin: 20px
+                    button
+                        border: none
+                        background-color: transparent
+                        text-decoration: underline
+                        letter-spacing: 2px
+                        color: #fff
+                        cursor: pointer
+                        margin-left: 8px
+                    .project-img
+                        width: 100%
+                        height: 140px
+                        object-fit: cover
+                    h2
+                        font-size: 18px
+                        margin: 5px 0 -10px 10px
+                        white-space: nowrap
+                    p
+                        margin-left: 10px
+                        font-size: 14px
+                        opacity: .8
 
         .bottom
             text-align: center
-            display: flex
+            display: flexbox
             flex-wrap: wrap
             justify-content: center
             ul
