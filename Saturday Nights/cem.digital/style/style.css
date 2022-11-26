@@ -98,6 +98,8 @@ ul li {
   -webkit-background-clip: text;
   -webkit-text-stroke: 1px transparent;
   padding: 26px;
+  cursor: pointer;
+  transition: color 0.5s ease;
 }
 
 header {
