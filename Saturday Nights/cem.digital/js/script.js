@@ -7,6 +7,8 @@ const info = document.getElementById('btn-info')
 const contact = document.getElementById('btn-contact')
 const twitter = document.getElementById('btn-twitter')
 const github = document.getElementById('btn-github')
+const tabEl = document.querySelector('.tab-el')
+const header = document.querySelector('header')
 
 var menuItems = [
     webDev, 
@@ -29,4 +31,13 @@ menuItems[index].addEventListener('mouseout', () => {
     menuItems[index].style.color = ""
 } )
 
+console.log(menuItems[index])
+menuItems[index].addEventListener('click', () => {
+    tabEl.innerHTML = menuItems[index].innerHTML 
+    header.innerHTML = menuItems[index].innerHTML
+})
 }
+
+webDev.addEventListener('click', () => {
+
+})

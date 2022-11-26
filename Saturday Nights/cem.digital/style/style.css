@@ -56,8 +56,13 @@ ul li {
   font-weight: bold;
   margin-left: 10px;
 }
+.browser .tab .tab-el {
+  display: inline-block;
+  margin: 0;
+}
 .browser .tab i {
   margin-left: 10px;
+  cursor: pointer;
 }
 .browser .content {
   background-color: #0A0E17;
