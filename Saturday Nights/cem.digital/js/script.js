@@ -1,30 +1,38 @@
 'use strict';
 
-const webDev = document.getElementById('btn-web') 
-const uxUi = document.getElementById('btn-uxui')
-const design = document.getElementById('btn-design')
-const info = document.getElementById('btn-info')
-const contact = document.getElementById('btn-contact')
+const btnWebdev = document.getElementById('btn-web') 
+const btnUxui = document.getElementById('btn-uxui')
+const btnDesign = document.getElementById('btn-design')
+const btnInfo = document.getElementById('btn-info')
+const btnContact = document.getElementById('btn-contact')
+const btnClose = document.getElementById('btn-close')
 const twitter = document.getElementById('btn-twitter')
 const github = document.getElementById('btn-github')
 const tabEl = document.querySelector('.tab-el')
 const header = document.querySelector('header')
 const mid = document.querySelector('.mid')
 const bottom = document.querySelector('.bottom')
-const webProjects = document.querySelector('.web-projects')
 const fox = document.getElementById('fox')
+const webProjects = document.querySelector('.web-projects')
+const designProjects = document.querySelector('.design-projects')
+const uxuiProjects = document.querySelector('.uxui-projects')
+const info = document.querySelector('.info')
+const contact = document.querySelector('.contact')
+
+
+
 var menuItems = [
-    webDev, 
-    uxUi, 
-    design,
-    info, 
-    contact,
+    btnWebdev, 
+    btnUxui, 
+    btnDesign,
+    btnInfo, 
+    btnContact,
     twitter,
     github
 ]
 
-menuItems.forEach(hover)
-function hover(item, index, arr) {
+menuItems.forEach(mainFunc)
+function mainFunc(item, index, arr) {
     menuItems[index]
 
 menuItems[index].addEventListener('mouseover', () => {
@@ -39,11 +47,63 @@ menuItems[index].addEventListener('click', () => {
     tabEl.innerHTML = menuItems[index].innerHTML 
     header.innerHTML = menuItems[index].innerHTML
 })
-}
 
-webDev.addEventListener('click', () => {
-    mid.classList.toggle('active')
+menuItems[index].addEventListener('click', () => {
+    mid.classList.add('active')
     bottom.style.display="flex"
     fox.style.transform="scale(0.8)"
-    webProjects.classList.toggle('active')
 })
+}
+
+btnWebdev.addEventListener('click',() => {
+    webProjects.classList.add('active')
+    uxuiProjects.classList.remove('active')
+    designProjects.classList.remove('active')
+    info.classList.remove('active')
+    contact.classList.remove('active')
+} )
+
+btnUxui.addEventListener('click',() => {
+    webProjects.classList.remove('active')
+    uxuiProjects.classList.add('active')
+    designProjects.classList.remove('active')
+    info.classList.remove('active')
+    contact.classList.remove('active')
+} )
+
+btnDesign.addEventListener('click',() => {
+    webProjects.classList.remove('active')
+    uxuiProjects.classList.remove('active')
+    designProjects.classList.add('active')
+    info.classList.remove('active')
+    contact.classList.remove('active')
+} )
+
+btnInfo.addEventListener('click',() => {
+    webProjects.classList.remove('active')
+    uxuiProjects.classList.remove('active')
+    designProjects.classList.remove('active')
+    info.classList.add('active')
+    contact.classList.remove('active')
+} )
+
+btnContact.addEventListener('click',() => {
+    webProjects.classList.remove('active')
+    uxuiProjects.classList.remove('active')
+    designProjects.classList.remove('active')
+    info.classList.remove('active')
+    contact.classList.add('active')
+} )
+
+btnClose.addEventListener('click',() => {
+    webProjects.classList.remove('active')
+    uxuiProjects.classList.remove('active')
+    designProjects.classList.remove('active')
+    info.classList.remove('active')
+    contact.classList.remove('active')
+    mid.classList.remove('active')
+    bottom.style.display="flexbox"
+    fox.style.transform="scale(1)"
+    tabEl.innerHTML = 'home'
+    header.innerHTML = 'CEM <br> ALPAY'
+} )

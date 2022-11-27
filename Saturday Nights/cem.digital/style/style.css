@@ -139,17 +139,14 @@ ul li {
 .browser .content .mid .web-projects.active {
   display: flex;
 }
-.browser .content .mid .web-projects .project-item {
+.browser .content .mid .project-item {
   width: 240px;
   height: 240px;
   border: 1px solid rgba(255, 255, 255, 0.1294117647);
   overflow: hidden;
   margin: 20px;
 }
-.browser .content .mid .web-projects .project-item #web {
-  display: none;
-}
-.browser .content .mid .web-projects .project-item button {
+.browser .content .mid .project-item button {
   border: none;
   background-color: transparent;
   text-decoration: underline;
@@ -158,18 +155,18 @@ ul li {
   cursor: pointer;
   margin-left: 8px;
 }
-.browser .content .mid .web-projects .project-item .project-img {
+.browser .content .mid .project-item .project-img {
   width: 100%;
   height: 140px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.browser .content .mid .web-projects .project-item h2 {
+.browser .content .mid .project-item h2 {
   font-size: 18px;
   margin: 5px 0 -10px 10px;
   white-space: nowrap;
 }
-.browser .content .mid .web-projects .project-item p {
+.browser .content .mid .project-item p {
   margin-left: 10px;
   font-size: 14px;
   opacity: 0.8;
