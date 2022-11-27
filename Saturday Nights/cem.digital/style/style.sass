@@ -76,6 +76,7 @@ ul
             display: flex
             img
                 width: 180px
+
         .mid
             display: none
             width: 80%
@@ -84,16 +85,44 @@ ul
             transition: height 1s ease
             &.active
                 display: flex
-            .project-list
-                display: flex
+            .uxui-projects
+                display: none
                 flex-wrap: wrap
                 justify-content: center
+                &.active
+                    display: flex
+            .design-projects
+                display: none
+                flex-wrap: wrap
+                justify-content: center
+                &.active
+                    display: flex
+            .info
+                display: none
+                flex-wrap: wrap
+                justify-content: center
+                &.active
+                    display: flex
+            .contact
+                display: none
+                flex-wrap: wrap
+                justify-content: center
+                &.active
+                    display: flex
+            .web-projects
+                display: none
+                flex-wrap: wrap
+                justify-content: center
+                &.active
+                    display: flex
                 .project-item
                     width: 240px
                     height: 240px
                     border: 1px solid #ffffff21
                     overflow: hidden
                     margin: 20px
+                    #web
+                        display: none
                     button
                         border: none
                         background-color: transparent

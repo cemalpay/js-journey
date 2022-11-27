@@ -11,6 +11,8 @@ const tabEl = document.querySelector('.tab-el')
 const header = document.querySelector('header')
 const mid = document.querySelector('.mid')
 const bottom = document.querySelector('.bottom')
+const webProjects = document.querySelector('.web-projects')
+const fox = document.getElementById('fox')
 var menuItems = [
     webDev, 
     uxUi, 
@@ -42,4 +44,6 @@ menuItems[index].addEventListener('click', () => {
 webDev.addEventListener('click', () => {
     mid.classList.toggle('active')
     bottom.style.display="flex"
+    fox.style.transform="scale(0.8)"
+    webProjects.classList.toggle('active')
 })
