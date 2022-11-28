@@ -85,7 +85,6 @@ ul li {
   justify-content: space-between;
   margin: auto;
   display: flex;
-  margin-bottom: -70px;
 }
 .browser .content .top img {
   width: 180px;
@@ -147,7 +146,6 @@ ul li {
 .browser .content .mid .contact {
   display: none;
   flex-wrap: wrap;
-  justify-content: center;
 }
 .browser .content .mid .contact.active {
   display: flex;
@@ -194,9 +192,14 @@ ul li {
 }
 .browser .content .bottom {
   text-align: center;
-  display: flexbox;
   flex-wrap: wrap;
   justify-content: center;
+}
+.browser .content .bottom.displayFlexbox {
+  display: flexbox;
+}
+.browser .content .bottom.displayFlex {
+  display: flex;
 }
 .browser .content .bottom ul li {
   font-size: 30px;

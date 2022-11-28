@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 const btnWebdev = document.getElementById('btn-web') 
 const btnUxui = document.getElementById('btn-uxui')
@@ -10,6 +10,7 @@ const twitter = document.getElementById('btn-twitter')
 const github = document.getElementById('btn-github')
 const tabEl = document.querySelector('.tab-el')
 const header = document.querySelector('header')
+const topPart = document.querySelector('.top')
 const mid = document.querySelector('.mid')
 const bottom = document.querySelector('.bottom')
 const fox = document.getElementById('fox')
@@ -50,7 +51,10 @@ menuItems[index].addEventListener('click', () => {
 
 menuItems[index].addEventListener('click', () => {
     mid.classList.add('active')
-    bottom.style.display="flex"
+    topPart.style.marginTop="80px"
+    topPart.style.marginBottom="-80px"
+    bottom.classList.add('displayFlex')
+    bottom.classList.remove('displayFlexbox')
     fox.style.transform="scale(0.8)"
 })
 }
@@ -102,8 +106,11 @@ btnClose.addEventListener('click',() => {
     info.classList.remove('active')
     contact.classList.remove('active')
     mid.classList.remove('active')
-    bottom.style.display="flexbox"
+    bottom.classList.add('displayFlexbox')
+    bottom.classList.remove('displayFlex')
     fox.style.transform="scale(1)"
     tabEl.innerHTML = 'home'
     header.innerHTML = 'CEM <br> ALPAY'
+    topPart.style.marginBottom=""
+    topPart.style.marginTop=""
 } )

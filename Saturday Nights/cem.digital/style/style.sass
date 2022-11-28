@@ -74,7 +74,6 @@ ul
             justify-content: space-between
             margin: auto
             display: flex
-            margin-bottom: -70px
             img
                 width: 180px
 
@@ -123,7 +122,6 @@ ul
             .contact
                 display: none
                 flex-wrap: wrap
-                justify-content: center
                 &.active
                     display: flex
             .web-projects
@@ -161,9 +159,12 @@ ul
 
         .bottom
             text-align: center
-            display: flexbox
             flex-wrap: wrap
             justify-content: center
+            &.displayFlexbox
+                display: flexbox
+            &.displayFlex
+                display: flex
             ul
                 li
                     font-size: 30px
