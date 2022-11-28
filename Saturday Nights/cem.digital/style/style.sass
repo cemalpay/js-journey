@@ -74,6 +74,7 @@ ul
             justify-content: space-between
             margin: auto
             display: flex
+            margin-bottom: -70px
             img
                 width: 180px
 
@@ -99,10 +100,26 @@ ul
                     display: flex
             .info
                 display: none
-                flex-wrap: wrap
-                justify-content: center
                 &.active
                     display: flex
+                    flex-direction: row-reverse
+                .cem-img
+                    width: 140px
+                    height: 140px
+                    border-radius: 50%
+                    margin-right: 20px
+                    align-self: center
+                .info-text
+                    font-size: 18px
+                    letter-spacing: 1.5px
+                    a
+                        text-decoration: none
+                        font-weight: bold
+                        cursor: poiner
+                        color: white
+                        &:visited
+                            color: white
+                            text-decoration: none
             .contact
                 display: none
                 flex-wrap: wrap

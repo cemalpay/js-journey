@@ -85,6 +85,7 @@ ul li {
   justify-content: space-between;
   margin: auto;
   display: flex;
+  margin-bottom: -70px;
 }
 .browser .content .top img {
   width: 180px;
@@ -117,11 +118,31 @@ ul li {
 }
 .browser .content .mid .info {
   display: none;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 .browser .content .mid .info.active {
   display: flex;
+  flex-direction: row-reverse;
+}
+.browser .content .mid .info .cem-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  margin-right: 20px;
+  align-self: center;
+}
+.browser .content .mid .info .info-text {
+  font-size: 18px;
+  letter-spacing: 1.5px;
+}
+.browser .content .mid .info .info-text a {
+  text-decoration: none;
+  font-weight: bold;
+  cursor: poiner;
+  color: white;
+}
+.browser .content .mid .info .info-text a:visited {
+  color: white;
+  text-decoration: none;
 }
 .browser .content .mid .contact {
   display: none;
