@@ -26,6 +26,17 @@ ul li {
   display: inline-block;
 }
 
+a {
+  text-decoration: none;
+  font-weight: bold;
+  cursor: poiner;
+  color: white;
+}
+a:visited {
+  color: white;
+  text-decoration: none;
+}
+
 .browser {
   z-index: 2;
   width: 1366px;
@@ -133,22 +144,32 @@ ul li {
   font-size: 18px;
   letter-spacing: 1.5px;
 }
-.browser .content .mid .info .info-text a {
-  text-decoration: none;
-  font-weight: bold;
-  cursor: poiner;
-  color: white;
-}
-.browser .content .mid .info .info-text a:visited {
-  color: white;
-  text-decoration: none;
-}
 .browser .content .mid .contact {
   display: none;
   flex-wrap: wrap;
 }
 .browser .content .mid .contact.active {
   display: flex;
+}
+.browser .content .mid .contact .contact-box ul li {
+  display: block;
+  padding: 20px;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+}
+.browser .content .mid .contact p {
+  text-align: center;
+  font-size: 18px;
+}
+.browser .content .mid .contact .socials {
+  text-align: center;
+}
+.browser .content .mid .contact .socials i {
+  font-size: 20px;
+  cursor: pointer;
+}
+.browser .content .mid .contact .socials i:not(:last-child) {
+  margin-right: 15px;
 }
 .browser .content .mid .web-projects {
   display: none;

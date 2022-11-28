@@ -25,6 +25,16 @@ ul
     display: inline-block
     li
         display: inline-block
+
+a
+    text-decoration: none
+    font-weight: bold
+    cursor: poiner
+    color: white
+    &:visited
+        color: white
+        text-decoration: none
+
 .browser
     z-index: 2
     width: 1366px
@@ -111,19 +121,29 @@ ul
                 .info-text
                     font-size: 18px
                     letter-spacing: 1.5px
-                    a
-                        text-decoration: none
-                        font-weight: bold
-                        cursor: poiner
-                        color: white
-                        &:visited
-                            color: white
-                            text-decoration: none
             .contact
                 display: none
                 flex-wrap: wrap
                 &.active
                     display: flex
+                .contact-box
+                    ul
+                        li
+                            display: block
+                            padding: 20px
+                            letter-spacing: 1.5px
+                            font-size: 18px
+                p
+                    text-align: center
+                    font-size: 18px
+                .socials
+                    text-align: center
+                    i
+                        font-size: 20px
+                        cursor: pointer
+
+                        &:not(:last-child)
+                            margin-right: 15px
             .web-projects
                 display: none
                 flex-wrap: wrap
