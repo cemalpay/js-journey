@@ -151,6 +151,11 @@ a:visited {
 }
 .browser .content .mid .info {
   display: none;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.browser .content .mid .info.show {
+  opacity: 1;
 }
 .browser .content .mid .info.active {
   display: flex;
@@ -170,6 +175,11 @@ a:visited {
 .browser .content .mid .contact {
   display: none;
   flex-wrap: wrap;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.browser .content .mid .contact.show {
+  opacity: 1;
 }
 .browser .content .mid .contact.active {
   display: flex;
@@ -178,17 +188,17 @@ a:visited {
   display: block;
   padding: 20px;
   letter-spacing: 1.5px;
-  font-size: 18px;
+  font-size: 22px;
 }
 .browser .content .mid .contact p {
   text-align: center;
-  font-size: 18px;
+  font-size: 22px;
 }
 .browser .content .mid .contact .socials {
   text-align: center;
 }
 .browser .content .mid .contact .socials i {
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
 }
 .browser .content .mid .contact .socials i:not(:last-child) {
@@ -198,6 +208,11 @@ a:visited {
   display: none;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 0;
+  transition: all 1s;
+}
+.browser .content .mid .web-projects.show {
+  opacity: 1;
 }
 .browser .content .mid .web-projects.active {
   display: flex;
@@ -223,6 +238,10 @@ a:visited {
   height: 140px;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: width 1s;
+}
+.browser .content .mid .project-item .project-img:hover {
+  width: 120%;
 }
 .browser .content .mid .project-item h2 {
   font-size: 18px;
@@ -238,12 +257,12 @@ a:visited {
   text-align: center;
   flex-wrap: wrap;
   justify-content: center;
-}
-.browser .content .bottom.displayFlexbox {
-  display: flexbox;
-}
-.browser .content .bottom.displayFlex {
   display: flex;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.browser .content .bottom.show {
+  opacity: 1;
 }
 .browser .content .bottom ul li {
   font-size: 30px;
@@ -275,6 +294,11 @@ header {
   background: white;
   -webkit-background-clip: text;
   -webkit-text-stroke: 6px transparent;
+  opacity: 0;
+  transition: opacity 1s;
+}
+header.show {
+  opacity: 1;
 }
 
 footer {

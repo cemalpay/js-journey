@@ -16,6 +16,7 @@ const topPart = document.querySelector('.top')
 const mid = document.querySelector('.mid')
 const bottom = document.querySelector('.bottom')
 const fox = document.getElementById('fox')
+const projectItem = document.querySelector('.project-item')
 const webProjects = document.querySelector('.web-projects')
 const designProjects = document.querySelector('.design-projects')
 const uxuiProjects = document.querySelector('.uxui-projects')
@@ -49,9 +50,11 @@ menuItems[index].addEventListener('click', () => {
     tabEl.innerHTML = menuItems[index].innerHTML 
     preloader.style.display = "flex"
     header.innerHTML = ""
+    header.classList.remove('show')
     setTimeout(() => {
         preloader.style.display ="none"
         header.innerHTML = menuItems[index].innerHTML
+        header.classList.add('show')
       }, 600)
 })
 
@@ -59,17 +62,22 @@ menuItems[index].addEventListener('click', () => {
     mid.classList.add('active')
     topPart.style.marginTop="80px"
     topPart.style.marginBottom="-70px"
-    bottom.classList.add('displayFlex')
-    bottom.classList.remove('displayFlexbox')
+    bottom.classList.remove('show')
+    setTimeout(() => {
+        bottom.classList.add('show')
+    }, 1250);
     fox.style.transform="scale(0)"
 })
 }
 
 btnWebdev.addEventListener('click',() => {
+    webProjects.classList.remove('show')
     setTimeout(() => {
         webProjects.classList.add('active')
       }, 600)
-    uxuiProjects.classList.remove('active')
+      setTimeout(() => {
+        webProjects.classList.add('show')
+      }, 1000)
     designProjects.classList.remove('active')
     info.classList.remove('active')
     contact.classList.remove('active')
@@ -78,7 +86,6 @@ btnWebdev.addEventListener('click',() => {
 
 btnDesign.addEventListener('click',() => {
     webProjects.classList.remove('active')
-    uxuiProjects.classList.remove('active')
     setTimeout(() => {
         designProjects.classList.add('active')
       }, 600)
@@ -88,28 +95,33 @@ btnDesign.addEventListener('click',() => {
 
 btnInfo.addEventListener('click',() => {
     webProjects.classList.remove('active')
-    uxuiProjects.classList.remove('active')
     designProjects.classList.remove('active')
+    info.classList.remove('show')
     setTimeout(() => {
         info.classList.add('active')
       }, 600)
+    setTimeout(() => {
+        info.classList.add('show')
+      }, 1000)
     contact.classList.remove('active')
 } )
 
 btnContact.addEventListener('click',() => {
     webProjects.classList.remove('active')
-    uxuiProjects.classList.remove('active')
     designProjects.classList.remove('active')
     info.classList.remove('active')
+    contact.classList.remove('show')
     setTimeout(() => {
         contact.classList.add('active')
       }, 600)
+      setTimeout(() => {
+        contact.classList.add('show')
+      }, 1000)
 
 } )
 
 btnClose.addEventListener('click',() => {
     webProjects.classList.remove('active')
-    uxuiProjects.classList.remove('active')
     designProjects.classList.remove('active')
     info.classList.remove('active')
     contact.classList.remove('active')
@@ -121,6 +133,7 @@ btnClose.addEventListener('click',() => {
     header.innerHTML = 'CEM <br> ALPAY'
     topPart.style.marginBottom=""
     topPart.style.marginTop=""
+    
 } )
 
 easterEgg.addEventListener('click', () => {
