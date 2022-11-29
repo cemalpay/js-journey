@@ -110,10 +110,40 @@ a:visited {
   display: none;
   align-items: center;
   justify-content: center;
+  -webkit-animation: scale 1s;
+          animation: scale 1s;
 }
 .browser .content .preloader img {
   width: 80px;
   height: 80px;
+}
+@-webkit-keyframes scale {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotate(90deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(180deg);
+    opacity: 0.6;
+  }
+}
+@keyframes scale {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotate(90deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(180deg);
+    opacity: 0.6;
+  }
 }
 .browser .content .top {
   width: 80%;
@@ -121,8 +151,13 @@ a:visited {
   margin: auto;
   display: flex;
 }
-.browser .content .top img {
+.browser .content .top #fox {
   width: 180px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.browser .content .top #fox.show {
+  opacity: 1;
 }
 .browser .content .mid {
   display: none;

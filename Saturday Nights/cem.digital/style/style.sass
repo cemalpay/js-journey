@@ -95,17 +95,34 @@ a
             display: none
             align-items: center
             justify-content: center
+            animation: scale 1s
             img
                 width: 80px
                 height: 80px
+            @keyframes scale
+                0%
+                    transform: rotate(0deg)
+                    opacity: .6
+
+                50%
+                    transform: rotate(90deg)
+                    opacity: 1
+
+                100%
+                    transform: rotate(180deg)
+                    opacity: .6
 
         .top
             width: 80%
             justify-content: space-between
             margin: auto
             display: flex
-            img
+            #fox
                 width: 180px
+                opacity: 0
+                transition: opacity 1s
+                &.show
+                    opacity: 1
 
         .mid
             display: none

@@ -121,19 +121,28 @@ btnContact.addEventListener('click',() => {
 } )
 
 btnClose.addEventListener('click',() => {
+    bottom.classList.remove('show')
+    fox.classList.remove('show')
+    header.classList.remove('show')
     webProjects.classList.remove('active')
     designProjects.classList.remove('active')
     info.classList.remove('active')
+    preloader.style.display="flex"
     contact.classList.remove('active')
     mid.classList.remove('active')
-    bottom.classList.add('displayFlexbox')
-    bottom.classList.remove('displayFlex')
-    fox.style.transform="scale(1)"
     tabEl.innerHTML = 'home'
-    header.innerHTML = 'CEM <br> ALPAY'
     topPart.style.marginBottom=""
     topPart.style.marginTop=""
-    
+    setTimeout(() => {
+        header.classList.add('show')
+        preloader.style.display ="none"
+        fox.style.transform="scale(1)"
+        fox.classList.add('show')
+        header.innerHTML = 'CEM <br> ALPAY'
+    }, 1000);
+    setTimeout(() => {
+        bottom.classList.add('show')
+    }, 1250);
 } )
 
 easterEgg.addEventListener('click', () => {
