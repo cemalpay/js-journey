@@ -53,6 +53,16 @@ a:visited {
 .browser .bar ul li {
   margin-left: 5px;
 }
+.browser .square-1 {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px #0A0E17 solid;
+  cursor: pointer;
+}
+.browser .square-1:hover {
+  background-color: #d11525;
+}
 .browser .square {
   display: inline-block;
   width: 20px;
@@ -169,7 +179,7 @@ a:visited {
   cursor: pointer;
 }
 .browser .content .mid .contact .socials i:not(:last-child) {
-  margin-right: 15px;
+  margin-right: 25px;
 }
 .browser .content .mid .web-projects {
   display: none;
@@ -232,6 +242,13 @@ a:visited {
   padding: 26px;
   cursor: pointer;
   transition: color 0.5s ease;
+}
+.browser .content .bottom ul li a {
+  color: #0A0E17;
+  transition: color 0.5s ease;
+}
+.browser .content .bottom ul li a:hover {
+  color: white;
 }
 
 header {

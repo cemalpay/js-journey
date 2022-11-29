@@ -28,8 +28,6 @@ var menuItems = [
     btnDesign,
     btnInfo, 
     btnContact,
-    twitter,
-    github
 ]
 
 menuItems.forEach(mainFunc)
@@ -43,7 +41,6 @@ menuItems[index].addEventListener('mouseout', () => {
     menuItems[index].style.color = ""
 } )
 
-console.log(menuItems[index])
 menuItems[index].addEventListener('click', () => {
     tabEl.innerHTML = menuItems[index].innerHTML 
     header.innerHTML = menuItems[index].innerHTML

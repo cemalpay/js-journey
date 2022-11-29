@@ -47,6 +47,14 @@ a
             margin: 25px 15px 15px 15px
             li
                 margin-left: 5px
+    .square-1
+        display: inline-block
+        width: 20px
+        height: 20px
+        border: 3px $bg-color solid
+        cursor: pointer
+        &:hover
+            background-color: #d11525
     .square
         display: inline-block
         width: 20px
@@ -143,7 +151,7 @@ a
                         cursor: pointer
 
                         &:not(:last-child)
-                            margin-right: 15px
+                            margin-right: 25px
             .web-projects
                 display: none
                 flex-wrap: wrap
@@ -196,6 +204,11 @@ a
                     padding: 26px
                     cursor: pointer
                     transition: color .5s ease
+                    a
+                        color: $bg-color
+                        transition: color .5s ease
+                        &:hover
+                            color: white
 
 header
     color: $bg-color
