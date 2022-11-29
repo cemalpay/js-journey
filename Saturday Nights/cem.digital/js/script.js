@@ -10,6 +10,7 @@ const btnClose = document.getElementById('btn-close')
 const twitter = document.getElementById('btn-twitter')
 const github = document.getElementById('btn-github')
 const tabEl = document.querySelector('.tab-el')
+const browser = document.querySelector('.browser')
 const header = document.querySelector('header')
 const topPart = document.querySelector('.top')
 const mid = document.querySelector('.mid')
@@ -20,12 +21,12 @@ const designProjects = document.querySelector('.design-projects')
 const uxuiProjects = document.querySelector('.uxui-projects')
 const info = document.querySelector('.info')
 const contact = document.querySelector('.contact')
+const easterEgg = document.querySelector('.square-1')
 
 
 
 var menuItems = [
     btnWebdev, 
-    btnUxui, 
     btnDesign,
     btnInfo, 
     btnContact,
@@ -46,12 +47,13 @@ menuItems[index].addEventListener('mouseout', () => {
 menuItems[index].addEventListener('click', () => {
     tabEl.innerHTML = menuItems[index].innerHTML 
     header.innerHTML = menuItems[index].innerHTML
+    
 })
 
 menuItems[index].addEventListener('click', () => {
     mid.classList.add('active')
     topPart.style.marginTop="80px"
-    topPart.style.marginBottom="-60px"
+    topPart.style.marginBottom="-70px"
     bottom.classList.add('displayFlex')
     bottom.classList.remove('displayFlexbox')
     fox.style.transform="scale(0)"
@@ -66,13 +68,6 @@ btnWebdev.addEventListener('click',() => {
     contact.classList.remove('active')
 } )
 
-btnUxui.addEventListener('click',() => {
-    webProjects.classList.remove('active')
-    uxuiProjects.classList.add('active')
-    designProjects.classList.remove('active')
-    info.classList.remove('active')
-    contact.classList.remove('active')
-} )
 
 btnDesign.addEventListener('click',() => {
     webProjects.classList.remove('active')
@@ -113,3 +108,7 @@ btnClose.addEventListener('click',() => {
     topPart.style.marginBottom=""
     topPart.style.marginTop=""
 } )
+
+easterEgg.addEventListener('click', () => {
+    browser.style.display="none"
+})
