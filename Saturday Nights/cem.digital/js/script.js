@@ -47,10 +47,11 @@ menuItems[index].addEventListener('mouseout', () => {
 
 menuItems[index].addEventListener('click', () => {
     tabEl.innerHTML = menuItems[index].innerHTML 
-    header.innerHTML = menuItems[index].innerHTML
     preloader.style.display = "flex"
+    header.innerHTML = ""
     setTimeout(() => {
         preloader.style.display ="none"
+        header.innerHTML = menuItems[index].innerHTML
       }, 600)
 })
 
@@ -65,7 +66,9 @@ menuItems[index].addEventListener('click', () => {
 }
 
 btnWebdev.addEventListener('click',() => {
-    webProjects.classList.add('active')
+    setTimeout(() => {
+        webProjects.classList.add('active')
+      }, 600)
     uxuiProjects.classList.remove('active')
     designProjects.classList.remove('active')
     info.classList.remove('active')
@@ -76,7 +79,9 @@ btnWebdev.addEventListener('click',() => {
 btnDesign.addEventListener('click',() => {
     webProjects.classList.remove('active')
     uxuiProjects.classList.remove('active')
-    designProjects.classList.add('active')
+    setTimeout(() => {
+        designProjects.classList.add('active')
+      }, 600)
     info.classList.remove('active')
     contact.classList.remove('active')
 } )
@@ -85,7 +90,9 @@ btnInfo.addEventListener('click',() => {
     webProjects.classList.remove('active')
     uxuiProjects.classList.remove('active')
     designProjects.classList.remove('active')
-    info.classList.add('active')
+    setTimeout(() => {
+        info.classList.add('active')
+      }, 600)
     contact.classList.remove('active')
 } )
 
@@ -94,7 +101,10 @@ btnContact.addEventListener('click',() => {
     uxuiProjects.classList.remove('active')
     designProjects.classList.remove('active')
     info.classList.remove('active')
-    contact.classList.add('active')
+    setTimeout(() => {
+        contact.classList.add('active')
+      }, 600)
+
 } )
 
 btnClose.addEventListener('click',() => {
