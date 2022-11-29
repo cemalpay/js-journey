@@ -1,5 +1,6 @@
 'use strict'
 
+const body = document.querySelector('.body')
 const btnWebdev = document.getElementById('btn-web') 
 const btnUxui = document.getElementById('btn-uxui')
 const btnDesign = document.getElementById('btn-design')
@@ -30,6 +31,7 @@ var menuItems = [
     btnContact,
 ]
 
+
 menuItems.forEach(mainFunc)
 function mainFunc(item, index, arr) {
     menuItems[index]
@@ -49,10 +51,10 @@ menuItems[index].addEventListener('click', () => {
 menuItems[index].addEventListener('click', () => {
     mid.classList.add('active')
     topPart.style.marginTop="80px"
-    topPart.style.marginBottom="-80px"
+    topPart.style.marginBottom="-60px"
     bottom.classList.add('displayFlex')
     bottom.classList.remove('displayFlexbox')
-    fox.style.transform="scale(0.8)"
+    fox.style.transform="scale(0)"
 })
 }
 
