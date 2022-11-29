@@ -101,6 +101,20 @@ a:visited {
 .browser .content ul li {
   margin-left: 4px;
 }
+.browser .content .preloader {
+  background-color: black;
+  z-index: 999;
+  position: absolute;
+  width: 1366px;
+  height: 705px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.browser .content .preloader img {
+  width: 80px;
+  height: 80px;
+}
 .browser .content .top {
   width: 80%;
   justify-content: space-between;

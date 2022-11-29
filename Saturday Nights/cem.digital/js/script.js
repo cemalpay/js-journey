@@ -22,6 +22,7 @@ const uxuiProjects = document.querySelector('.uxui-projects')
 const info = document.querySelector('.info')
 const contact = document.querySelector('.contact')
 const easterEgg = document.querySelector('.square-1')
+const preloader = document.querySelector('.preloader')
 
 
 
@@ -47,7 +48,10 @@ menuItems[index].addEventListener('mouseout', () => {
 menuItems[index].addEventListener('click', () => {
     tabEl.innerHTML = menuItems[index].innerHTML 
     header.innerHTML = menuItems[index].innerHTML
-    
+    preloader.style.display = "flex"
+    setTimeout(() => {
+        preloader.style.display ="none"
+      }, 600)
 })
 
 menuItems[index].addEventListener('click', () => {
