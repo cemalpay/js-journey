@@ -40,8 +40,9 @@ a
     background: $gradient
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
     @media (max-width:$phoneScreen)
-        width: 460px
-
+        width: 380px
+        height: 700px
+        margin-top: -20%
     .bar
         height: 65px
         ul
@@ -84,6 +85,7 @@ a
         align-items: center
         flex-wrap: wrap
         flex-direction: column
+        overflow: scroll
         @media (max-width:$phoneScreen)
             flex-wrap: nowrap
         ul
@@ -122,9 +124,9 @@ a
             margin: auto
             display: flex
             @media (max-width:$phoneScreen)
-                font-size: 40px
+                font-size: 20px
                 width: 100%
-                margin-left: 30px
+                padding: 20px 30px
             #fox
                 width: 180px
                 opacity: 0
@@ -280,7 +282,7 @@ header
     opacity: 0
     transition: opacity 1s
     @media (max-width:$phoneScreen)
-        font-size: 60px
+        font-size: 50px
         -webkit-text-stroke: 2px transparent
     &.show
         opacity: 1

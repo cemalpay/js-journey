@@ -67,7 +67,7 @@ menuItems[index].addEventListener('click', () => {
     maxWidth()
     function maxWidth(){
     if (widthX.matches) { // If media query matches
-        topPart.style.marginTop="0px"
+        topPart.style.marginTop="10px"
         topPart.style.marginBottom="0px"
       } else { // If media query does not matches
         topPart.style.marginTop="80px"
