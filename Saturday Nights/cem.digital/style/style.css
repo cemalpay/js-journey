@@ -111,6 +111,11 @@ a:visited {
 .browser .content ul {
   padding: 12px 30px;
 }
+@media (max-width: 600px) {
+  .browser .content ul {
+    padding: 20px 0px;
+  }
+}
 .browser .content ul li {
   margin-left: 4px;
 }
@@ -190,6 +195,11 @@ a:visited {
   margin: auto;
   justify-content: center;
 }
+@media (max-width: 600px) {
+  .browser .content .mid {
+    width: 90%;
+  }
+}
 .browser .content .mid.active {
   display: flex;
 }
@@ -214,6 +224,11 @@ a:visited {
   opacity: 0;
   transition: opacity 1s;
 }
+@media (max-width: 600px) {
+  .browser .content .mid .info {
+    flex-wrap: wrap;
+  }
+}
 .browser .content .mid .info.show {
   opacity: 1;
 }
@@ -228,9 +243,19 @@ a:visited {
   margin-right: 20px;
   align-self: center;
 }
+@media (max-width: 600px) {
+  .browser .content .mid .info .cem-img {
+    display: none;
+  }
+}
 .browser .content .mid .info .info-text {
   font-size: 18px;
   letter-spacing: 1.5px;
+}
+@media (max-width: 600px) {
+  .browser .content .mid .info .info-text {
+    font-size: 16px;
+  }
 }
 .browser .content .mid .contact {
   display: none;
@@ -249,6 +274,11 @@ a:visited {
   padding: 20px;
   letter-spacing: 1.5px;
   font-size: 22px;
+}
+@media (max-width: 600px) {
+  .browser .content .mid .contact .contact-box ul li {
+    font-size: 19px;
+  }
 }
 .browser .content .mid .contact p {
   text-align: center;

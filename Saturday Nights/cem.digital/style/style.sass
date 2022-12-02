@@ -90,6 +90,8 @@ a
             flex-wrap: nowrap
         ul
             padding: 12px 30px
+            @media (max-width:$phoneScreen)
+                padding: 20px 0px
             li
                 margin-left: 4px
         .preloader
@@ -141,6 +143,8 @@ a
             width: 80%
             margin: auto
             justify-content: center
+            @media (max-width:$phoneScreen)
+                width: 90%
             &.active
                 display: flex
             .uxui-projects
@@ -159,6 +163,8 @@ a
                 display: none
                 opacity: 0
                 transition: opacity 1s
+                @media (max-width:$phoneScreen)
+                    flex-wrap: wrap
                 &.show
                     opacity: 1
                 &.active
@@ -170,9 +176,13 @@ a
                     border-radius: 50%
                     margin-right: 20px
                     align-self: center
+                    @media (max-width:$phoneScreen)
+                        display: none
                 .info-text
                     font-size: 18px
                     letter-spacing: 1.5px
+                    @media (max-width:$phoneScreen)
+                        font-size: 16px
             .contact
                 display: none
                 flex-wrap: wrap
@@ -189,6 +199,8 @@ a
                             padding: 20px
                             letter-spacing: 1.5px
                             font-size: 22px
+                            @media (max-width:$phoneScreen)
+                                font-size: 19px
                 p
                     text-align: center
                     font-size: 22px
