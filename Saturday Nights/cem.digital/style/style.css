@@ -44,6 +44,11 @@ a:visited {
   background: linear-gradient(145deg, rgb(69, 255, 143) 0%, rgb(255, 224, 246) 25%, rgb(255, 216, 199) 50%, rgb(126, 152, 158) 75%, rgb(90, 132, 195) 100%);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
+@media (max-width: 600px) {
+  .browser {
+    width: 460px;
+  }
+}
 .browser .bar {
   height: 65px;
 }
@@ -151,10 +156,20 @@ a:visited {
   margin: auto;
   display: flex;
 }
+@media (max-width: 600px) {
+  .browser .content .top {
+    font-size: 40px;
+  }
+}
 .browser .content .top #fox {
   width: 180px;
   opacity: 0;
   transition: opacity 1s;
+}
+@media (max-width: 600px) {
+  .browser .content .top #fox {
+    width: 80px;
+  }
 }
 .browser .content .top #fox.show {
   opacity: 1;
@@ -296,6 +311,12 @@ a:visited {
   opacity: 0;
   transition: opacity 1s;
 }
+@media (max-width: 600px) {
+  .browser .content .bottom {
+    text-align: left;
+    flex-wrap: nowrap;
+  }
+}
 .browser .content .bottom.show {
   opacity: 1;
 }
@@ -331,6 +352,12 @@ header {
   -webkit-text-stroke: 6px transparent;
   opacity: 0;
   transition: opacity 1s;
+}
+@media (max-width: 600px) {
+  header {
+    font-size: 60px;
+    -webkit-text-stroke: 2px transparent;
+  }
 }
 header.show {
   opacity: 1;

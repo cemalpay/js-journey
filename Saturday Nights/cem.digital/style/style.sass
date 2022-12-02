@@ -1,11 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap')
 
-*
-    box-sizing: border-box
-
+$phoneScreen: 600px
 $bg-color: #0A0E17
 $gradient: linear-gradient(145deg, rgba(69,255,143,1) 0%, rgba(255,224,246,1) 25%, rgba(255,216,199,1) 50%, rgba(126,152,158,1) 75%, rgba(90,132,195,1) 100%)
-
+*
+    box-sizing: border-box
 body
     background-color: $bg-color
     color: white
@@ -40,6 +39,9 @@ a
     height: 768px
     background: $gradient
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px
+    @media (max-width:$phoneScreen)
+        width: 460px
+
     .bar
         height: 65px
         ul
@@ -117,10 +119,14 @@ a
             justify-content: space-between
             margin: auto
             display: flex
+            @media (max-width:$phoneScreen)
+                font-size: 40px
             #fox
                 width: 180px
                 opacity: 0
                 transition: opacity 1s
+                @media (max-width:$phoneScreen)
+                    width: 80px
                 &.show
                     opacity: 1
 
@@ -235,6 +241,9 @@ a
             display: flex
             opacity: 0
             transition: opacity 1s
+            @media (max-width:$phoneScreen)
+                text-align: left
+                flex-wrap: nowrap
             &.show
                 opacity: 1
             ul
@@ -264,6 +273,9 @@ header
     -webkit-text-stroke: 6px transparent
     opacity: 0
     transition: opacity 1s
+    @media (max-width:$phoneScreen)
+        font-size: 60px
+        -webkit-text-stroke: 2px transparent
     &.show
         opacity: 1
 footer
