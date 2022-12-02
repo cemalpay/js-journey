@@ -5,28 +5,54 @@
 
 body
     font-family: 'Montserrat', sans-serif
-    display: flex
-    flex-direction: column
-    align-items: center
-    justify-content: center
     height: 100vh
     overflow: hidden
     margin: 0
-
+header
+    position: sticky
+    top: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 100vw
+    height: 40px
+    background-color: #030303
+    .logo
+        text-align: center
+        font-weight: bold
+        font-size: 20px
+        color: white
+.content
+    width: 100vw
+    background-color: grey
+    display: flex
+    flex-wrap: wrap
+    .title
+        background-color: red
+        width: 800px
+    .visuals
+        .mainImg
+            width: 160px
+            height: 160px
 .subMenu
+    width: 100vw
+    height: 15%
+    background-color: blue
     position: absolute
-    bottom: 60px
+    bottom: 0
     font-size: 22px
+    z-index: 999
+    display: flex
+    justify-content: center
     //transform: rotate(-90deg)
     ul
-        padding: 0
-        margin: 0
         list-style: none
+        margin: 0
+        padding: 0
         li
             display: inline-block
-            transform: rotate(-90deg)
+            transform: rotate(-90deg) translateX(-50%)
             a
-                padding: 8px 12px
                 text-decoration: none
                 &:visited
                     text-decoration: none
