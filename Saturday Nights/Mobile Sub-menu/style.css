@@ -15,11 +15,24 @@ body {
 }
 
 .subMenu {
+  position: absolute;
+  bottom: 60px;
   font-size: 22px;
 }
 .subMenu ul {
+  padding: 0;
+  margin: 0;
   list-style: none;
 }
 .subMenu ul li {
-  padding: 10px;
+  display: inline-block;
+  transform: rotate(-90deg);
+}
+.subMenu ul li a {
+  padding: 8px 12px;
+  text-decoration: none;
+}
+.subMenu ul li a:visited {
+  text-decoration: none;
+  color: black;
 }/*# sourceMappingURL=style.css.map */
