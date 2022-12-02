@@ -100,6 +100,11 @@ a:visited {
   flex-wrap: wrap;
   flex-direction: column;
 }
+@media (max-width: 600px) {
+  .browser .content {
+    flex-wrap: nowrap;
+  }
+}
 .browser .content ul {
   padding: 12px 30px;
 }
@@ -159,6 +164,8 @@ a:visited {
 @media (max-width: 600px) {
   .browser .content .top {
     font-size: 40px;
+    width: 100%;
+    margin-left: 30px;
   }
 }
 .browser .content .top #fox {
@@ -315,6 +322,9 @@ a:visited {
   .browser .content .bottom {
     text-align: left;
     flex-wrap: nowrap;
+  }
+  .browser .content .bottom.mobile {
+    display: none;
   }
 }
 .browser .content .bottom.show {

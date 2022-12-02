@@ -84,6 +84,8 @@ a
         align-items: center
         flex-wrap: wrap
         flex-direction: column
+        @media (max-width:$phoneScreen)
+            flex-wrap: nowrap
         ul
             padding: 12px 30px
             li
@@ -121,6 +123,8 @@ a
             display: flex
             @media (max-width:$phoneScreen)
                 font-size: 40px
+                width: 100%
+                margin-left: 30px
             #fox
                 width: 180px
                 opacity: 0
@@ -244,6 +248,8 @@ a
             @media (max-width:$phoneScreen)
                 text-align: left
                 flex-wrap: nowrap
+                &.mobile
+                    display: none
             &.show
                 opacity: 1
             ul

@@ -58,10 +58,22 @@ menuItems[index].addEventListener('click', () => {
       }, 600)
 })
 
+//widthX değişkeni max-width 600px olursa -true
+var widthX = window.matchMedia("(max-width: 600px)")
+
 menuItems[index].addEventListener('click', () => {
     mid.classList.add('active')
-    topPart.style.marginTop="80px"
-    topPart.style.marginBottom="-70px"
+    // Run maxWidth function
+    maxWidth()
+    function maxWidth(){
+    if (widthX.matches) { // If media query matches
+        topPart.style.marginTop="0px"
+        topPart.style.marginBottom="0px"
+      } else { // If media query does not matches
+        topPart.style.marginTop="80px"
+        topPart.style.marginBottom="-70px"
+      }
+    }
     bottom.classList.remove('show')
     setTimeout(() => {
         bottom.classList.add('show')
