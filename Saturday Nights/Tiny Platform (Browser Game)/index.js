@@ -20,7 +20,10 @@ class Player {
     }
     update() {
         this.draw()
+    
         this.position.y += this.velocity.y
+        this.position.x += this.velocity.x
+
         if (this.position.y + this.height + this.velocity.y< canvas.height)
         this.velocity.y += gravity
         else this.velocity.y = 0
@@ -31,6 +34,7 @@ const player = new Player({
     y:0,
 })
 
+
 function animate() {
     window.requestAnimationFrame(animate)
     c.fillStyle="white"
@@ -39,3 +43,20 @@ function animate() {
 }
 
 animate()
+
+
+window.addEventListener('keydown', (event) => {
+    switch (event.key) {
+        case 'd':
+            player.velocity.x = 1
+            console.log('move right')
+            break
+        case 'a':
+            player.velocity.x = -1
+           console.log('move left')
+           break
+        case 'w'
+            player.velocity.y = -15
+            console.log('jump')
+    }
+})
