@@ -1,10 +1,15 @@
 const canvas = document.querySelector('canvas')
 const c = canvas.getContext('2d')
 
+
+//canvasın en'i ve boy'u
 canvas.width = 1024
 canvas.height = 576
+
+//yerçekimi çarpanı
 const gravity = 0.4
 
+// sprite class'ı yaratıldı
 class Sprite {
     constructor({position, imageSrc}) {
         this.position = position
@@ -20,6 +25,7 @@ class Sprite {
     }
 }
 
+// player class'ı yaratıldı
 class Player {
     constructor(position) {
         this.position = position
@@ -35,20 +41,23 @@ class Player {
     }
     update() {
         this.draw()
-    
+
         this.position.y += this.velocity.y
         this.position.x += this.velocity.x
-
-        if (this.position.y + this.height + this.velocity.y< canvas.height)
+        // eğer player'ın y deki pozisyonu canvasın height'ından küçükse (yani player zeminde değilse)
+        if (this.position.y + this.height + this.velocity.y < canvas.height)
         this.velocity.y += gravity
         else this.velocity.y = 0
     }
 }
+
+// new player yaratıldı ve başlangıç pozisyonu belirlendi
 const player = new Player({
     x:0,
     y:0,
 })
 
+// keys adında sağ ve sol yön tuşlarının pressed durumunu belirten bir array
 const keys = {
     d: {
         pressed: false
@@ -56,15 +65,31 @@ const keys = {
     a: {
         pressed: false
     },
-    w: {
-        pressed: false
-    },
 }
+
+// bg adında yeni sprite oluşturup pozisyonunu belirttik
+const background = new Sprite({
+    position: {
+        x:0,
+        y:0,
+    },
+    imageSrc:'./img/background.png'
+})
 
 function animate() {
     window.requestAnimationFrame(animate)
     c.fillStyle="white"
     c.fillRect(0, 0, canvas.width, canvas.height)
+
+    //save ve restore arasına alınan fonksiyonlar bir kere çalışıyor
+    c.save()
+    //arkaplanı 4 kat büyüttük
+    c.scale(4, 4)
+    background.update()
+    c.restore()
+
+
+    //player'in x düzlemindeki hareketi
     player.update()
     player.velocity.x = 0
     if (keys.d.pressed) player.velocity.x = 4
@@ -73,32 +98,28 @@ function animate() {
 
 animate()
 
-
+//arrow keys'in pressed true olma durumu
 window.addEventListener('keydown', (event) => {
     switch (event.key) {
         case 'd':
             keys.d.pressed = true
-            console.log('move right')
             break
         case 'a':
             keys.a.pressed = true
-           console.log('move left')
            break
         case 'w':
             player.velocity.y = -15
-            console.log('jump')
     }
 })
 
+// arrow keys'in pressed false olma durumu
 window.addEventListener('keyup', (event) => {
     switch (event.key) {
         case 'd':
             keys.d.pressed = false
-            console.log('move right')
             break
         case 'a':
             keys.a.pressed = false
-           console.log('move left')
            break
     }
 })
