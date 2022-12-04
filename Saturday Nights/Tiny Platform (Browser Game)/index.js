@@ -34,6 +34,17 @@ const player = new Player({
     y:0,
 })
 
+const keys = {
+    d: {
+        pressed: false
+    },
+    a: {
+        pressed: false
+    },
+    w: {
+        pressed: false
+    },
+}
 
 function animate() {
     window.requestAnimationFrame(animate)
@@ -48,15 +59,28 @@ animate()
 window.addEventListener('keydown', (event) => {
     switch (event.key) {
         case 'd':
-            player.velocity.x = 1
+            keys.d.pressed = true
             console.log('move right')
             break
         case 'a':
-            player.velocity.x = -1
+            keys.a.pressed = true
            console.log('move left')
            break
-        case 'w'
+        case 'w':
             player.velocity.y = -15
             console.log('jump')
+    }
+})
+
+window.addEventListener('keyup', (event) => {
+    switch (event.key) {
+        case 'd':
+            keys.d.pressed = false
+            console.log('move right')
+            break
+        case 'a':
+            keys.a.pressed = false
+           console.log('move left')
+           break
     }
 })
