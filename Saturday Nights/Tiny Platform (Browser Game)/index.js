@@ -51,6 +51,9 @@ function animate() {
     c.fillStyle="white"
     c.fillRect(0, 0, canvas.width, canvas.height)
     player.update()
+    player.velocity.x = 0
+    if (keys.d.pressed) player.velocity.x = 1
+        else if (keys.a.pressed) player.velocity.x = -1
 }
 
 animate()
