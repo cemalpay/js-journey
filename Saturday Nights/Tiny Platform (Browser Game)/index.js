@@ -65,7 +65,7 @@ platformCollisions2D.forEach((row, y) => {
 // new player yaratıldı ve başlangıç pozisyonu belirlendi
 const player = new Player({
     position:{
-        x:500,
+        x:100,
         y:0
     },
     collisionBlocks,
@@ -113,15 +113,15 @@ function animate() {
     platformCollisionBlocks.forEach((block) => {
         block.update()
     })
-    c.restore()
-
-
 
     //player'in x düzlemindeki hareketi
     player.update()
     player.velocity.x = 0
     if (keys.d.pressed) player.velocity.x = 4
-        else if (keys.a.pressed) player.velocity.x = -4
+    else if (keys.a.pressed) player.velocity.x = -4
+
+    c.restore()
+
 }
 
 animate()

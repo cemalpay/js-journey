@@ -6,8 +6,8 @@ class Player {
             x:0,
             y:1,
         }
-        this.height = 100
-        this.width = 60
+        this.height = 100 / 4
+        this.width = 60 / 4
         this.collisionBlocks = collisionBlocks
     }
     draw() {
@@ -36,7 +36,9 @@ class Player {
                     object2: collisionBlock,
                 })
                 ) {
-                    console.log('we are collide')
+                    if(this.velocity.y > 0 ){
+                        this.velocity.y = 0
+                    }
                 }
         }
     }
