@@ -24,12 +24,20 @@ const platformCollisions2D = []
 for (let i = 0; i < platformCollisions.length; i += 36) {
     platformCollisions2D.push(platformCollisions.slice(i, i + 36))
 }
-const CollisionBlocks = []
+
+/*
+rowlardaki değerler bizim y deki pozisyonumuzu veriyor
+column(symbol)'deki değerler ise x deki pozisyonumuzu.
+
+bu şekilde 199 değerinin x ve y deki pozisyonunu bularak
+orada bir collision block oluşturulmasını sağlayacağız
+*/
+const collisionBlocks = []
 floorCollisions2D.forEach((row, y) => {
     row.forEach((symbol, x) => {
         if(symbol === 199) {
             console.log('draw a block here!')
-            CollisionBlocks.push(new CollisionBlock({
+            collisionBlocks.push(new CollisionBlock({
                 position: {
                     x: x * 16,
                     y: y * 16,
@@ -92,8 +100,11 @@ function animate() {
     //arkaplanın pozisyonunu ayarladık (x:0 y:(-bg.height) + (canvas.height / 4))
     c.translate(0,-background.image.height + scaledCanvas.height)
     background.update()
+
+    //map yüklendiğinde collision blockların yüklenmesini sağlıyoruz.
+    //
     //restore satırının üstünde olmalı çünkü scale ediliyor harita
-    CollisionBlocks.forEach((CollisionBlock) => {
+    collisionBlocks.forEach((CollisionBlock) => {
         CollisionBlock.update()
     })
     platformCollisionBlocks.forEach((block) => {
