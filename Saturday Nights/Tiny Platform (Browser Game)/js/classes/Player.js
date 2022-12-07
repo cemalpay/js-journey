@@ -21,6 +21,27 @@ class Player {
         this.applyGravity()
         this.checkForVerticalCollisions()
     }
+    checkForHorizontalCollisions(){
+        for (let i = 0; i <this.collisionBlocks.length; i++){
+            const collisionBlock = this.collisionBlocks[i]
+            //player'in altı >= block üstü
+            if(
+                collision({
+                    object1: this,
+                    object2: collisionBlock,
+                })
+                ) {
+                    if(this.velocity.x > 0 ){
+                        this.velocity.x = 0
+                        this.position.x = collisionBlock.position.x - this.height - 0.01
+                    }
+                    if(this.velocity.x < 0 ){
+                        this.velocity.x = 0
+                        this.position.x = collisionBlock.position.y + collisionBlock.height + 0.01
+                    }
+                }
+        }
+    }
 
     applyGravity(){
         this.position.x += this.velocity.x
@@ -38,6 +59,11 @@ class Player {
                 ) {
                     if(this.velocity.y > 0 ){
                         this.velocity.y = 0
+                        this.position.y = collisionBlock.position.y - this.height - 0.01
+                    }
+                    if(this.velocity.y < 0 ){
+                        this.velocity.y = 0
+                        this.position.y = collisionBlock.position.y + collisionBlock.height + 0.01
                     }
                 }
         }
