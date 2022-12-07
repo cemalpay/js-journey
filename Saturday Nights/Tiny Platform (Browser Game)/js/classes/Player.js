@@ -17,7 +17,8 @@ class Player {
     update() {
         this.draw()
 
-        this.position.y += this.velocity.y
+        this.position.x += this.velocity.x
+        this.checkForHorizontalCollisions()
         this.applyGravity()
         this.checkForVerticalCollisions()
     }
@@ -33,18 +34,20 @@ class Player {
                 ) {
                     if(this.velocity.x > 0 ){
                         this.velocity.x = 0
-                        this.position.x = collisionBlock.position.x - this.height - 0.01
+                        this.position.x = collisionBlock.position.x - this.width - 0.01
+                        break
                     }
                     if(this.velocity.x < 0 ){
                         this.velocity.x = 0
-                        this.position.x = collisionBlock.position.y + collisionBlock.height + 0.01
+                        this.position.x = collisionBlock.position.y + collisionBlock.width + 0.01
+                        break
                     }
                 }
         }
     }
 
     applyGravity(){
-        this.position.x += this.velocity.x
+        this.position.y += this.velocity.y
         this.velocity.y += gravity
     }
     checkForVerticalCollisions(){
@@ -60,10 +63,12 @@ class Player {
                     if(this.velocity.y > 0 ){
                         this.velocity.y = 0
                         this.position.y = collisionBlock.position.y - this.height - 0.01
+                        break
                     }
                     if(this.velocity.y < 0 ){
                         this.velocity.y = 0
                         this.position.y = collisionBlock.position.y + collisionBlock.height + 0.01
+                        break
                     }
                 }
         }
