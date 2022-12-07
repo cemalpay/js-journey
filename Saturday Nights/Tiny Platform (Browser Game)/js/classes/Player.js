@@ -18,10 +18,11 @@ class Player {
         this.draw()
 
         this.position.y += this.velocity.y
+        this.applyGravity()
+    }
+
+    applyGravity(){
         this.position.x += this.velocity.x
-        // eğer player'ın y deki pozisyonu canvasın height'ından küçükse (yani player zeminde değilse)
-        if (this.position.y + this.height + this.velocity.y < canvas.height)
         this.velocity.y += gravity
-        else this.velocity.y = 0
     }
 }
