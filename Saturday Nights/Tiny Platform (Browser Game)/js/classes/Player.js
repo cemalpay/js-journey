@@ -31,7 +31,13 @@ class Player {
             const collisionBlock = this.collisionBlocks[i]
             //player'in altı >= block üstü
             if(
-                ) 
+                collision({
+                    object1: this,
+                    object2: collisionBlock,
+                })
+                ) {
+                    console.log('we are collide')
+                }
         }
     }
 }
