@@ -13,24 +13,28 @@ const scaledCanvas = {
 //yerçekimi çarpanı
 const gravity = 0.4
 
-// 36 x 27
+// 36 satır x 27 sütun
+// her block 16x16
 // her 36lık satırı bölüp 2d arrayine pushladık
 const floorCollisions2D = []
 for (let i = 0; i < floorCollisions.length; i += 36) {
     floorCollisions2D.push(floorCollisions.slice(i, i + 36))
 }
-floorCollisions2D.forEach((row) => {
-    row.forEach(symbol => {
+const CollisionBlocks = []
+floorCollisions2D.forEach((row, y) => {
+    row.forEach((symbol, x) => {
         if(symbol === 199) {
             console.log('draw a block here!')
-            c.fill
+            CollisionBlocks.push(new CollisionBlock({
+                position: {
+                    x: x * 16,
+                    y: y * 16,
+                }
+            }))
         }
     })
 })
-
-
-
-
+console.log(CollisionBlocks)
 // new player yaratıldı ve başlangıç pozisyonu belirlendi
 const player = new Player({
     x:0,
@@ -69,7 +73,12 @@ function animate() {
     //arkaplanın pozisyonunu ayarladık (x:0 y:(-bg.height) + (canvas.height / 4))
     c.translate(0,-background.image.height + scaledCanvas.height)
     background.update()
+    //restore satırının üstünde olmalı çünkü scale ediliyor harita
+    CollisionBlocks.forEach(CollisionBlock => {
+        CollisionBlock.update()
+    })
     c.restore()
+
 
 
     //player'in x düzlemindeki hareketi
