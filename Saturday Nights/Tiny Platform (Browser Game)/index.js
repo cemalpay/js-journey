@@ -13,6 +13,14 @@ const scaledCanvas = {
 //yerçekimi çarpanı
 const gravity = 0.4
 
+// 36 x 27
+// her 36lık satırı bölüp 2d arrayine pushladık
+const floorCollisions2D = []
+for (let i = 0; i < floorCollisions.length; i += 36) {
+    floorCollisions2D.push(floorCollisions.slice(i, i + 36))
+}
+console.log(floorCollisions2D)
+
 // sprite class'ı yaratıldı
 class Sprite {
     constructor({position, imageSrc}) {
