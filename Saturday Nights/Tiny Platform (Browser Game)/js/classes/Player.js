@@ -19,10 +19,19 @@ class Player {
 
         this.position.y += this.velocity.y
         this.applyGravity()
+        this.checkForVerticalCollisions()
     }
 
     applyGravity(){
         this.position.x += this.velocity.x
         this.velocity.y += gravity
+    }
+    checkForVerticalCollisions(){
+        for (let i = 0; i <this.collisionBlocks.length; i++){
+            const collisionBlock = this.collisionBlocks[i]
+            //player'in altı >= block üstü
+            if(
+                ) 
+        }
     }
 }
