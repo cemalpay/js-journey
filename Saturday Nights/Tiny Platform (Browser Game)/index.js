@@ -11,7 +11,7 @@ const scaledCanvas = {
     height: canvas.height / 4,
 }
 //yerçekimi çarpanı
-const gravity = 0.4
+const gravity = 0.3
 
 // 36 satır x 27 sütun
 // her block 16x16
@@ -117,8 +117,8 @@ function animate() {
     //player'in x düzlemindeki hareketi
     player.update()
     player.velocity.x = 0
-    if (keys.d.pressed) player.velocity.x = 4
-    else if (keys.a.pressed) player.velocity.x = -4
+    if (keys.d.pressed) player.velocity.x = 2
+    else if (keys.a.pressed) player.velocity.x = -2
 
     c.restore()
 
@@ -136,7 +136,7 @@ window.addEventListener('keydown', (event) => {
             keys.a.pressed = true
            break
         case 'w':
-            player.velocity.y = -15
+            player.velocity.y = -6
     }
 })
 

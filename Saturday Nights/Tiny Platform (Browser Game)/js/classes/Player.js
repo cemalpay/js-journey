@@ -6,8 +6,8 @@ class Player {
             x:0,
             y:1,
         }
-        this.height = 100 / 4
-        this.width = 60 / 4
+        this.height = 25
+        this.width = 20
         this.collisionBlocks = collisionBlocks
     }
     draw() {
