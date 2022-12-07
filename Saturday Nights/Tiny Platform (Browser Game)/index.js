@@ -20,6 +20,10 @@ const floorCollisions2D = []
 for (let i = 0; i < floorCollisions.length; i += 36) {
     floorCollisions2D.push(floorCollisions.slice(i, i + 36))
 }
+const platformCollisions2D = []
+for (let i = 0; i < platformCollisions.length; i += 36) {
+    platformCollisions2D.push(platformCollisions.slice(i, i + 36))
+}
 const CollisionBlocks = []
 floorCollisions2D.forEach((row, y) => {
     row.forEach((symbol, x) => {
@@ -34,7 +38,22 @@ floorCollisions2D.forEach((row, y) => {
         }
     })
 })
-console.log(CollisionBlocks)
+const platformCollisionBlocks = []
+platformCollisions2D.forEach((row, y) => {
+    row.forEach((symbol, x) => {
+        if(symbol === 199) {
+            console.log('draw a block here!')
+            platformCollisionBlocks.push(new CollisionBlock({
+                position: {
+                    x: x * 16,
+                    y: y * 16,
+                }
+            }))
+        }
+    })
+})
+
+
 // new player yaratıldı ve başlangıç pozisyonu belirlendi
 const player = new Player({
     x:0,
@@ -74,8 +93,11 @@ function animate() {
     c.translate(0,-background.image.height + scaledCanvas.height)
     background.update()
     //restore satırının üstünde olmalı çünkü scale ediliyor harita
-    CollisionBlocks.forEach(CollisionBlock => {
+    CollisionBlocks.forEach((CollisionBlock) => {
         CollisionBlock.update()
+    })
+    platformCollisionBlocks.forEach((block) => {
+        block.update()
     })
     c.restore()
 
