@@ -1,16 +1,18 @@
 // player class'ı yaratıldı
 class Player {
-    constructor(position) {
+    constructor({position, collisionBlocks}) {
         this.position = position
         this.velocity = {
             x:0,
             y:1,
         }
         this.height = 100
+        this.width = 60
+        this.collisionBlocks = collisionBlocks
     }
     draw() {
         c.fillStyle = 'red'
-        c.fillRect(this.position.x, this.position.y, 100, this.height)
+        c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
     update() {
         this.draw()

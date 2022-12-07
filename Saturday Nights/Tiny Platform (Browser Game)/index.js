@@ -64,8 +64,11 @@ platformCollisions2D.forEach((row, y) => {
 
 // new player yaratıldı ve başlangıç pozisyonu belirlendi
 const player = new Player({
-    x:0,
-    y:0,
+    position:{
+        x:500,
+        y:0
+    },
+    collisionBlocks,
 })
 
 // keys adında sağ ve sol yön tuşlarının pressed durumunu belirten bir array
