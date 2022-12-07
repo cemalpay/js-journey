@@ -19,7 +19,13 @@ const floorCollisions2D = []
 for (let i = 0; i < floorCollisions.length; i += 36) {
     floorCollisions2D.push(floorCollisions.slice(i, i + 36))
 }
-console.log(floorCollisions2D)
+floorCollisions2D.forEach((row) => {
+    row.forEach(symbol => {
+        if(symbol === 199) {
+            console.log('draw a block here!')
+        }
+    })
+})
 
 // sprite class'ı yaratıldı
 class Sprite {
