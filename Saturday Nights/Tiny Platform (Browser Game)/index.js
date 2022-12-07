@@ -23,6 +23,7 @@ floorCollisions2D.forEach((row) => {
     row.forEach(symbol => {
         if(symbol === 199) {
             console.log('draw a block here!')
+            c.fill
         }
     })
 })
