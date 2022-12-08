@@ -38,7 +38,7 @@ class Player {
                     }
                     if(this.velocity.x < 0 ){
                         this.velocity.x = 0
-                        this.position.x = collisionBlock.position.y + collisionBlock.width + 0.01
+                        this.position.x = collisionBlock.position.x + collisionBlock.width + 0.01
                         break
                     }
                 }
@@ -52,7 +52,6 @@ class Player {
     checkForVerticalCollisions(){
         for (let i = 0; i <this.collisionBlocks.length; i++){
             const collisionBlock = this.collisionBlocks[i]
-            //player'in altı >= block üstü
             if(
                 collision({
                     object1: this,
