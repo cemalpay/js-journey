@@ -51,7 +51,7 @@ platformCollisions2D.forEach((row, y) => {
     row.forEach((symbol, x) => {
         if(symbol === 199) {
             console.log('draw a block here!')
-            platformCollisionBlocks.push(new CollisionBlock({
+            collisionBlocks.push(new CollisionBlock({
                 position: {
                     x: x * 16,
                     y: y * 16,
