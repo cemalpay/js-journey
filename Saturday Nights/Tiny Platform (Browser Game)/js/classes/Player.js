@@ -25,7 +25,6 @@ class Player {
     checkForHorizontalCollisions(){
         for (let i = 0; i <this.collisionBlocks.length; i++){
             const collisionBlock = this.collisionBlocks[i]
-            //player'in altı >= block üstü
             if(
                 collision({
                     object1: this,
