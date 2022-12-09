@@ -11,7 +11,7 @@ const scaledCanvas = {
     height: canvas.height / 4,
 }
 //yerçekimi çarpanı
-const gravity = 0.3
+const gravity = 0.1
 
 // 36 satır x 27 sütun
 // her block 16x16
