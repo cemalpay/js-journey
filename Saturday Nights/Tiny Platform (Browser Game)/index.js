@@ -71,6 +71,7 @@ const player = new Player({
         y:100
     },
     collisionBlocks,
+    platformCollisionBlocks,
     imageSrc:'./img/warrior/Idle.png',
     frameRate: 8,
 })
