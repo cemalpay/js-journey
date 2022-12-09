@@ -148,6 +148,7 @@ function animate() {
     window.requestAnimationFrame(animate)
     c.fillStyle="white"
     c.fillRect(0, 0, canvas.width, canvas.height)
+    c.translate(camera.position.x, camera.position.y)
 
     //save ve restore arasına alınan fonksiyonlar bir kere çalışıyor
     c.save()
@@ -155,7 +156,7 @@ function animate() {
     c.scale(4, 4)
 
     // //arkaplanın pozisyonunu ayarladık (x:0 y:(-bg.height) + (canvas.height / 4))
-    c.translate(0,-background.image.height + scaledCanvas.height)
+    // c.translate(0,-background.image.height + scaledCanvas.height)
     background.update()
 
     //map yüklendiğinde collision blockların yüklenmesini sağlıyoruz.
