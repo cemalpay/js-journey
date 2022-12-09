@@ -136,6 +136,7 @@ const background = new Sprite({
     },
     imageSrc:'./img/background.png'
 })
+const backgroundImageHeight = 432
 
 function animate() {
     window.requestAnimationFrame(animate)
