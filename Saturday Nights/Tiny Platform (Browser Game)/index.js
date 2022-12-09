@@ -142,7 +142,7 @@ const camera = {
       x: 0,
       y: -backgroundImageHeight + scaledCanvas.height,
     },
-
+}
 
 function animate() {
     window.requestAnimationFrame(animate)
