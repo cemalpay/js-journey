@@ -137,6 +137,12 @@ const background = new Sprite({
     imageSrc:'./img/background.png'
 })
 const backgroundImageHeight = 432
+const camera = {
+    position: {
+      x: 0,
+      y: -backgroundImageHeight + scaledCanvas.height,
+    },
+
 
 function animate() {
     window.requestAnimationFrame(animate)
