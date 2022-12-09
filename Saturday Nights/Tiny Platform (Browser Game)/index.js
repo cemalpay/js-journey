@@ -7,8 +7,8 @@ canvas.width = 1024
 canvas.height = 576
 
 const scaledCanvas = {
-    width: canvas.width /4,
-    height: canvas.height /4,
+    width: canvas.width / 4,
+    height: canvas.height / 4,
 }
 //yerçekimi çarpanı
 const gravity = 0.3
@@ -70,7 +70,8 @@ const player = new Player({
         y:100
     },
     collisionBlocks,
-    imageSrc:'./img/warrior/Idle.png'
+    imageSrc:'./img/warrior/Idle.png',
+    frameRate: 8,
 })
 
 // keys adında sağ ve sol yön tuşlarının pressed durumunu belirten bir array
