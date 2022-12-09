@@ -70,6 +70,7 @@ const player = new Player({
         y:0
     },
     collisionBlocks,
+    imageSrc:'./img/warrior/Idle.png'
 })
 
 // keys adında sağ ve sol yön tuşlarının pressed durumunu belirten bir array
