@@ -7,8 +7,8 @@ canvas.width = 1024
 canvas.height = 576
 
 const scaledCanvas = {
-    width: canvas.width ,
-    height: canvas.height ,
+    width: canvas.width /4,
+    height: canvas.height /4,
 }
 //yerçekimi çarpanı
 const gravity = 0.3
@@ -99,7 +99,7 @@ function animate() {
     //save ve restore arasına alınan fonksiyonlar bir kere çalışıyor
     c.save()
     //arkaplanı 4 kat büyüttük
-    //c.scale(2, 2)
+    c.scale(4, 4)
 
     // //arkaplanın pozisyonunu ayarladık (x:0 y:(-bg.height) + (canvas.height / 4))
     c.translate(0,-background.image.height + scaledCanvas.height)
