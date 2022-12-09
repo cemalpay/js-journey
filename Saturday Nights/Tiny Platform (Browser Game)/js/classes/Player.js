@@ -1,5 +1,5 @@
 // player class'ı yaratıldı
-class Player extends Sprite {
+class Player extends Sprite{
     constructor({position, collisionBlocks, imageSrc}) {
         super({imageSrc})
         this.position = position
@@ -10,6 +10,8 @@ class Player extends Sprite {
         this.collisionBlocks = collisionBlocks
     }
     update() {
+        c.fillStyle = 'rgba(0,255,0,0.2)'
+        c.fillRect(this.position.x, this.position.y, this.width, this.height)
         this.draw()
 
         this.position.x += this.velocity.x
