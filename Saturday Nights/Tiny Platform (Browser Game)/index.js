@@ -52,11 +52,12 @@ platformCollisions2D.forEach((row, y) => {
         if(symbol === 199) {
             console.log('draw a block here!')
             //!!! değiştirmeyi unutma!!! geçici olarak platform collisionları floor ile aynı yaptık
-            collisionBlocks.push(new CollisionBlock({
+            platformCollisionBlocks.push(new CollisionBlock({
                 position: {
                     x: x * 16,
                     y: y * 16,
-                }
+                },
+                height: 4,
             }))
         }
     })
