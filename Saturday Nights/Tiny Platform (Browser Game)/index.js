@@ -74,6 +74,18 @@ const player = new Player({
     platformCollisionBlocks,
     imageSrc:'./img/warrior/Idle.png',
     frameRate: 8,
+    animations: {
+        Idle: {
+            imageSrc: './img/warrior/Idle.png',
+            frameRate: 8,
+            frameBuffer: 3,
+        },
+        Run: {
+            imageSrc: './img/warrior/Run.png',
+            frameRate: 8,
+            frameBuffer: 5,
+        },
+    }
 })
 
 // keys adında sağ ve sol yön tuşlarının pressed durumunu belirten bir array
