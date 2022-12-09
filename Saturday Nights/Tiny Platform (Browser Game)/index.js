@@ -162,18 +162,42 @@ function animate() {
     //map yüklendiğinde collision blockların yüklenmesini sağlıyoruz.
     //
     //restore satırının üstünde olmalı çünkü scale ediliyor harita
-    collisionBlocks.forEach((CollisionBlock) => {
-        CollisionBlock.update()
-    })
-    platformCollisionBlocks.forEach((block) => {
-        block.update()
-    })
-
+    // collisionBlocks.forEach((CollisionBlock) => {
+    //     CollisionBlock.update()
+    // })
+    // platformCollisionBlocks.forEach((block) => {
+    //     block.update()
+    // })
+    player.checkForHorizontalCanvasCollision()
     //player'in x düzlemindeki hareketi
     player.update()
+
     player.velocity.x = 0
-    if (keys.d.pressed) player.velocity.x = 2
-    else if (keys.a.pressed) player.velocity.x = -2
+    if (keys.d.pressed) {
+        player.switchSprite('Run')
+        player.velocity.x = 2
+        player.lastDirection = 'right'
+        player.shouldPanCameraToTheLeft({ canvas, camera })
+    } else if (keys.a.pressed) {
+        player.switchSprite('RunLeft')
+        player.velocity.x = -2
+        player.lastDirection = 'left'
+        player.shouldPanCameraToTheRight({ canvas, camera })
+    } else if (player.velocity.y === 0) {
+        if (player.lastDirection === 'right') player.switchSprite('Idle')
+        else player.switchSprite('IdleLeft')
+    }
+
+    if (player.velocity.y < 0) {
+        player.shouldPanCameraDown({ camera, canvas })
+        if (player.lastDirection === 'right') player.switchSprite('Jump')
+        else player.switchSprite('JumpLeft')
+    } else if (player.velocity.y > 0) {
+        player.shouldPanCameraUp({ camera, canvas })
+        if (player.lastDirection === 'right') player.switchSprite('Fall')
+        else player.switchSprite('FallLeft')
+    }
+
 
     c.restore()
 
@@ -191,7 +215,7 @@ window.addEventListener('keydown', (event) => {
             keys.a.pressed = true
            break
         case 'w':
-            player.velocity.y = -6
+            player.velocity.y = -4
     }
 })
 
