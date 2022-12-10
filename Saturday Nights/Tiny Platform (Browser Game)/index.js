@@ -127,6 +127,9 @@ const keys = {
     a: {
         pressed: false
     },
+    w: {
+        pressed: false
+    },
 }
 
 // bg adında yeni sprite oluşturup pozisyonunu belirttik
@@ -205,10 +208,17 @@ window.addEventListener('keydown', (event) => {
         case 'a':
             keys.a.pressed = true
            break
-        case 'w':
+        case 'w':       
+            if (player.velocity.y === 0)
             player.velocity.y = -4
+            else if (player.velocity.y > 0)
+            player.velocity.y = -2
+            else if(player.velocity.y > -6)
+            player.velocity.y = 0
     }
+    console.log(player.velocity.y)
 })
+
 
 // arrow keys'in pressed false olma durumu
 window.addEventListener('keyup', (event) => {
@@ -217,6 +227,9 @@ window.addEventListener('keyup', (event) => {
             keys.d.pressed = false
             break
         case 'a':
+            keys.a.pressed = false
+           break
+        case 'w':
             keys.a.pressed = false
            break
     }
