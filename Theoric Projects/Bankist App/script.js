@@ -88,11 +88,12 @@ const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
   ['GBP', 'Pound sterling'],
+  ['TRY', 'Turkish lira'],
 ]);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-//kur 1.1 gibi euroyu 1.1 ile çarpıp dolar cinsinden gösteriyoruz.
-const euroToUsd = 1.1;
+//kur çevirme 
+const euroToTRY = 0.05;
 const movementsUSD = movements.map(function (mov) {
   return mov * euroToUsd;
 })
