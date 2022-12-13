@@ -85,7 +85,7 @@ displayMovements(account1.movements);
 // username oluşturma fonksiyonu
 const user = 'Cem Alpay Tas'; // cat 
 
-// tüm harfleri küçük harfe çevirdik, boşlukları kaldırdık, ilk harfleri aldık ve birleştirdik.
+// tüm harfleri küçük harfe çevirdik, boşluklardan ayrdık, ayırdığımız kelimelerin ilk harfleri aldık ve birleştirdik.
 const createUsernames = function (accs) {
   //accounts içindeki her bir account için username oluşturuyoruz.
   accs.forEach(function (acc) {
