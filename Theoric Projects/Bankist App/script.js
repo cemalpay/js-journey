@@ -80,6 +80,19 @@ const displayMovements = function (movements) {
 
 }
 displayMovements(account1.movements);
+
+
+// username oluşturma fonksiyonu
+const user = 'Cem Alpay Tas'; // cat 
+
+// tüm harfleri küçük harfe çevirdik, boşlukları kaldırdık, ilk harfleri aldık ve birleştirdik.
+createUserNames = function (user) {
+  const username = user
+  .toLowerCase()
+  .split(' ')
+  .map(name => name[0])
+  .join('');
+}
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
