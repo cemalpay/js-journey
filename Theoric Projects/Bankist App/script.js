@@ -86,13 +86,19 @@ displayMovements(account1.movements);
 const user = 'Cem Alpay Tas'; // cat 
 
 // tüm harfleri küçük harfe çevirdik, boşlukları kaldırdık, ilk harfleri aldık ve birleştirdik.
-createUserNames = function (user) {
-  const username = user
-  .toLowerCase()
-  .split(' ')
-  .map(name => name[0])
-  .join('');
+const createUsernames = function (accs) {
+  //accounts içindeki her bir account için username oluşturuyoruz.
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+    .toLowerCase()
+    .split(' ')
+    .map(name => name[0])
+    .join('');
+  })
 }
+createUsernames(accounts)
+console.log(accounts)
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
