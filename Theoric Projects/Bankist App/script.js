@@ -131,3 +131,18 @@ const movementsDescriptions = movements.map(
 );
 
 console.log(movementsDescriptions);
+
+//filter methodu kullanarak sadece pozitif değerleri alıyoruz.
+const deposits = movements.filter(mov => mov > 0);
+console.log(deposits);
+
+//filter methodu kullanarak sadece negatif değerleri alıyoruz.
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
+
+/*
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor
+.push(mov);
+console.log(depositsFor);
+*/
