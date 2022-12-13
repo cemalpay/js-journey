@@ -209,14 +209,17 @@ window.addEventListener('keydown', (event) => {
             keys.a.pressed = true
            break
         case 'w':       
+        const last2Keys =[]
+        last2Keys.push(player.velocity.y + 4)
+        console.log(last2Keys)
             if (player.velocity.y === 0)
             player.velocity.y = -4
             else if (player.velocity.y > 0)
             player.velocity.y = -2
-            else if(player.velocity.y > -6)
+            else if (last2Keys >= 2)
             player.velocity.y = 0
+            break
     }
-    console.log(player.velocity.y)
 })
 
 
