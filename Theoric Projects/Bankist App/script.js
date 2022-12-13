@@ -74,7 +74,7 @@ const displayMovements = function (movements) {
           <div class="movements__value">${mov}</div>
     </div>
     `; 
-      //containerMovements bölümünün içine html kodunu ekliyoruz.
+      //containerMovements bölümünün içine html kodunu ekliyoruz. ()
       containerMovements.insertAdjacentHTML('afterbegin', html);
   })
 
