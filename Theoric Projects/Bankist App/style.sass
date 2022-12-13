@@ -65,3 +65,23 @@ nav
 .btn--sort:focus
     outline: none
     color: #777
+
+/*main*/
+.app
+    position: relative
+    max-width: 100rem
+    margin: 4rem auto
+    display: grid
+    grid-template: 4fr 3fr
+    grid-template-rows: auto repeat(3, 15rem) auto
+    gap: 2rem
+
+    opacity: 0
+    transition: all 1s
+
+.balance
+    grid-column: 1 / span 2
+    display: flex
+    align-items: flex-end
+    justify-content: space-between
+    margin-bottom: 2rem
