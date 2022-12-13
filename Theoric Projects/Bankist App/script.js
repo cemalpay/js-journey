@@ -94,8 +94,8 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 //kur çevirme 
 const euroToTRY = 0.05;
-const movementsUSD = movements.map(function (mov) {
-  return mov * euroToUsd;
+const movementsTRY = movements.map(function (mov) {
+  return mov * euroToTRY;
 })
-console.log(movementsUSD);
+console.log(movementsTRY);
 console.log(movements);
