@@ -125,6 +125,8 @@ console.log(movements);
 // for (const mov of movements) movementsTRYfor.push(mov * euroToTRY);
 // console.log(movementsTRYfor);
 
+//map methodu kullanarak movements arrayinin her bir elemanını işliyoruz.
+//math.abs ile negatif değerleri pozitif değere çeviriyoruz.
 const movementsDescriptions = movements.map(
   (mov, i) => 
   `Movement ${i + 1}: You ${mov > 0 ? 'deposited': 'withdrew'} ${Math.abs(mov)}`
@@ -139,6 +141,7 @@ console.log(deposits);
 //filter methodu kullanarak sadece negatif değerleri alıyoruz.
 const withdrawals = movements.filter(mov => mov < 0);
 console.log(withdrawals);
+
 
 /*
 const depositsFor = [];
