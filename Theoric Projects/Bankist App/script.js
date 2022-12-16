@@ -149,5 +149,7 @@ for (const mov of movements) if (mov > 0) depositsFor
 .push(mov);
 console.log(depositsFor);
 */
-
-const balance = movements.reduce()
+// accumulator -> snowball
+const balance = movements.reduce(function(acc, curr, i, arr) {
+  acc + curr;
+})
