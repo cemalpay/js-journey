@@ -151,5 +151,17 @@ console.log(depositsFor);
 */
 // accumulator -> snowball
 const balance = movements.reduce(function(acc, curr, i, arr) {
+  console.log(`Iteration ${i}: ${acc}`);
+  /* LOG RESULT
+   Iteration 0: 0
+   Iteration 1: 200
+   Iteration 2: 650
+   Iteration 3: 250
+   Iteration 4: 3250
+   Iteration 5: 2600
+   Iteration 6: 2470
+   Iteration 7: 2540
+   */
   return acc + curr;
-})
+}, 0);
+console.log(balance);
