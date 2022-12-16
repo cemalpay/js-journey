@@ -151,5 +151,5 @@ console.log(depositsFor);
 */
 // accumulator -> snowball
 const balance = movements.reduce(function(acc, curr, i, arr) {
-  acc + curr;
+  return acc + curr;
 })
