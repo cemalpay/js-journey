@@ -81,6 +81,11 @@ const displayMovements = function (movements) {
 }
 displayMovements(account1.movements);
 
+const calcDisplayBalance = function (movements) {
+  const balance = movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} €`;
+}
+calcDisplayBalance(account1.movements);
 
 // username oluşturma fonksiyonu
 const user = 'Cem Alpay Tas'; // cat 
@@ -97,7 +102,8 @@ const createUsernames = function (accs) {
   })
 }
 createUsernames(accounts)
-console.log(accounts)
+
+
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -150,16 +156,16 @@ for (const mov of movements) if (mov > 0) depositsFor
 console.log(depositsFor);
 */
 // accumulator -> snowball
-const balance = movements.reduce((acc, curr) => acc + curr, 0);
-  console.log(`Iteration ${i}: ${acc}`);
-  /* LOG RESULT
-   Iteration 0: 0
-   Iteration 1: 200
-   Iteration 2: 650
-   Iteration 3: 250
-   Iteration 4: 3250
-   Iteration 5: 2600
-   Iteration 6: 2470
-   Iteration 7: 2540
-   */
-console.log(balance);
+// const balance = movements.reduce((acc, curr) => acc + curr, 0);
+//   console.log(`Iteration ${i}: ${acc}`);
+//   /* LOG RESULT
+//    Iteration 0: 0
+//    Iteration 1: 200
+//    Iteration 2: 650
+//    Iteration 3: 250
+//    Iteration 4: 3250
+//    Iteration 5: 2600
+//    Iteration 6: 2470
+//    Iteration 7: 2540
+//    */
+// console.log(balance);
