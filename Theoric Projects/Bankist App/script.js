@@ -66,44 +66,43 @@ const displayMovements = function (movements) {
   containerMovements.innerHTML = '';
 
   movements.forEach(function (mov, i) {
-    const type = mov > 0 ? 'deposit' : 'withdrawal'
-    
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+
     const html = ` 
     <div class="movements__row">
-          <div class="movements__type movements__type--${type}">${i + 1} ${type}</div>
+          <div class="movements__type movements__type--${type}">${
+      i + 1
+    } ${type}</div>
           <div class="movements__value">${mov}</div>
     </div>
-    `; 
-      //containerMovements bölümünün içine html kodunu ekliyoruz. ()
-      containerMovements.insertAdjacentHTML('afterbegin', html);
-  })
-
-}
+    `;
+    //containerMovements bölümünün içine html kodunu ekliyoruz. ()
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
 displayMovements(account1.movements);
 
 const calcDisplayBalance = function (movements) {
   const balance = movements.reduce((acc, mov) => acc + mov, 0);
   labelBalance.textContent = `${balance} €`;
-}
+};
 calcDisplayBalance(account1.movements);
 
 // username oluşturma fonksiyonu
-const user = 'Cem Alpay Tas'; // cat 
+const user = 'Cem Alpay Tas'; // cat
 
 // tüm harfleri küçük harfe çevirdik, boşluklardan ayrdık, ayırdığımız kelimelerin ilk harfleri aldık ve birleştirdik.
 const createUsernames = function (accs) {
   //accounts içindeki her bir account için username oluşturuyoruz.
   accs.forEach(function (acc) {
     acc.username = acc.owner
-    .toLowerCase()
-    .split(' ')
-    .map(name => name[0])
-    .join('');
-  })
-}
-createUsernames(accounts)
-
-
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0])
+      .join('');
+  });
+};
+createUsernames(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -115,7 +114,6 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
   ['TRY', 'Turkish lira'],
 ]);
-
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
@@ -134,8 +132,10 @@ console.log(movements);
 //map methodu kullanarak movements arrayinin her bir elemanını işliyoruz.
 //math.abs ile negatif değerleri pozitif değere çeviriyoruz.
 const movementsDescriptions = movements.map(
-  (mov, i) => 
-  `Movement ${i + 1}: You ${mov > 0 ? 'deposited': 'withdrew'} ${Math.abs(mov)}`
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+      mov
+    )}`
 );
 
 console.log(movementsDescriptions);
@@ -147,7 +147,6 @@ console.log(deposits);
 //filter methodu kullanarak sadece negatif değerleri alıyoruz.
 const withdrawals = movements.filter(mov => mov < 0);
 console.log(withdrawals);
-
 
 /*
 const depositsFor = [];
@@ -171,8 +170,8 @@ console.log(depositsFor);
 // console.log(balance);
 
 //Maximum value
-const max = movements.reduce((acc, mov) => {
-  if (acc > mov) return acc;
-  else return mov;
-}, movements[0]);
-console.log(max);
+// const max = movements.reduce((acc, mov) => {
+//   if (acc > mov) return acc;
+//   else return mov;
+// }, movements[0]);
+// console.log(max);
