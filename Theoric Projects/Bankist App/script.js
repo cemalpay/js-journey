@@ -105,6 +105,16 @@ const calcDisplaySummary = movements => {
     .map(mov => mov * euroToTRY)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumOut.textContent = `${Math.abs(out)} TRY`;
+
+  const interest = movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * euroToTRY * 1.2) / 100)
+    .filter((int, i, arr) => {
+      console.log(arr);
+      return int >= 1;
+    })
+    .reduce((acc, int) => acc + int, 0);
+  labelSumInterest.textContent = `${interest} TRY`;
 };
 calcDisplaySummary(account1.movements);
 // username oluşturma fonksiyonu
