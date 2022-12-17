@@ -133,91 +133,91 @@ const createUsernames = function (accs) {
 };
 createUsernames(accounts);
 
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
-// // LECTURES
+// /////////////////////////////////////////////////
+// /////////////////////////////////////////////////
+// // // LECTURES
 
-// const currencies = new Map([
-//   ['USD', 'United States dollar'],
-//   ['EUR', 'Euro'],
-//   ['GBP', 'Pound sterling'],
-//   ['TRY', 'Turkish lira'],
-// ]);
+// // const currencies = new Map([
+// //   ['USD', 'United States dollar'],
+// //   ['EUR', 'Euro'],
+// //   ['GBP', 'Pound sterling'],
+// //   ['TRY', 'Turkish lira'],
+// // ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-// //kur çevirme fonksiyonu
-// // Functional Programming
-// const euroToTRY = 0.05;
-// const movementsTRY = movements.map(mov => mov * euroToTRY);
-// console.log(movementsTRY);
-// console.log(movements);
+// // //kur çevirme fonksiyonu
+// // // Functional Programming
+// // const euroToTRY = 0.05;
+// // const movementsTRY = movements.map(mov => mov * euroToTRY);
+// // console.log(movementsTRY);
+// // console.log(movements);
 
-// //Traditional Programming
-// // const movementsTRYfor = [];
-// // for (const mov of movements) movementsTRYfor.push(mov * euroToTRY);
-// // console.log(movementsTRYfor);
+// // //Traditional Programming
+// // // const movementsTRYfor = [];
+// // // for (const mov of movements) movementsTRYfor.push(mov * euroToTRY);
+// // // console.log(movementsTRYfor);
 
-// //map methodu kullanarak movements arrayinin her bir elemanını işliyoruz.
-// //math.abs ile negatif değerleri pozitif değere çeviriyoruz.
-// const movementsDescriptions = movements.map(
-//   (mov, i) =>
-//     `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
-//       mov
-//     )}`
-// );
+// // //map methodu kullanarak movements arrayinin her bir elemanını işliyoruz.
+// // //math.abs ile negatif değerleri pozitif değere çeviriyoruz.
+// // const movementsDescriptions = movements.map(
+// //   (mov, i) =>
+// //     `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+// //       mov
+// //     )}`
+// // );
 
-// console.log(movementsDescriptions);
+// // console.log(movementsDescriptions);
 
-// //filter methodu kullanarak sadece pozitif değerleri alıyoruz.
-// const deposits = movements.filter(mov => mov > 0);
-// console.log(deposits);
+// // //filter methodu kullanarak sadece pozitif değerleri alıyoruz.
+// // const deposits = movements.filter(mov => mov > 0);
+// // console.log(deposits);
 
-// //filter methodu kullanarak sadece negatif değerleri alıyoruz.
-// const withdrawals = movements.filter(mov => mov < 0);
-// console.log(withdrawals);
+// // //filter methodu kullanarak sadece negatif değerleri alıyoruz.
+// // const withdrawals = movements.filter(mov => mov < 0);
+// // console.log(withdrawals);
 
-/*
-const depositsFor = [];
-for (const mov of movements) if (mov > 0) depositsFor
-.push(mov);
-console.log(depositsFor);
-*/
-// accumulator -> snowball
-// const balance = movements.reduce((acc, curr) => acc + curr, 0);
-//   console.log(`Iteration ${i}: ${acc}`);
-//   /* LOG RESULT
-//    Iteration 0: 0
-//    Iteration 1: 200
-//    Iteration 2: 650
-//    Iteration 3: 250
-//    Iteration 4: 3250
-//    Iteration 5: 2600
-//    Iteration 6: 2470
-//    Iteration 7: 2540
-//    */
-// console.log(balance);
+// /*
+// const depositsFor = [];
+// for (const mov of movements) if (mov > 0) depositsFor
+// .push(mov);
+// console.log(depositsFor);
+// */
+// // accumulator -> snowball
+// // const balance = movements.reduce((acc, curr) => acc + curr, 0);
+// //   console.log(`Iteration ${i}: ${acc}`);
+// //   /* LOG RESULT
+// //    Iteration 0: 0
+// //    Iteration 1: 200
+// //    Iteration 2: 650
+// //    Iteration 3: 250
+// //    Iteration 4: 3250
+// //    Iteration 5: 2600
+// //    Iteration 6: 2470
+// //    Iteration 7: 2540
+// //    */
+// // console.log(balance);
 
-//Maximum value
-// const max = movements.reduce((acc, mov) => {
-//   if (acc > mov) return acc;
-//   else return mov;
-// }, movements[0]);
-// console.log(max);
+// //Maximum value
+// // const max = movements.reduce((acc, mov) => {
+// //   if (acc > mov) return acc;
+// //   else return mov;
+// // }, movements[0]);
+// // console.log(max);
 
-//CHAINING METHODS
-//PIPELINE
-// const totalDepositsEUR = movements
-//   .filter(mov => mov > 0)
-//   .map(mov => mov * euroToTRY)
-//   .reduce((acc, mov) => acc + mov, 0);
+// //CHAINING METHODS
+// //PIPELINE
+// // const totalDepositsEUR = movements
+// //   .filter(mov => mov > 0)
+// //   .map(mov => mov * euroToTRY)
+// //   .reduce((acc, mov) => acc + mov, 0);
 
-// console.log(totalDepositsEUR);
+// // console.log(totalDepositsEUR);
 
-const firstWithdrawal = movements.find(mov => mov < 0);
-console.log(firstWithdrawal);
+// const firstWithdrawal = movements.find(mov => mov < 0);
+// console.log(firstWithdrawal);
 
-console.log(accounts);
+// console.log(accounts);
 
-const account = accounts.find(acc => acc.owner === 'Recep Tayyip Erdogan');
-console.log(account.movements);
+// const account = accounts.find(acc => acc.owner === 'Recep Tayyip Erdogan');
+// console.log(account.movements);
