@@ -207,9 +207,17 @@ console.log(depositsFor);
 
 //CHAINING METHODS
 //PIPELINE
-const totalDepositsEUR = movements
-  .filter(mov => mov > 0)
-  .map(mov => mov * euroToTRY)
-  .reduce((acc, mov) => acc + mov, 0);
+// const totalDepositsEUR = movements
+//   .filter(mov => mov > 0)
+//   .map(mov => mov * euroToTRY)
+//   .reduce((acc, mov) => acc + mov, 0);
 
-console.log(totalDepositsEUR);
+// console.log(totalDepositsEUR);
+
+const firstWithdrawal = movements.find(mov => mov < 0);
+console.log(firstWithdrawal);
+
+console.log(accounts);
+
+const account = accounts.find(acc => acc.owner === 'Recep Tayyip Erdogan');
+console.log(account.movements);
