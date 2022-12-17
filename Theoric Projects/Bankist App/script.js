@@ -61,6 +61,9 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+//kur
+const euroToTRY = 0.05;
+
 const displayMovements = function (movements) {
   //eski değerleri boşalttık
   containerMovements.innerHTML = '';
@@ -73,7 +76,7 @@ const displayMovements = function (movements) {
           <div class="movements__type movements__type--${type}">${
       i + 1
     } ${type}</div>
-          <div class="movements__value">${mov}</div>
+          <div class="movements__value">${mov}€</div>
     </div>
     `;
     //containerMovements bölümünün içine html kodunu ekliyoruz. ()
@@ -83,11 +86,21 @@ const displayMovements = function (movements) {
 displayMovements(account1.movements);
 
 const calcDisplayBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} €`;
+  const balance = movements
+    .map(mov => mov * euroToTRY)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${balance} TRY`;
 };
 calcDisplayBalance(account1.movements);
 
+const calcDisplaySummary = movements => {
+  const incomes = movements
+    .filter(mov => mov > 0)
+    .map(mov => mov * euroToTRY)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumIn.textContent = `${incomes} TRY`;
+};
+calcDisplaySummary(account1.movements);
 // username oluşturma fonksiyonu
 const user = 'Cem Alpay Tas'; // cat
 
@@ -176,8 +189,8 @@ console.log(depositsFor);
 // }, movements[0]);
 // console.log(max);
 
+//CHAINING METHODS
 //PIPELINE
-const euroToTRY = 0.05;
 const totalDepositsEUR = movements
   .filter(mov => mov > 0)
   .map(mov => mov * euroToTRY)
