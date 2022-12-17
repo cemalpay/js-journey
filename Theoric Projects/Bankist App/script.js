@@ -133,6 +133,14 @@ const createUsernames = function (accs) {
 };
 createUsernames(accounts);
 
+//Login implementing with event handler
+btnLogin.addEventListener('click', function (e) {
+  // form submit olduğunda sayfa yenilenmesini engellemek için
+  e.preventDefault();
+
+  console.log('LOGIN');
+});
+
 // /////////////////////////////////////////////////
 // /////////////////////////////////////////////////
 // // // LECTURES
