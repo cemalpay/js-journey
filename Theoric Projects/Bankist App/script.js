@@ -99,6 +99,12 @@ const calcDisplaySummary = movements => {
     .map(mov => mov * euroToTRY)
     .reduce((acc, mov) => acc + mov, 0);
   labelSumIn.textContent = `${incomes} TRY`;
+
+  const out = movements
+    .filter(mov => mov < 0)
+    .map(mov => mov * euroToTRY)
+    .reduce((acc, mov) => acc + mov, 0);
+  labelSumOut.textContent = `${Math.abs(out)} TRY`;
 };
 calcDisplaySummary(account1.movements);
 // username oluşturma fonksiyonu
