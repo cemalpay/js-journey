@@ -106,47 +106,47 @@ createUsernames(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
-// LECTURES
+// // LECTURES
 
-const currencies = new Map([
-  ['USD', 'United States dollar'],
-  ['EUR', 'Euro'],
-  ['GBP', 'Pound sterling'],
-  ['TRY', 'Turkish lira'],
-]);
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+//   ['TRY', 'Turkish lira'],
+// ]);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-//kur çevirme fonksiyonu
-// Functional Programming
-const euroToTRY = 0.05;
-const movementsTRY = movements.map(mov => mov * euroToTRY);
-console.log(movementsTRY);
-console.log(movements);
+// //kur çevirme fonksiyonu
+// // Functional Programming
+// const euroToTRY = 0.05;
+// const movementsTRY = movements.map(mov => mov * euroToTRY);
+// console.log(movementsTRY);
+// console.log(movements);
 
-//Traditional Programming
-// const movementsTRYfor = [];
-// for (const mov of movements) movementsTRYfor.push(mov * euroToTRY);
-// console.log(movementsTRYfor);
+// //Traditional Programming
+// // const movementsTRYfor = [];
+// // for (const mov of movements) movementsTRYfor.push(mov * euroToTRY);
+// // console.log(movementsTRYfor);
 
-//map methodu kullanarak movements arrayinin her bir elemanını işliyoruz.
-//math.abs ile negatif değerleri pozitif değere çeviriyoruz.
-const movementsDescriptions = movements.map(
-  (mov, i) =>
-    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
-      mov
-    )}`
-);
+// //map methodu kullanarak movements arrayinin her bir elemanını işliyoruz.
+// //math.abs ile negatif değerleri pozitif değere çeviriyoruz.
+// const movementsDescriptions = movements.map(
+//   (mov, i) =>
+//     `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'withdrew'} ${Math.abs(
+//       mov
+//     )}`
+// );
 
-console.log(movementsDescriptions);
+// console.log(movementsDescriptions);
 
-//filter methodu kullanarak sadece pozitif değerleri alıyoruz.
-const deposits = movements.filter(mov => mov > 0);
-console.log(deposits);
+// //filter methodu kullanarak sadece pozitif değerleri alıyoruz.
+// const deposits = movements.filter(mov => mov > 0);
+// console.log(deposits);
 
-//filter methodu kullanarak sadece negatif değerleri alıyoruz.
-const withdrawals = movements.filter(mov => mov < 0);
-console.log(withdrawals);
+// //filter methodu kullanarak sadece negatif değerleri alıyoruz.
+// const withdrawals = movements.filter(mov => mov < 0);
+// console.log(withdrawals);
 
 /*
 const depositsFor = [];
@@ -175,3 +175,12 @@ console.log(depositsFor);
 //   else return mov;
 // }, movements[0]);
 // console.log(max);
+
+//PIPELINE
+const euroToTRY = 0.05;
+const totalDepositsEUR = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * euroToTRY)
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(totalDepositsEUR);
