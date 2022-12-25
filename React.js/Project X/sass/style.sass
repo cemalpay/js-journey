@@ -12,13 +12,21 @@ body
 h1
     font-family: $mainFont
     font-size: $fontSizeLarge
+ul
+    list-style: none
 
+.container
+    max-width: 1366px
+    margin: 0 auto
 
 .header
     margin-bottom: $mainMargin
     display: flex
     align-items: center
     justify-content: space-between
+    .logo img
+        height: 68px
+        width: 68px
 .x-form
     background-color: $mainColor
     margin-bottom: $mainMargin
@@ -48,5 +56,24 @@ h1
     padding: 5px 10px
 .vote-buttons
     margin-left: auto
-ul
-    list-style: none
+
+.source
+    color: $secondaryColor
+    text-decoration: none
+    opacity: 0.8
+    transition: opacity 0.3s
+    &:visited
+        color: $secondaryColor
+    &:hover
+        opacity: 1
+    
+.btn
+    font-family: $mainFont
+    text-transform: uppercase
+    font-size: $fontSizeSmall
+    font-weight: bold
+    padding: 16px 0 13px
+    border: none
+.btn-large
+    font-size: $fontSize
+    padding: 20px 32px 17px

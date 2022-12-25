@@ -14,60 +14,62 @@
     />
   </head>
   <body>
-    <header class="header">
-      <div class="logo">
-        <img src="logo.png" height="68" width="68" alt="" />
-      </div>
-      <button>Create new X</button>
-    </header>
-    <form class="x-form">
-      <input type="text" placeholder="Write here..." />
-      <input type="text" placeholder="Source" />
-      <select>
-        <option value="">Choose category:</option>
-        <option value="general">General</option>
-        <option value="design">Design</option>
-      </select>
-      <button>Post</button>
-    </form>
-    <main class="main">
-      <aside>
-        <ul>
-          <li><button>All</button></li>
-          <li><button>General</button></li>
-          <li><button>Design</button></li>
-        </ul>
-      </aside>
-      <section>
-        <ul>
-          <li class="x-text">
-            <p>
-              React is being developed by Meta (formerly facebook)
-              <a href="#" target="_blank">(Source)</a>
-            </p>
-            <span class="tag" style="background-color: black">#general#</span>
-            <div class="vote-buttons">
-              <button>👍 24</button>
-              <button>⛔ 9</button>
-              <button>🦄 4</button>
-            </div>
-          </li>
-          <li class="x-text">
-            <p>
-              Millennial dads spend 3 times as much time with their kids than
-              their fathers spent with them. In 1982, 43% of fathers had never
-              changed a diaper. Today, that number is down to 3%
-              <a href="#" target="_blank">(Source)</a>
-            </p>
-            <span class="tag" style="background-color: black">#general#</span>
-            <div class="vote-buttons">
-              <button>👍 24</button>
-              <button>⛔ 9</button>
-              <button>🦄 4</button>
-            </div>
-          </li>
-        </ul>
-      </section>
-    </main>
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <img src="logo.png" alt="" />
+        </div>
+        <button class="btn btn-large">Create new X</button>
+      </header>
+      <form class="x-form">
+        <input type="text" placeholder="Write here..." />
+        <input type="text" placeholder="Source" />
+        <select>
+          <option value="">Choose category:</option>
+          <option value="general">General</option>
+          <option value="design">Design</option>
+        </select>
+        <button class="btn btn-large">Post</button>
+      </form>
+      <main class="main">
+        <aside>
+          <ul>
+            <li><button class="btn">All</button></li>
+            <li><button class="btn">General</button></li>
+            <li><button class="btn">Design</button></li>
+          </ul>
+        </aside>
+        <section>
+          <ul>
+            <li class="x-text">
+              <p>
+                React is being developed by Meta (formerly facebook)
+                <a class="source" href="#" target="_blank">(Source)</a>
+              </p>
+              <span class="tag" style="background-color: black">#general#</span>
+              <div class="vote-buttons">
+                <button class="btn-vote">👍 24</button>
+                <button class="btn-vote">⛔ 9</button>
+                <button class="btn-vote">🦄 4</button>
+              </div>
+            </li>
+            <li class="x-text">
+              <p>
+                Millennial dads spend 3 times as much time with their kids than
+                their fathers spent with them. In 1982, 43% of fathers had never
+                changed a diaper. Today, that number is down to 3%
+                <a class="source" href="#" target="_blank">(Source)</a>
+              </p>
+              <span class="tag" style="background-color: black">#general#</span>
+              <div class="vote-buttons">
+                <button class="btn-vote">👍 24</button>
+                <button class="btn-vote">⛔ 9</button>
+                <button class="btn-vote">🦄 4</button>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

@@ -15,11 +15,24 @@ h1 {
   font-size: 1.8rem;
 }
 
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
 .header {
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.header .logo img {
+  height: 68px;
+  width: 68px;
 }
 
 .x-form {
@@ -59,6 +72,29 @@ h1 {
   margin-left: auto;
 }
 
-ul {
-  list-style: none;
+.source {
+  color: #f4f4f5;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+.source:visited {
+  color: #f4f4f5;
+}
+.source:hover {
+  opacity: 1;
+}
+
+.btn {
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 16px 0 13px;
+  border: none;
+}
+
+.btn-large {
+  font-size: 1.2rem;
+  padding: 20px 32px 17px;
 }/*# sourceMappingURL=style.css.map */
