@@ -63,6 +63,8 @@ ul {
 
 .tag {
   text-transform: uppercase;
+  background-color: #f4f4f5;
+  color: #171717;
   font-size: 1rem;
   font-weight: 700;
   padding: 5px 10px;
@@ -70,6 +72,16 @@ ul {
 
 .vote-buttons {
   margin-left: auto;
+}
+.vote-buttons button {
+  border: none;
+  background-color: #262626;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 100px;
+  color: inherit;
+  cursor: pointer;
 }
 
 .source {
@@ -85,6 +97,10 @@ ul {
   opacity: 1;
 }
 
+.category {
+  margin-bottom: 1rem;
+}
+
 .btn {
   font-family: "Inter", sans-serif;
   text-transform: uppercase;
@@ -92,9 +108,19 @@ ul {
   font-weight: bold;
   padding: 16px 0 13px;
   border: none;
+  cursor: pointer;
 }
 
 .btn-large {
   font-size: 1.2rem;
   padding: 20px 32px 17px;
+}
+
+.btn-all {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.btn-category {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

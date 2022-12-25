@@ -51,11 +51,22 @@ ul
     gap: $marginSmall
 .tag
     text-transform: uppercase
+    background-color: $secondaryColor
+    color: $mainColor
     font-size: $fontSizeSmall
     font-weight: 700
     padding: 5px 10px
 .vote-buttons
     margin-left: auto
+    button
+        border: none
+        background-color: $backgroundColor
+        font-size: $fontSizeSmall
+        font-weight: 700
+        padding: 6px 12px
+        border-radius: 100px
+        color: inherit
+        cursor: pointer
 
 .source
     color: $secondaryColor
@@ -66,7 +77,8 @@ ul
         color: $secondaryColor
     &:hover
         opacity: 1
-    
+.category
+    margin-bottom: $marginSmall
 .btn
     font-family: $mainFont
     text-transform: uppercase
@@ -74,6 +86,12 @@ ul
     font-weight: bold
     padding: 16px 0 13px
     border: none
+    cursor: pointer
 .btn-large
     font-size: $fontSize
     padding: 20px 32px 17px
+.btn-all 
+    margin-bottom: $marginSmall
+    width: 100%
+.btn-category
+    width: 100%
