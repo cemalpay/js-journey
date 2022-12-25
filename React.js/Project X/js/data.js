@@ -1,12 +1,14 @@
 const CATEGORIES = [
+  { name: "general", color: "#f97316" },
   { name: "wordpress", color: "#3b82f6" },
+  { name: "design", color: "#3b82f6" },
   { name: "github", color: "#16a34a" },
   { name: "vscode", color: "#ef4444" },
   { name: "javascript", color: "#eab308" },
   { name: "google cloud", color: "#db2777" },
   { name: "docker", color: "#14b8a6" },
-  { name: "general", color: "#f97316" },
   { name: "starters", color: "#8b5cf6" },
+  { name: "development", color: "#f97316" },
 ];
 
 const initialFacts = [

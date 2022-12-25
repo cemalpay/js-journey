@@ -10,16 +10,16 @@ body {
   padding: 1rem;
 }
 
+h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 1.8rem;
+}
+
 .header {
   margin-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-h1 {
-  font-family: "Inter", sans-serif;
-  font-size: 1.8rem;
 }
 
 .x-form {
@@ -29,6 +29,12 @@ h1 {
   text-align: center;
 }
 
+.main {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 2rem;
+}
+
 .x-text {
   font-family: "Sono", sans-serif;
   font-size: 1.2rem;
@@ -36,6 +42,10 @@ h1 {
   background-color: #171717;
   margin-bottom: 1rem;
   padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .tag {
@@ -43,6 +53,10 @@ h1 {
   font-size: 1rem;
   font-weight: 700;
   padding: 5px 10px;
+}
+
+.vote-buttons {
+  margin-left: auto;
 }
 
 ul {

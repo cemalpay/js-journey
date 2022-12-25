@@ -9,19 +9,25 @@ body
     color: $secondaryColor
     padding: $mainPadding
 
+h1
+    font-family: $mainFont
+    font-size: $fontSizeLarge
+
+
 .header
     margin-bottom: $mainMargin
     display: flex
     align-items: center
     justify-content: space-between
-h1
-    font-family: $mainFont
-    font-size: $fontSizeLarge
 .x-form
     background-color: $mainColor
     margin-bottom: $mainMargin
     padding: $mainPadding $paddingLarge
     text-align: center
+.main
+    display: grid
+    grid-template-columns: 250px 1fr
+    gap: $mainMargin
     
 .x-text
     font-family: $secondaryFont
@@ -31,11 +37,16 @@ h1
     margin-bottom: $marginSmall
     padding: $mainPadding $paddingLarge
 
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: $marginSmall
 .tag
     text-transform: uppercase
     font-size: $fontSizeSmall
     font-weight: 700
     padding: 5px 10px
-
+.vote-buttons
+    margin-left: auto
 ul
     list-style: none
