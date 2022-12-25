@@ -32,6 +32,26 @@ ul
     margin-bottom: $mainMargin
     padding: $mainPadding $paddingLarge
     text-align: center
+    display: flex
+    gap: 8px
+    border-radius: 16px
+    input, select
+        width: 220px
+        background-color: $mainColorLight
+        border: none
+        border-radius: 100px
+        font-family: $mainFont
+        padding: 16px
+        color: inherit
+        &:focus
+            outline: none
+        &:first-child
+            flex-grow: 1
+    span
+        font-weight: 700
+        font-size: $fontSizeSmall
+
+
 .main
     display: grid
     grid-template-columns: 250px 1fr
@@ -44,7 +64,7 @@ ul
     background-color: $mainColor
     margin-bottom: $marginSmall
     padding: $mainPadding $paddingLarge
-
+    border-radius: 16px
     display: flex
     align-items: center
     justify-content: space-between
@@ -93,10 +113,17 @@ ul
     font-weight: bold
     padding: 16px 0 13px
     border: none
+    border-radius: 100px
     cursor: pointer
+    transition: 0.3s
+    &:hover
+        transform: rotate(-2deg)
 .btn-large
     font-size: $fontSize
     padding: 20px 32px 17px
+.btn-post
+    padding: 12px 24px
+    border-radius: 100px
 .btn-all 
     margin-bottom: $marginSmall
     width: 100%

@@ -40,6 +40,28 @@ ul {
   margin-bottom: 2rem;
   padding: 1rem 2rem;
   text-align: center;
+  display: flex;
+  gap: 8px;
+  border-radius: 16px;
+}
+.x-form input, .x-form select {
+  width: 220px;
+  background-color: #2f2f2f;
+  border: none;
+  border-radius: 100px;
+  font-family: "Inter", sans-serif;
+  padding: 16px;
+  color: inherit;
+}
+.x-form input:focus, .x-form select:focus {
+  outline: none;
+}
+.x-form input:first-child, .x-form select:first-child {
+  flex-grow: 1;
+}
+.x-form span {
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 .main {
@@ -55,6 +77,7 @@ ul {
   background-color: #171717;
   margin-bottom: 1rem;
   padding: 1rem 2rem;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -115,12 +138,22 @@ ul {
   font-weight: bold;
   padding: 16px 0 13px;
   border: none;
+  border-radius: 100px;
   cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  transform: rotate(-2deg);
 }
 
 .btn-large {
   font-size: 1.2rem;
   padding: 20px 32px 17px;
+}
+
+.btn-post {
+  padding: 12px 24px;
+  border-radius: 100px;
 }
 
 .btn-all {
