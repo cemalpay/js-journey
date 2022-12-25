@@ -6,16 +6,18 @@ body {
 h1 {
   font-size: 2.4rem;
   text-align: center;
+  color: #333;
 }
 
-p {
+.x-text {
   font-size: 1.4rem;
   line-height: 1.4;
 }
 
-span {
+.tag {
   text-transform: uppercase;
   font-size: 1rem;
+  font-weight: 700;
 }
 
 ul {
