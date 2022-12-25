@@ -58,8 +58,11 @@ ul
     padding: 5px 10px
 .vote-buttons
     margin-left: auto
+    flex-shrink: 0  
+    display: flex
+    gap: 8px
     button
-        border: none
+        border: 1px solid transparent
         background-color: $backgroundColor
         font-size: $fontSizeSmall
         font-weight: 700
@@ -67,6 +70,10 @@ ul
         border-radius: 100px
         color: inherit
         cursor: pointer
+        transition:  0.3s
+        &:hover
+            border: 1px solid $secondaryColor
+
 
 .source
     color: $secondaryColor
