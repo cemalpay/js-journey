@@ -1,18 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap')
-body
-    font-family: Inter, sans-serif
-h1
-    font-size: 2.4rem
-    text-align: center
-    color: #333
+@import 'variables'    
 
+body
+    background-color: $backgroundColor
+    color: $secondaryColor
+
+h1
+    font-family: $mainFont
+    font-size: $fontSizeLarge
+    text-align: center
+.x-form
+    background-color: $mainColor
+    
 .x-text
-    font-size: 1.4rem
+    font-family: $secondaryFont
+    font-size: $fontSize
     line-height: 1.4
+    background-color: $mainColor
 
 .tag
     text-transform: uppercase
-    font-size: 1rem
+    font-size: $fontSizeSmall
     font-weight: 700
 
 ul
