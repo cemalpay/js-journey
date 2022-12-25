@@ -1,6 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #262626;
   color: #f4f4f5;
+}
+
+.header {
+  margin-bottom: 2rem;
 }
 
 h1 {
@@ -11,6 +21,7 @@ h1 {
 
 .x-form {
   background-color: #171717;
+  margin-bottom: 2rem;
 }
 
 .x-text {
