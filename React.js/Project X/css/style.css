@@ -12,6 +12,9 @@ body {
 
 .header {
   margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 h1 {
@@ -23,6 +26,7 @@ h1 {
   background-color: #171717;
   margin-bottom: 2rem;
   padding: 1rem 2rem;
+  text-align: center;
 }
 
 .x-text {
