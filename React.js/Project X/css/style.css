@@ -167,7 +167,7 @@ ul {
   transition: 0.3s;
 }
 .btn:hover {
-  transform: rotate(-2deg);
+  transform: rotate(-1deg);
 }
 
 .btn-large {
