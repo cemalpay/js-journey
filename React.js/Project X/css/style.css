@@ -187,4 +187,8 @@ ul {
 
 .btn-category {
   width: 100%;
+}
+
+.hidden {
+  display: none !important;
 }/*# sourceMappingURL=style.css.map */
