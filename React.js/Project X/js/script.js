@@ -56,6 +56,8 @@ async function loadData() {
       },
     }
   );
+  const data = await res.json();
+  createXList(data);
 }
 
 createXList(initialFacts);
