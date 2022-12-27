@@ -41,6 +41,23 @@ const xList = document.querySelector(".x-list");
 
 //Render x in list
 xList.innerHTML = "";
+
+//Load data from supabase
+loadData();
+async function loadData() {
+  const res = await fetch(
+    "https://nkfrsvaqfwhdrscsccqj.supabase.co/rest/v1/x-list",
+    {
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5rZnJzdmFxZndoZHJzY3NjY3FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzIwMTI1MDcsImV4cCI6MTk4NzU4ODUwN30.48a_RYFtgAAjqdZKu9LQq5lhRdyu5WzdQXPMQNBE5dI",
+        authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5rZnJzdmFxZndoZHJzY3NjY3FqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NzIwMTI1MDcsImV4cCI6MTk4NzU4ODUwN30.48a_RYFtgAAjqdZKu9LQq5lhRdyu5WzdQXPMQNBE5dI",
+      },
+    }
+  );
+}
+
 createXList(initialFacts);
 function createXList() {
   initialFacts.forEach((x) => {
