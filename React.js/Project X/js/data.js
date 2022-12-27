@@ -1,16 +1,15 @@
 const CATEGORIES = [
-  { name: "general", color: "#f97316" },
-  { name: "wordpress", color: "#3b82f6" },
-  { name: "design", color: "#3b82f6" },
-  { name: "github", color: "#16a34a" },
-  { name: "vscode", color: "#ef4444" },
-  { name: "javascript", color: "#eab308" },
-  { name: "google cloud", color: "#db2777" },
-  { name: "docker", color: "#14b8a6" },
-  { name: "starters", color: "#8b5cf6" },
-  { name: "development", color: "#f97316" },
+  { name: "development", color: "#f0fdfa" },
+  { name: "general", color: "#ccfbf1" },
+  { name: "wordpress", color: "#99f6e4" },
+  { name: "design", color: "#5eead4" },
+  { name: "github", color: "#2dd4bf" },
+  { name: "vscode", color: "#14b8a6" },
+  { name: "javascript", color: "#0d9488" },
+  { name: "google cloud", color: "#0f766e" },
+  { name: "docker", color: "#115e59" },
+  { name: "starters", color: "#134e4a" },
 ];
-
 const initialFacts = [
   {
     id: 1,
