@@ -9,31 +9,9 @@ const initialFacts = [
     votesFalse: 4,
     createdIn: 2021,
   },
-  {
-    id: 2,
-    text: "Millennial dads spend 3 times as much time with their kids than their fathers spent with them. In 1982, 43% of fathers had never changed a diaper. Today, that number is down to 3%",
-    source:
-      "https://www.mother.ly/parenting/millennial-dads-spend-more-time-with-their-kids",
-    category: "javascript",
-    votesInteresting: 11,
-    votesMindblowing: 2,
-    votesFalse: 0,
-    createdIn: 2019,
-  },
-  {
-    id: 3,
-    text: "Lisbon is the capital of Portugal",
-    source: "https://en.wikipedia.org/wiki/Lisbon",
-    category: "github",
-    votesInteresting: 8,
-    votesMindblowing: 3,
-    votesFalse: 1,
-    createdIn: 2015,
-  },
 ];
-
 // Dom Elements
-const btnOpen = document.querySelector(".btn-open");
+const btn = document.querySelector(".btn-open");
 const xForm = document.querySelector(".x-form");
 const xList = document.querySelector(".x-list");
 
@@ -44,6 +22,7 @@ xList.innerHTML = "";
 
 //Load data from supabase
 loadData();
+
 async function loadData() {
   const res = await fetch(
     "https://nkfrsvaqfwhdrscsccqj.supabase.co/rest/v1/x-list",
@@ -57,34 +36,32 @@ async function loadData() {
     }
   );
   const data = await res.json();
+
   createXList(data);
 }
 
-createXList(initialFacts);
-function createXList() {
-  initialFacts.forEach((x) => {
-    const xItem = document.createElement("li");
-    xItem.classList.add("x-text");
-    xItem.innerHTML = `
+function createXList(dataArray) {
+  const htmlArr = dataArray.map(
+    (x) =>
+      `<li class="x-text">
         <p>
           ${x.text}
           <a class="source" href="${x.source}" target="_blank">(Source)</a>
         </p>
-        <span class="tag">${x.category}</span>
-      `;
-    xList.appendChild(xItem);
-  });
+        <span class="tag" style="background-color: #e0e0e0">${x.category}</span>
+        </li>`
+  );
+  const html = htmlArr.join("");
+  xList.insertAdjacentHTML("beforeend", html);
 }
-const html = htmlArr.join("");
-xList.insertAdjacentHTML("beforeend", html);
 
 //Toggle Form visibility
-btnOpen.addEventListener("click", () => {
+btn.addEventListener("click", () => {
   if (xForm.classList.contains("hidden")) {
     xForm.classList.remove("hidden");
-    btnOpen.textContent = "Close";
+    btn.textContent = "Close";
   } else {
     xForm.classList.add("hidden");
-    btnOpen.textContent = "Create New X";
+    btn.textContent = "Create New X";
   }
 });
