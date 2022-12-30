@@ -61,25 +61,31 @@ function CategoryFilter() {
   return <aside>Category Filter</aside>;
 }
 function XList() {
-  const Xs = initialFacts;
+  const xItems = initialFacts;
   return (
     <section>
       <ul className="x-list">
-        {Xs.map((X) => (
-          <li key={Xs.id} className="x-text">
-            {X.text}
-            <a className="source" href={X.source} target="_blank">
-              (Source)
-            </a>
-            <span className="tag">{X.category}</span>
-            <div className="vote-buttons">
-              <button className="btn-vote">⛔ 9</button>
-              <button className="btn-vote">🦄 4</button>
-            </div>
-          </li>
+        {xItems.map((xItem) => (
+          <XContent key={xItem.id} xItem={xItem} />
         ))}
       </ul>
     </section>
+  );
+}
+
+function XContent({ xItem }) {
+  return (
+    <li className="x-text">
+      {xItem.text}
+      <a className="source" href={xItem.source} target="_blank">
+        (Source)
+      </a>
+      <span className="tag">{xItem.category}</span>
+      <div className="vote-buttons">
+        <button className="btn-vote">⛔ 9</button>
+        <button className="btn-vote">🦄 4</button>
+      </div>
+    </li>
   );
 }
 
