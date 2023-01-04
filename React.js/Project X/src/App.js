@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./css/style.css";
 import "./css/style.css.map";
 
@@ -35,6 +36,21 @@ const initialFacts = [
   },
 ];
 
+function Counter() {
+  const [count, setCount] = useState(8);
+  return (
+    <div>
+      <span style={{ fonstSize: "40px" }}>{count}</span>
+      <button
+        className="btn btn-large"
+        onClick={() => setCount((count) => count + 1)}
+      >
+        +1
+      </button>
+    </div>
+  );
+}
+
 function App() {
   return (
     <>
@@ -45,6 +61,7 @@ function App() {
         </div>
         <button className="btn btn-large btn-open">Create new X</button>
       </header>
+      <Counter />
       <NewXForm />
       {/*MAIN*/}
       <main className="main">
@@ -54,6 +71,7 @@ function App() {
     </>
   );
 }
+
 function NewXForm() {
   return <form className="x-form">New X Form</form>;
 }
