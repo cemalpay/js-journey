@@ -57,8 +57,35 @@ function App() {
 function NewXForm() {
   return <form className="x-form">New X Form</form>;
 }
+
+const CATEGORIES = [
+  { name: "development", color: "#f0fdfa" },
+  { name: "general", color: "#ccfbf1" },
+  { name: "wordpress", color: "#99f6e4" },
+  { name: "design", color: "#5eead4" },
+  { name: "github", color: "#2dd4bf" },
+  { name: "vscode", color: "#14b8a6" },
+  { name: "javascript", color: "#0d9488" },
+  { name: "google cloud", color: "#0f766e" },
+  { name: "docker", color: "#115e59" },
+  { name: "starters", color: "#134e4a" },
+];
+
 function CategoryFilter() {
-  return <aside>Category Filter</aside>;
+  return (
+    <aside>
+      <ul>
+        <li>
+          <button class="btn btn-all">All</button>
+        </li>
+        {CATEGORIES.map((category) => (
+          <li className="category" key={category.name}>
+            <button className="btn btn-category">{category.name}</button>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
 }
 function XList() {
   const xItems = initialFacts;
