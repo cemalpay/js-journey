@@ -52,6 +52,7 @@ function Counter() {
 }
 
 function App() {
+  const [showForm, setShowForm] = useState(false);
   return (
     <>
       {/*HEADER*/}
@@ -59,10 +60,15 @@ function App() {
         <div className="logo">
           <img src="logo.png" alt="" />
         </div>
-        <button className="btn btn-large btn-open">Create new X</button>
+        <button
+          className="btn btn-large btn-open"
+          onClick={() => setShowForm((show) => !true)}
+        >
+          Create new X
+        </button>
       </header>
-      <Counter />
-      <NewXForm />
+
+      {showForm ? <NewXForm /> : null}
       {/*MAIN*/}
       <main className="main">
         <CategoryFilter />
