@@ -63,11 +63,6 @@ function Header({ showForm, setShowForm }) {
     </header>
   );
 }
-
-function NewXForm() {
-  return <form className="x-form">New X Form</form>;
-}
-
 const CATEGORIES = [
   { name: "development", color: "#f0fdfa" },
   { name: "general", color: "#ccfbf1" },
@@ -80,6 +75,44 @@ const CATEGORIES = [
   { name: "docker", color: "#115e59" },
   { name: "starters", color: "#134e4a" },
 ];
+
+function NewXForm() {
+  const [text, setText] = useState("");
+  const [source, setSource] = useState("");
+  const [category, setCategory] = useState("");
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log(text, source, category);
+  }
+
+  return (
+    <form className="x-form" onSubmit={handleSubmit}>
+      {" "}
+      <input
+        type="text"
+        placeholder="Write here..."
+        value={text}
+        onChange={(e) => setText(e.target.value)}
+      />
+      <input
+        value={source}
+        type="text"
+        placeholder="Source"
+        onChange={(e) => setSource(e.target.value)}
+      />
+      <select value={category} onChange={(e) => setCategory(e.target.value)}>
+        <option value="">Choose category:</option>
+        {CATEGORIES.map((category) => (
+          <option key={category.name} value={category.name}>
+            {category.name.toUpperCase()}
+          </option>
+        ))}
+      </select>
+      <button className="btn btn-post">Post</button>
+    </form>
+  );
+}
 
 function CategoryFilter() {
   return (
