@@ -13,27 +13,6 @@ const initialFacts = [
     votesFalse: 4,
     createdIn: 2021,
   },
-  {
-    id: 2,
-    text: "Millennial dads spend 3 times as much time with their kids than their fathers spent with them. In 1982, 43% of fathers had never changed a diaper. Today, that number is down to 3%",
-    source:
-      "https://www.mother.ly/parenting/millennial-dads-spend-more-time-with-their-kids",
-    category: "general",
-    votesInteresting: 11,
-    votesMindblowing: 2,
-    votesFalse: 0,
-    createdIn: 2019,
-  },
-  {
-    id: 3,
-    text: "Lisbon is the capital of Portugal",
-    source: "https://en.wikipedia.org/wiki/Lisbon",
-    category: "github",
-    votesInteresting: 8,
-    votesMindblowing: 3,
-    votesFalse: 1,
-    createdIn: 2015,
-  },
 ];
 
 function Counter() {
@@ -52,32 +31,36 @@ function Counter() {
 }
 
 function App() {
-  /* Define state variable */
-
   const [showForm, setShowForm] = useState(false);
+
   return (
     <>
-      {/*HEADER*/}
-      <header className="header">
-        <div className="logo">
-          <img src="logo.png" alt="" />
-        </div>
-        <button
-          className="btn btn-large btn-open"
-          /*Toggle state variable */
-          onClick={() => setShowForm((show) => !true)}
-        >
-          Create new X
-        </button>
-      </header>
+      <Header showForm={showForm} setShowForm={setShowForm} />
 
       {showForm ? <NewXForm /> : null}
+
       {/*MAIN*/}
       <main className="main">
         <CategoryFilter />
         <XList />
       </main>
     </>
+  );
+}
+
+function Header({ showForm, setShowForm }) {
+  return (
+    <header className="header">
+      <div className="logo">
+        <img src="logo.png" alt="" />
+      </div>
+      <button
+        className="btn btn-large btn-open"
+        onClick={() => setShowForm((show) => !show)}
+      >
+        {showForm ? "Close" : "Create new X"}
+      </button>
+    </header>
   );
 }
 
@@ -131,7 +114,7 @@ function XContent({ xItem }) {
   return (
     <li className="x-text">
       {xItem.text}
-      <a className="source" href={xItem.source} target="_blank">
+      <a className="source" href={xItem.source}>
         (Source)
       </a>
       <span className="tag">{xItem.category}</span>
