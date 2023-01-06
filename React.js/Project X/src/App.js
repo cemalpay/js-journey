@@ -32,17 +32,18 @@ function Counter() {
 
 function App() {
   const [showForm, setShowForm] = useState(false);
+  const [xItems, setX] = useState(initialFacts);
 
   return (
     <>
       <Header showForm={showForm} setShowForm={setShowForm} />
 
-      {showForm ? <NewXForm /> : null}
+      {showForm ? <NewXForm setX={setX} setShowForm={setShowForm} /> : null}
 
       {/*MAIN*/}
       <main className="main">
         <CategoryFilter />
-        <XList />
+        <XList xItems={xItems} />
       </main>
     </>
   );
@@ -76,14 +77,48 @@ const CATEGORIES = [
   { name: "starters", color: "#134e4a" },
 ];
 
-function NewXForm() {
+function isValidHttpUrl(string) {
+  let url;
+  try {
+    url = new URL(string);
+  } catch (_) {
+    return false;
+  }
+  return url.protocol === "http:" || url.protocol === "https:";
+}
+
+function NewXForm({ setX, setShowForm }) {
   const [text, setText] = useState("");
   const [source, setSource] = useState("");
   const [category, setCategory] = useState("");
 
   function handleSubmit(event) {
+    // 1. prevent browser from reloading
     event.preventDefault();
     console.log(text, source, category);
+
+    // 2. check if data valid. if so add to list
+    if (text && isValidHttpUrl(source) && category) {
+      // 3. create new x item
+      const newXItem = {
+        id: Math.round(Math.random() * 1000000),
+        text,
+        source,
+        category,
+        votesInteresting: 0,
+        votesMindblowing: 0,
+        votesFalse: 0,
+        createdIn: new Date().getFullYear(),
+      };
+      // 4. add the new x item to the ui
+      setX((xItems) => [newXItem, ...xItems]);
+      // 5. clear the form
+      setText("");
+      setSource("");
+      setCategory("");
+      // 6. close the form
+      setShowForm(false);
+    }
   }
 
   return (
@@ -130,8 +165,7 @@ function CategoryFilter() {
     </aside>
   );
 }
-function XList() {
-  const xItems = initialFacts;
+function XList({ xItems }) {
   return (
     <section>
       <ul className="x-list">
