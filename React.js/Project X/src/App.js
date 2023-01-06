@@ -52,6 +52,8 @@ function Counter() {
 }
 
 function App() {
+  /* Define state variable */
+
   const [showForm, setShowForm] = useState(false);
   return (
     <>
@@ -62,6 +64,7 @@ function App() {
         </div>
         <button
           className="btn btn-large btn-open"
+          /*Toggle state variable */
           onClick={() => setShowForm((show) => !true)}
         >
           Create new X
