@@ -19,9 +19,17 @@ ul {
   list-style: none;
 }
 
-.container {
+#root {
   max-width: 1366px;
   margin: 0 auto;
+}
+
+.loader {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 100px;
 }
 
 .header {

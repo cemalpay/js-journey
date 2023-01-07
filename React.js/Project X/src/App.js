@@ -34,12 +34,18 @@ function Counter() {
 function App() {
   const [showForm, setShowForm] = useState(false);
   const [xItems, setX] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(function () {
     async function getX() {
-      const { data: xList, error } = await supabase.from("xList").select("*");
+      setIsLoading(true);
+      const { data: xList, error } = await supabase
+        .from("xList")
+        .select("*")
+        .order("text", { ascending: true });
       console.log(xList, error);
       setX(xList);
+      setIsLoading(false);
     }
     getX();
   }, []);
@@ -53,10 +59,14 @@ function App() {
       {/*MAIN*/}
       <main className="main">
         <CategoryFilter />
-        <XList xItems={xItems} />
+        {isLoading ? <Loader /> : <XList xItems={xItems} />}
       </main>
     </>
   );
+}
+
+function Loader() {
+  return <p className="loader">Loading...</p>;
 }
 
 function Header({ showForm, setShowForm }) {
