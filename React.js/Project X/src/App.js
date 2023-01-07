@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import supabase from "./supabase";
 import "./css/style.css";
 import "./css/style.css.map";
 
@@ -32,7 +33,16 @@ function Counter() {
 
 function App() {
   const [showForm, setShowForm] = useState(false);
-  const [xItems, setX] = useState(initialFacts);
+  const [xItems, setX] = useState([]);
+
+  useEffect(function () {
+    async function getX() {
+      const { data: xList, error } = await supabase.from("xList").select("*");
+      console.log(xList, error);
+      setX(xList);
+    }
+    getX();
+  }, []);
 
   return (
     <>
@@ -154,7 +164,7 @@ function CategoryFilter() {
     <aside>
       <ul>
         <li>
-          <button class="btn btn-all">All</button>
+          <button className="btn btn-all">All</button>
         </li>
         {CATEGORIES.map((category) => (
           <li className="category" key={category.name}>
