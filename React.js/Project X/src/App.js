@@ -35,20 +35,30 @@ function App() {
   const [showForm, setShowForm] = useState(false);
   const [xItems, setX] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [currentCategory, setCurrentCategory] = useState("All");
 
-  useEffect(function () {
-    async function getX() {
-      setIsLoading(true);
-      const { data: xList, error } = await supabase
-        .from("xList")
-        .select("*")
-        .order("text", { ascending: true });
-      console.log(xList, error);
-      setX(xList);
-      setIsLoading(false);
-    }
-    getX();
-  }, []);
+  useEffect(
+    function () {
+      async function getX() {
+        setIsLoading(true);
+
+        let query = supabase.from("xList").select("*");
+
+        if (currentCategory !== "All") {
+          query = query.eq("category", currentCategory);
+        }
+
+        const { data: xList, error } = await query.order("text", {
+          ascending: true,
+        });
+        console.log(xList, error);
+        setX(xList);
+        setIsLoading(false);
+      }
+      getX();
+    },
+    [currentCategory]
+  );
 
   return (
     <>
@@ -58,7 +68,7 @@ function App() {
 
       {/*MAIN*/}
       <main className="main">
-        <CategoryFilter />
+        <CategoryFilter setCurrentCategory={setCurrentCategory} />
         {isLoading ? <Loader /> : <XList xItems={xItems} />}
       </main>
     </>
@@ -169,16 +179,26 @@ function NewXForm({ setX, setShowForm }) {
   );
 }
 
-function CategoryFilter() {
+function CategoryFilter({ setCurrentCategory }) {
   return (
     <aside>
       <ul>
         <li>
-          <button className="btn btn-all">All</button>
+          <button
+            className="btn btn-all"
+            onClick={() => setCurrentCategory("all")}
+          >
+            All
+          </button>
         </li>
         {CATEGORIES.map((category) => (
           <li className="category" key={category.name}>
-            <button className="btn btn-category">{category.name}</button>
+            <button
+              className="btn btn-category"
+              onClick={() => setCurrentCategory("category.name")}
+            >
+              {category.name}
+            </button>
           </li>
         ))}
       </ul>
@@ -186,6 +206,9 @@ function CategoryFilter() {
   );
 }
 function XList({ xItems }) {
+  if (xItems.length === 0) {
+    return <p className="no-x">No X found</p>;
+  }
   return (
     <section>
       <ul className="x-list">
