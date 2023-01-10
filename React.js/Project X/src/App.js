@@ -31,15 +31,15 @@ function App() {
 
         let query = supabase.from("xList").select("*");
 
-        if (currentCategory !== "All") {
+        if (currentCategory !== "all") {
           query = query.eq("category", currentCategory);
         }
 
-        const { data: xList, error } = await query.order("text", {
-          ascending: true,
-        });
-        console.log(xList, error);
-        setX(xList);
+        const { data: xList, error } = await query
+          .order("votesFalse", { ascending: true })
+          .limit(1000);
+        if (!error) setX(xList);
+        else alert("There was a problem getting data");
         setIsLoading(false);
       }
       getX();
@@ -186,7 +186,7 @@ function CategoryFilter({ setCurrentCategory }) {
           <li className="category" key={category.name}>
             <button
               className="btn btn-category"
-              onClick={() => setCurrentCategory("category.name")}
+              onClick={() => setCurrentCategory(category.name)}
             >
               {category.name}
             </button>
