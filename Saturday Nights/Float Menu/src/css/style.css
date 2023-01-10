@@ -12,6 +12,18 @@ body {
   margin: 0;
 }
 
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  color: #171717;
+}
+
 .container {
   width: 800px;
 }
@@ -27,7 +39,7 @@ body {
   width: 100%;
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0 30px;
+  padding: 0 16px;
 }
 .menu-float .menu-float__inner {
   position: relative;
@@ -35,12 +47,19 @@ body {
   justify-content: center;
   padding: 6px 0;
 }
-.menu-float .menu-float__inner .menu-float__layout {
+.menu-float .menu-float__bottom {
+  text-align: center;
+}
+.menu-float .menu-float__bottom .menu-float__layout {
   display: inline-block;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid #a3a3a3;
+  transition: all 0.3s ease;
 }
-.menu-float .menu-float__inner .menu-float__wrapper {
-  min-width: 497px;
+.menu-float .menu-float__bottom .menu-float__layout:hover {
+  background-color: #fafaf9;
+}
+.menu-float .menu-float__bottom .menu-float__wrapper {
+  min-width: 400px;
 }/*# sourceMappingURL=style.css.map */

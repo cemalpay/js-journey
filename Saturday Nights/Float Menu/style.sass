@@ -11,6 +11,17 @@ body
     align-items: center
     justify-content: center
     margin: 0
+
+a
+    color: #fff
+    text-decoration: none
+    &:visited
+        color: #fff
+        text-decoration: none
+    &:hover
+        color: #171717
+
+        
 .container
     width: 800px
 .menu-float
@@ -23,16 +34,21 @@ body
         width: 100%
         max-width: 1920px
         margin: 0 auto
-        padding: 0 30px
+        padding: 0 16px
     .menu-float__inner
         position: relative 
         display: flex
         justify-content: center
         padding: 6px 0
+    .menu-float__bottom
+        text-align: center
         .menu-float__layout
             display: inline-block
             padding: 20px
             border-radius: 10px
             border: 1px solid #a3a3a3
+            transition: all 0.3s ease
+            &:hover
+                background-color: #fafaf9
         .menu-float__wrapper
-            min-width: 497px
+            min-width: 400px
