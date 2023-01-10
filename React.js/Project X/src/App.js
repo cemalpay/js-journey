@@ -135,8 +135,7 @@ function NewXForm({ setX, setShowForm }) {
         text,
         source,
         category,
-        votesInteresting: 0,
-        votesMindblowing: 0,
+        votesUnicorn: 0,
         votesFalse: 0,
         createdIn: new Date().getFullYear(),
       };
@@ -229,8 +228,8 @@ function XContent({ xItem }) {
       </a>
       <span className="tag">{xItem.category}</span>
       <div className="vote-buttons">
-        <button className="btn-vote">⛔ 9</button>
-        <button className="btn-vote">🦄 4</button>
+        <button className="btn-vote">⛔ {xItem.votesFalse}</button>
+        <button className="btn-vote">🦄 {xItem.votesUnicorn}</button>
       </div>
     </li>
   );
