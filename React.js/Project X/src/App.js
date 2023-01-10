@@ -113,21 +113,21 @@ function NewXForm({ setX, setShowForm }) {
   async function handleSubmit(event) {
     // 1. prevent browser from reloading
     event.preventDefault();
-    console.log(text, source, category);
 
     // 2. check if data valid. if so add to list
     if (text && isValidHttpUrl(source) && category) {
       // 3. Upload new x to db
       setIsUploading(true);
       const { data: newXItem, error } = await supabase
-        .from("facts")
+        .from("xList")
         .insert([{ text, source, category }])
         .select();
       setIsUploading(false);
 
       // 4. add the new x item to the ui
+      console.log(newXItem);
       setX((xItems) => [newXItem[0], ...xItems]);
-      // 5. clear the form
+      /*5. clear the form*/
       setText("");
       setSource("");
       setCategory("");
