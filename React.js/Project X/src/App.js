@@ -3,19 +3,6 @@ import supabase from "./supabase";
 import "./css/style.css";
 import "./css/style.css.map";
 
-const initialFacts = [
-  {
-    id: 1,
-    text: "React is being developed by Meta (formerly facebook)",
-    source: "https://opensource.fb.com/",
-    category: "general",
-    votesInteresting: 24,
-    votesMindblowing: 9,
-    votesFalse: 4,
-    createdIn: 2021,
-  },
-];
-
 function Counter() {
   const [count, setCount] = useState(8);
   return (
@@ -122,7 +109,7 @@ function NewXForm({ setX, setShowForm }) {
   const [source, setSource] = useState("");
   const [category, setCategory] = useState("");
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     // 1. prevent browser from reloading
     event.preventDefault();
     console.log(text, source, category);
@@ -130,17 +117,22 @@ function NewXForm({ setX, setShowForm }) {
     // 2. check if data valid. if so add to list
     if (text && isValidHttpUrl(source) && category) {
       // 3. create new x item
-      const newXItem = {
-        id: Math.round(Math.random() * 1000000),
-        text,
-        source,
-        category,
-        votesUnicorn: 0,
-        votesFalse: 0,
-        createdIn: new Date().getFullYear(),
-      };
+      // const newXItem = {
+      //   id: Math.round(Math.random() * 1000000),
+      //   text,
+      //   source,
+      //   category,
+      //   votesUnicorn: 0,
+      //   votesFalse: 0,
+      //   createdIn: new Date().getFullYear(),
+      // Upload new x to db
+      const { data: newXItem, error } = await supabase
+        .from("facts")
+        .insert([{ text, source, category }])
+        .select();
+
       // 4. add the new x item to the ui
-      setX((xItems) => [newXItem, ...xItems]);
+      setX((xItems) => [newXItem[0], ...xItems]);
       // 5. clear the form
       setText("");
       setSource("");
