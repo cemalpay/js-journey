@@ -107,6 +107,7 @@ function isValidHttpUrl(string) {
 function NewXForm({ setX, setShowForm }) {
   const [text, setText] = useState("");
   const [source, setSource] = useState("");
+  const [isUploading, setIsUploading] = useState(false);
   const [category, setCategory] = useState("");
 
   async function handleSubmit(event) {
@@ -116,20 +117,13 @@ function NewXForm({ setX, setShowForm }) {
 
     // 2. check if data valid. if so add to list
     if (text && isValidHttpUrl(source) && category) {
-      // 3. create new x item
-      // const newXItem = {
-      //   id: Math.round(Math.random() * 1000000),
-      //   text,
-      //   source,
-      //   category,
-      //   votesUnicorn: 0,
-      //   votesFalse: 0,
-      //   createdIn: new Date().getFullYear(),
-      // Upload new x to db
+      // 3. Upload new x to db
+      setIsUploading(true);
       const { data: newXItem, error } = await supabase
         .from("facts")
         .insert([{ text, source, category }])
         .select();
+      setIsUploading(false);
 
       // 4. add the new x item to the ui
       setX((xItems) => [newXItem[0], ...xItems]);
@@ -150,14 +144,20 @@ function NewXForm({ setX, setShowForm }) {
         placeholder="Write here..."
         value={text}
         onChange={(e) => setText(e.target.value)}
+        disabled={isUploading}
       />
       <input
         value={source}
         type="text"
         placeholder="Source"
         onChange={(e) => setSource(e.target.value)}
+        disabled={isUploading}
       />
-      <select value={category} onChange={(e) => setCategory(e.target.value)}>
+      <select
+        value={category}
+        onChange={(e) => setCategory(e.target.value)}
+        disabled={isUploading}
+      >
         <option value="">Choose category:</option>
         {CATEGORIES.map((category) => (
           <option key={category.name} value={category.name}>
