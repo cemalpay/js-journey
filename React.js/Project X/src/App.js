@@ -56,7 +56,7 @@ function App() {
       {/*MAIN*/}
       <main className="main">
         <CategoryFilter setCurrentCategory={setCurrentCategory} />
-        {isLoading ? <Loader /> : <XList xItems={xItems} />}
+        {isLoading ? <Loader /> : <XList xItems={xItems} setX={setX} />}
       </main>
     </>
   );
@@ -125,8 +125,7 @@ function NewXForm({ setX, setShowForm }) {
       setIsUploading(false);
 
       // 4. add the new x item to the ui
-      console.log(newXItem);
-      setX((xItems) => [newXItem[0], ...xItems]);
+      if (!error) setX((xItems) => [newXItem[0], ...xItems]);
       /*5. clear the form*/
       setText("");
       setSource("");
@@ -196,7 +195,7 @@ function CategoryFilter({ setCurrentCategory }) {
     </aside>
   );
 }
-function XList({ xItems }) {
+function XList({ xItems, setX }) {
   if (xItems.length === 0) {
     return <p className="no-x">No X found</p>;
   }
@@ -204,14 +203,29 @@ function XList({ xItems }) {
     <section>
       <ul className="x-list">
         {xItems.map((xItem) => (
-          <XContent key={xItem.id} xItem={xItem} />
+          <XContent key={xItem.id} xItem={xItem} setX={setX} />
         ))}
       </ul>
     </section>
   );
 }
 
-function XContent({ xItem }) {
+function XContent({ xItem, setX }) {
+  const [isUpdating, setIsUpdating] = useState(false);
+  async function handleVote() {
+    setIsUpdating(true);
+    const { data: updatedXList, error } = await supabase
+      .from("xList")
+      .update({ votesUnicorn: xItem.votesUnicorn + 1 })
+      .eq("id", xItem.id)
+      .select();
+    setIsUpdating(false);
+    if (!error)
+      setX((xItems) =>
+        xItems.map((f) => (f.id === xItem.id ? updatedXList[0] : f))
+      );
+  }
+
   return (
     <li className="x-text">
       {xItem.text}
@@ -220,8 +234,12 @@ function XContent({ xItem }) {
       </a>
       <span className="tag">{xItem.category}</span>
       <div className="vote-buttons">
-        <button className="btn-vote">⛔ {xItem.votesFalse}</button>
-        <button className="btn-vote">🦄 {xItem.votesUnicorn}</button>
+        <button className="btn-vote" onClick={handleVote} disabled={isUpdating}>
+          ⛔ {xItem.votesFalse}
+        </button>
+        <button className="btn-vote" onClick={handleVote} disabled={isUpdating}>
+          🦄 {xItem.votesUnicorn}
+        </button>
       </div>
     </li>
   );
