@@ -22,7 +22,7 @@ function App() {
   const [showForm, setShowForm] = useState(false);
   const [xItems, setX] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [currentCategory, setCurrentCategory] = useState("All");
+  const [currentCategory, setCurrentCategory] = useState("all");
 
   useEffect(
     function () {
@@ -212,11 +212,11 @@ function XList({ xItems, setX }) {
 
 function XContent({ xItem, setX }) {
   const [isUpdating, setIsUpdating] = useState(false);
-  async function handleVote() {
+  async function handleVote(columnName) {
     setIsUpdating(true);
     const { data: updatedXList, error } = await supabase
       .from("xList")
-      .update({ votesUnicorn: xItem.votesUnicorn + 1 })
+      .update({ [columnName]: xItem[columnName] + 1 })
       .eq("id", xItem.id)
       .select();
     setIsUpdating(false);
@@ -234,10 +234,18 @@ function XContent({ xItem, setX }) {
       </a>
       <span className="tag">{xItem.category}</span>
       <div className="vote-buttons">
-        <button className="btn-vote" onClick={handleVote} disabled={isUpdating}>
+        <button
+          className="btn-vote"
+          onClick={() => handleVote("votesFalse")}
+          disabled={isUpdating}
+        >
           ⛔ {xItem.votesFalse}
         </button>
-        <button className="btn-vote" onClick={handleVote} disabled={isUpdating}>
+        <button
+          className="btn-vote"
+          onClick={() => handleVote("votesUnicorn")}
+          disabled={isUpdating}
+        >
           🦄 {xItem.votesUnicorn}
         </button>
       </div>
