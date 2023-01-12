@@ -212,6 +212,7 @@ function XList({ xItems, setX }) {
 
 function XContent({ xItem, setX }) {
   const [isUpdating, setIsUpdating] = useState(false);
+  const isDisputed = xItem.votesUnicorn < xItem.votesFalse;
   async function handleVote(columnName) {
     setIsUpdating(true);
     const { data: updatedXList, error } = await supabase
@@ -228,6 +229,7 @@ function XContent({ xItem, setX }) {
 
   return (
     <li className="x-text">
+      {isDisputed ? <span className="disputed"> [⛔Disputed]</span> : null}
       {xItem.text}
       <a className="source" href={xItem.source}>
         (Source)

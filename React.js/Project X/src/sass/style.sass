@@ -7,7 +7,7 @@
 body
     background-color: $backgroundColor
     color: $secondaryColor
-    padding: $mainPadding $paddingLarge
+    padding: $mainPadding $paddingLarge 0px
 
 h1
     font-family: $mainFont
@@ -19,6 +19,7 @@ ul
 #root
     max-width: 1366px
     margin: 0 auto
+
 
 .loader
     text-align: center
@@ -61,18 +62,21 @@ ul
 
 @media (max-width: $tabletWidth)
     body
-        padding: $paddingSmall $mainPadding
+        padding: $paddingSmall $mainPadding 0px
     .x-form
         flex-direction: column
         align-items: stretch
         input, select
             width: auto
 
-
+section
+    overflow: scroll
+    padding-block: 20px
 .main
     display: grid
     grid-template-columns: 250px 1fr
     gap: $mainMargin
+    height: calc( 100vh - 68px - 40px - 48px )
     
     @media (max-width: $tabletWidth)
         grid-template-columns: 1fr
@@ -96,7 +100,9 @@ ul
         flex-direction: column
         align-items: flex-end
         gap: 12px
-    
+
+.disputed
+    color: #ef4444
 .tag
     text-transform: uppercase
     background-color: $secondaryColor
