@@ -3,6 +3,8 @@ import supabase from "./supabase";
 import "./css/style.css";
 import "./css/style.css.map";
 
+import Header from "./components/Header";
+
 function Counter() {
   const [count, setCount] = useState(8);
   return (
@@ -66,21 +68,6 @@ function Loader() {
   return <p className="loader">Loading...</p>;
 }
 
-function Header({ showForm, setShowForm }) {
-  return (
-    <header className="header">
-      <div className="logo">
-        <img src="logo.png" alt="" />
-      </div>
-      <button
-        className="btn btn-large btn-open"
-        onClick={() => setShowForm((show) => !show)}
-      >
-        {showForm ? "Close" : "Create new X"}
-      </button>
-    </header>
-  );
-}
 const CATEGORIES = [
   { name: "development", color: "#f0fdfa" },
   { name: "general", color: "#ccfbf1" },
