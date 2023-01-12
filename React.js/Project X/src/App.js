@@ -5,21 +5,6 @@ import "./css/style.css.map";
 
 import Header from "./components/Header";
 
-function Counter() {
-  const [count, setCount] = useState(8);
-  return (
-    <div>
-      <span style={{ fonstSize: "40px" }}>{count}</span>
-      <button
-        className="btn btn-large"
-        onClick={() => setCount((count) => count + 1)}
-      >
-        +1
-      </button>
-    </div>
-  );
-}
-
 function App() {
   const [showForm, setShowForm] = useState(false);
   const [xItems, setX] = useState([]);
