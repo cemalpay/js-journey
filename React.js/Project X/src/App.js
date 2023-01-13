@@ -5,8 +5,9 @@ import "./css/style.css.map";
 
 import Header from "./components/Header";
 import NewXForm from "./components/NewXForm";
-import XContent from "./components/XContent";
+import XList from "./components/XList";
 import CategoryFilter from "./components/CategoryFilter";
+import Loader from "./components/Loader";
 
 function App() {
   const [showForm, setShowForm] = useState(false);
@@ -49,25 +50,6 @@ function App() {
         {isLoading ? <Loader /> : <XList xItems={xItems} setX={setX} />}
       </main>
     </>
-  );
-}
-
-function Loader() {
-  return <p className="loader">Loading...</p>;
-}
-
-function XList({ xItems, setX }) {
-  if (xItems.length === 0) {
-    return <p className="no-x">No X found</p>;
-  }
-  return (
-    <section>
-      <ul className="x-list">
-        {xItems.map((xItem) => (
-          <XContent key={xItem.id} xItem={xItem} setX={setX} />
-        ))}
-      </ul>
-    </section>
   );
 }
 

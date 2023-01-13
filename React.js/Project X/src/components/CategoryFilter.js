@@ -1,4 +1,4 @@
-const CATEGORIES = [
+const Categories = [
   { name: "development" },
   { name: "general" },
   { name: "wordpress" },
@@ -23,7 +23,7 @@ function CategoryFilter({ setCurrentCategory }) {
             All
           </button>
         </li>
-        {CATEGORIES.map((category) => (
+        {Categories.map((category) => (
           <li className="category" key={category.name}>
             <button
               className="btn btn-category"
