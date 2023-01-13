@@ -6,6 +6,20 @@ import "./css/style.css.map";
 import Header from "./components/Header";
 import XContent from "./components/XContent";
 
+/* CATEGORY LIST */
+const CATEGORIES = [
+  { name: "development" },
+  { name: "general" },
+  { name: "wordpress" },
+  { name: "design" },
+  { name: "github" },
+  { name: "vscode" },
+  { name: "javascript" },
+  { name: "google cloud" },
+  { name: "docker" },
+  { name: "starters" },
+];
+
 function App() {
   const [showForm, setShowForm] = useState(false);
   const [xItems, setX] = useState([]);
@@ -53,19 +67,6 @@ function App() {
 function Loader() {
   return <p className="loader">Loading...</p>;
 }
-
-const CATEGORIES = [
-  { name: "development", color: "#f0fdfa" },
-  { name: "general", color: "#ccfbf1" },
-  { name: "wordpress", color: "#99f6e4" },
-  { name: "design", color: "#5eead4" },
-  { name: "github", color: "#2dd4bf" },
-  { name: "vscode", color: "#14b8a6" },
-  { name: "javascript", color: "#0d9488" },
-  { name: "google cloud", color: "#0f766e" },
-  { name: "docker", color: "#115e59" },
-  { name: "starters", color: "#134e4a" },
-];
 
 function isValidHttpUrl(string) {
   let url;

@@ -1,5 +1,5 @@
 import supabase from "../supabase";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function XContent({ xItem, setX }) {
   const [isUpdating, setIsUpdating] = useState(false);
