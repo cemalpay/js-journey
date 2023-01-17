@@ -22,6 +22,7 @@ function XContent({ xItem, setX }) {
     <li className="x-text">
       {isDisputed ? <span className="disputed"> [⛔Disputed]</span> : null}
       {xItem.text}
+
       <a className="source" href={xItem.source}>
         (Source)
       </a>
