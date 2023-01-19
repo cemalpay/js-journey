@@ -3,11 +3,6 @@
     
 section  
     border: 1px solid $secondaryColor
-.main
-    display: grid
-    grid-template-columns: 250px 1fr
-    gap: $mainMargin
-    height: calc( 100vh - 68px - 40px - 48px )
 .x-text
     font-family: $secondaryFont
     font-size: $fontSize
@@ -20,6 +15,8 @@ section
     align-items: center
     justify-content: space-between
     gap: $marginSmall
+    white-space: wrap
+    overflow: hidden
 
 .disputed
     color: #ef4444
@@ -58,7 +55,13 @@ section
         color: $secondaryColor
     &:hover
         opacity: 1
-
+.no-x
+    text-align: center
+    padding: 24px
+    font-size: $fontSizeLarge
+    font-weight: 700
+    color: $secondaryColor
+    opacity: 0.8
 
 @media (max-width: $tabletWidth)
     .main
