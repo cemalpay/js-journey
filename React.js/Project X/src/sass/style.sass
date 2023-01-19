@@ -4,70 +4,21 @@
     margin: 0
     padding: 0
     box-sizing: border-box  
+
+#root
+    max-width: 1366px
+    margin: 0 auto
+
 body
     background-color: $backgroundColor
     color: $secondaryColor
     padding: $mainPadding $paddingLarge 0px
-
 h1
     font-family: $mainFont
     font-size: $fontSizeLarge
 ul
     list-style: none
 
-
-#root
-    max-width: 1366px
-    margin: 0 auto
-
-
-.loader
-    text-align: center
-    text-transform: uppercase
-    font-size: $fontSizeLarge
-    font-weight: 700
-    margin-top: 100px
-    
-.header
-    margin-bottom: $mainMargin
-    display: flex
-    align-items: center
-    justify-content: space-between
-    .logo
-        font-family: 'Circular'
-        font-size: $fontSizeLarge
-.x-form
-    background-color: $mainColor
-    margin-bottom: $mainMargin
-    padding: $mainPadding $paddingLarge
-    text-align: center
-    display: flex
-    gap: 8px
-    border-radius: 16px
-    input, select
-        width: 220px
-        background-color: $mainColorLight
-        border: none
-        border-radius: 100px
-        font-family: $mainFont
-        padding: 16px
-        color: inherit
-        &:focus
-            outline: none
-        &:first-child
-            flex-grow: 1
-    span
-        font-weight: 700
-        font-size: $fontSizeSmall
-
-@media (max-width: $tabletWidth)
-    body
-        padding: $paddingSmall $mainPadding 0px
-    .x-form
-        flex-direction: column
-        align-items: stretch
-        input, select
-            width: auto
 
 section
     padding-block: 20px

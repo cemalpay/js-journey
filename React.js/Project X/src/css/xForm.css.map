@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["../sass/_variables.sass","../sass/xForm.sass"],"names":[],"mappings":"AACA;AAUA;AAeA;AAKA;AAKA;AClCA;EACI,kBDWQ;ECVR,eDiCS;EChCT;EACA;EACA;EACA;EACA;;AACA;EACI;EACA,kBDIS;ECHT;EACA;EACA,aDYG;ECXH;EACA;;AACA;EACI;;AACJ;EACI;;AACR;EACI;EACA,WDSQ;;;ACPhB;EACI;IACI;;EACJ;IACI;IACA;;EACA;IACI","file":"xForm.css"}

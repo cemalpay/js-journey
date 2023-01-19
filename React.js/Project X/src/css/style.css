@@ -9,6 +9,11 @@
   box-sizing: border-box;
 }
 
+#root {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
 body {
   background-color: #262626;
   color: #f4f4f5;
@@ -24,71 +29,6 @@ ul {
   list-style: none;
 }
 
-#root {
-  max-width: 1366px;
-  margin: 0 auto;
-}
-
-.loader {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-top: 100px;
-}
-
-.header {
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.header .logo {
-  font-family: "Circular";
-  font-size: 1.8rem;
-}
-
-.x-form {
-  background-color: #171717;
-  margin-bottom: 2rem;
-  padding: 1rem 2rem;
-  text-align: center;
-  display: flex;
-  gap: 8px;
-  border-radius: 16px;
-}
-.x-form input, .x-form select {
-  width: 220px;
-  background-color: #2f2f2f;
-  border: none;
-  border-radius: 100px;
-  font-family: "Inter", sans-serif;
-  padding: 16px;
-  color: inherit;
-}
-.x-form input:focus, .x-form select:focus {
-  outline: none;
-}
-.x-form input:first-child, .x-form select:first-child {
-  flex-grow: 1;
-}
-.x-form span {
-  font-weight: 700;
-  font-size: 1rem;
-}
-
-@media (max-width: 1024px) {
-  body {
-    padding: 0.5rem 1rem 0px;
-  }
-  .x-form {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .x-form input, .x-form select {
-    width: auto;
-  }
-}
 section {
   padding-block: 20px;
 }

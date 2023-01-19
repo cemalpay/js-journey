@@ -1,0 +1,16 @@
+/* Breakpoints */
+/* Colors */
+/* Fonts */
+/* Font sizes */
+/* Margins and paddings */
+.header {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "Circular";
+  font-size: 1.8rem;
+}/*# sourceMappingURL=header.css.map */

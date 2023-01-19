@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import supabase from "./supabase";
 import "./css/style.css";
-import "./css/style.css.map";
+import "./css/header.css";
+import "./css/loader.css";
 
 import Header from "./components/Header";
 import NewXForm from "./components/NewXForm";

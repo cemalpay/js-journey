@@ -1,0 +1,34 @@
+@import "variables"
+    
+.x-form
+    background-color: $mainColor
+    margin-bottom: $mainMargin
+    padding: $mainPadding $paddingLarge
+    text-align: center
+    display: flex
+    gap: 8px
+    border-radius: 16px
+    input, select
+        width: 220px
+        background-color: $mainColorLight
+        border: none
+        border-radius: 100px
+        font-family: $mainFont
+        padding: 16px
+        color: inherit
+        &:focus
+            outline: none
+        &:first-child
+            flex-grow: 1
+    span
+        font-weight: 700
+        font-size: $fontSizeSmall
+
+@media (max-width: $tabletWidth)
+    body
+        padding: $paddingSmall $mainPadding 0px
+    .x-form
+        flex-direction: column
+        align-items: stretch
+        input, select
+            width: auto
