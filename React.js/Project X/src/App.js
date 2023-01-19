@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import supabase from "./supabase";
 import "./css/style.css";
 import "./css/header.css";
+import "./css/xForm.css";
+import "./css/xList.css";
 import "./css/loader.css";
 
 import Header from "./components/Header";

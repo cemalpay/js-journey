@@ -1,0 +1,69 @@
+@import variables
+    
+    
+section  
+    border: 1px solid $secondaryColor
+.main
+    display: grid
+    grid-template-columns: 250px 1fr
+    gap: $mainMargin
+    height: calc( 100vh - 68px - 40px - 48px )
+.x-text
+    font-family: $secondaryFont
+    font-size: $fontSize
+    line-height: 1.4
+    background-color: $mainColor
+    margin-bottom: $marginSmall
+    padding: $mainPadding $paddingLarge
+    border-radius: 16px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: $marginSmall
+
+.disputed
+    color: #ef4444
+.tag
+    text-transform: uppercase
+    background-color: $secondaryColor
+    color: $mainColor
+    font-size: $fontSizeSmall
+    font-weight: 700
+    padding: 5px 10px
+
+.vote-buttons
+    margin-left: auto
+    flex-shrink: 0  
+    display: flex
+    gap: 8px
+    button
+        border: 1px solid transparent
+        background-color: $backgroundColor
+        font-size: $fontSizeSmall
+        font-weight: 700
+        padding: 6px 12px
+        border-radius: 100px
+        color: inherit
+        cursor: pointer
+        transition:  0.3s
+        &:hover
+            border: 1px solid $secondaryColor
+
+.source
+    color: $secondaryColor
+    text-decoration: none
+    opacity: 0.8
+    transition: opacity 0.3s
+    &:visited
+        color: $secondaryColor
+    &:hover
+        opacity: 1
+
+
+@media (max-width: $tabletWidth)
+    .main
+        grid-template-columns: 1fr
+    .x-text
+        flex-direction: column
+        align-items: flex-end
+        gap: 12px
