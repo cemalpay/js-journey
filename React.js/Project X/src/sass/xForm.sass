@@ -6,8 +6,10 @@
     padding: $mainPadding $paddingLarge
     text-align: center
     display: flex
+    flex-wrap: wrap
     gap: 8px
     border-radius: 16px
+    justify-content: space-between
     input, select
         width: 220px
         background-color: $mainColorLight
@@ -18,15 +20,20 @@
         color: inherit
         &:focus
             outline: none
-        &:first-child
-            flex-grow: 1
     option
         font-size: $fontSizeSmall
         
     span
         font-weight: 700
         font-size: $fontSizeSmall
-
+#title
+        width: 100%
+#text
+        width: 100%
+#source
+        width: 45%
+#category
+        width: 45%
 @media (max-width: $tabletWidth)
     .x-form
         flex-direction: column

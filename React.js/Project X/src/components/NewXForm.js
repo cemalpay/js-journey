@@ -15,6 +15,7 @@ const CATEGORIES = [
 ];
 
 function NewXForm({ setX, setShowForm }) {
+  const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [source, setSource] = useState("");
   const [isUploading, setIsUploading] = useState(false);
@@ -30,13 +31,14 @@ function NewXForm({ setX, setShowForm }) {
       setIsUploading(true);
       const { data: newXItem, error } = await supabase
         .from("xList")
-        .insert([{ text, source, category }])
+        .insert([{ title, text, source, category }])
         .select();
       setIsUploading(false);
 
       // 4. add the new x item to the ui
       if (!error) setX((xItems) => [newXItem[0], ...xItems]);
       /*5. clear the form*/
+      setTitle("");
       setText("");
       setSource("");
       setCategory("");
@@ -47,8 +49,16 @@ function NewXForm({ setX, setShowForm }) {
 
   return (
     <form className="x-form" onSubmit={handleSubmit}>
-      {" "}
       <input
+        id="title"
+        type="text"
+        placeholder="Title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        disabled={isUploading}
+      />
+      <input
+        id="text"
         type="text"
         placeholder="Write here..."
         value={text}
@@ -56,6 +66,7 @@ function NewXForm({ setX, setShowForm }) {
         disabled={isUploading}
       />
       <input
+        id="source"
         value={source}
         type="text"
         placeholder="Source"
@@ -63,6 +74,7 @@ function NewXForm({ setX, setShowForm }) {
         disabled={isUploading}
       />
       <select
+        id="category"
         value={category}
         onChange={(e) => setCategory(e.target.value)}
         disabled={isUploading}

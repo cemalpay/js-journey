@@ -24,6 +24,12 @@
   margin-bottom: 1rem;
 }
 
+.x-secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
 .disputed {
   color: #ef4444;
 }
@@ -37,6 +43,7 @@
   padding: 5px 10px;
   min-width: 120px;
   text-align: center;
+  margin-left: 10px;
 }
 
 .vote-buttons {

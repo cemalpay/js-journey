@@ -9,8 +9,10 @@
   padding: 1rem 2rem;
   text-align: center;
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   border-radius: 16px;
+  justify-content: space-between;
 }
 .x-form input, .x-form select {
   width: 220px;
@@ -24,15 +26,28 @@
 .x-form input:focus, .x-form select:focus {
   outline: none;
 }
-.x-form input:first-child, .x-form select:first-child {
-  flex-grow: 1;
-}
 .x-form option {
   font-size: 1rem;
 }
 .x-form span {
   font-weight: 700;
   font-size: 1rem;
+}
+
+#title {
+  width: 100%;
+}
+
+#text {
+  width: 100%;
+}
+
+#source {
+  width: 45%;
+}
+
+#category {
+  width: 45%;
 }
 
 @media (max-width: 1024px) {

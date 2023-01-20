@@ -35,7 +35,7 @@ function XContent({ xItem, setX }) {
     <li className="x-text">
       {isDisputed ? <span className="disputed"> [⛔Disputed]</span> : null}
       {isBigger140 ? (
-        <div>
+        <div className="x-primary">
           <h3 className="title" style={{ opacity: 1 }}>
             {" "}
             {xItem.title}
@@ -48,25 +48,31 @@ function XContent({ xItem, setX }) {
           <h3 className="title"> {xItem.title}</h3> {xItem.text}{" "}
         </p>
       )}
-      <a className="source" href={xItem.source}>
-        (Source)
-      </a>
-      <span className="tag">{xItem.category}</span>
-      <div className="vote-buttons">
-        <button
-          className="btn-vote"
-          onClick={() => handleVote("votesFalse")}
-          disabled={isUpdating}
-        >
-          ⛔ {xItem.votesFalse}
-        </button>
-        <button
-          className="btn-vote"
-          onClick={() => handleVote("votesUnicorn")}
-          disabled={isUpdating}
-        >
-          🦄 {xItem.votesUnicorn}
-        </button>
+      <div className="x-secondary">
+        <div className="x-secondary__top">
+          <a className="source" href={xItem.source}>
+            (Source)
+          </a>
+          <span className="tag">{xItem.category}</span>
+        </div>
+        <div className="x-secondary__bottom">
+          <div className="vote-buttons">
+            <button
+              className="btn-vote"
+              onClick={() => handleVote("votesFalse")}
+              disabled={isUpdating}
+            >
+              ⛔ {xItem.votesFalse}
+            </button>
+            <button
+              className="btn-vote"
+              onClick={() => handleVote("votesUnicorn")}
+              disabled={isUpdating}
+            >
+              🦄 {xItem.votesUnicorn}
+            </button>
+          </div>
+        </div>
       </div>
       <ReadMore />
     </li>
