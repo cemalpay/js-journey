@@ -17,6 +17,17 @@ function XContent({ xItem, setX }) {
         xItems.map((f) => (f.id === xItem.id ? updatedXList[0] : f))
       );
   }
+  function ReadMore() {
+    if (xItem.text.length > 100) {
+      return (
+        <>
+          <div className="read-more">
+            <button className="read-more__btn">Read more</button>
+          </div>
+        </>
+      );
+    }
+  }
 
   return (
     <li className="x-text">
@@ -43,7 +54,7 @@ function XContent({ xItem, setX }) {
           🦄 {xItem.votesUnicorn}
         </button>
       </div>
-      <button className="read-more">Read more!</button>
+      <ReadMore />
     </li>
   );
 }

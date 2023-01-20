@@ -64,14 +64,19 @@ section
     font-weight: 700
     color: $secondaryColor
 
+
 .read-more
     position: absolute
     right: $paddingLarge 
     bottom: $paddingLarge
-    font-size: $fontSizeSmall
-    background-color: transparent 
-    color: $secondaryColor
-    border: none
+    .read-more__btn
+        font-size: $fontSizeSmall
+        background-color: transparent 
+        color: $secondaryColor
+        border: none
+
+
+
 @media (max-width: $tabletWidth)
     .main
         grid-template-columns: 1fr
