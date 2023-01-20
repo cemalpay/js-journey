@@ -34,13 +34,20 @@ function XContent({ xItem, setX }) {
   return (
     <li className="x-text">
       {isDisputed ? <span className="disputed"> [⛔Disputed]</span> : null}
-      {}
       {isBigger140 ? (
-        <div style={{ opacity: 0.2 }}>{xItem.text}</div>
+        <div>
+          <h3 className="title" style={{ opacity: 1 }}>
+            {" "}
+            {xItem.title}
+          </h3>
+          <p style={{ opacity: 0.2 }}>{xItem.text}</p>
+        </div>
       ) : (
-        xItem.text
+        <p>
+          {" "}
+          <h3 className="title"> {xItem.title}</h3> {xItem.text}{" "}
+        </p>
       )}
-
       <a className="source" href={xItem.source}>
         (Source)
       </a>

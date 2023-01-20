@@ -16,9 +16,12 @@
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  white-space: wrap;
   overflow: hidden;
-  max-height: 140px;
+  max-height: 160px;
+}
+
+.title {
+  margin-bottom: 1rem;
 }
 
 .disputed {
