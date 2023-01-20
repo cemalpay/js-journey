@@ -4,6 +4,7 @@ import { useState } from "react";
 function XContent({ xItem, setX }) {
   const [isUpdating, setIsUpdating] = useState(false);
   const [isBigger140, setIsBigger140] = useState(false);
+  const [isActive, setIsActive] = useState(false);
   const isDisputed = xItem.votesUnicorn < xItem.votesFalse;
   async function handleVote(columnName) {
     setIsUpdating(true);
@@ -18,24 +19,27 @@ function XContent({ xItem, setX }) {
         xItems.map((f) => (f.id === xItem.id ? updatedXList[0] : f))
       );
   }
-  function ReadMore() {
+  const handleToggle = () => {
+    setIsActive(!isActive);
+  };
+  function ReadMoreButton() {
     if (xItem.text.length > 140) {
       setIsBigger140(true);
       return (
         <>
           <div className="read-more">
-            <button className="read-more__btn">READ MORE</button>
+            <button onClick={handleToggle} className="read-more__btn">
+              READ MORE
+            </button>
           </div>
         </>
       );
     }
   }
-
   return (
-    <li className="x-text">
-      {isDisputed ? <span className="disputed"> [⛔Disputed]</span> : null}
+    <li className={`x-text ${isActive ? "active" : ""}`}>
       {isBigger140 ? (
-        <div className="x-primary">
+        <div>
           <h3 className="title" style={{ opacity: 1 }}>
             {" "}
             {xItem.title}
@@ -73,8 +77,9 @@ function XContent({ xItem, setX }) {
             </button>
           </div>
         </div>
+        {isDisputed ? <span className="disputed"> [⛔Disputed]</span> : null}
       </div>
-      <ReadMore />
+      <ReadMoreButton />
     </li>
   );
 }
