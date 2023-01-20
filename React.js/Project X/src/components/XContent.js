@@ -50,7 +50,7 @@ function XContent({ xItem, setX }) {
       )}
       <div className="x-secondary">
         <div className="x-secondary__top">
-          <a className="source" href={xItem.source}>
+          <a className="source" href={xItem.source} target="_blank">
             (Source)
           </a>
           <span className="tag">{xItem.category}</span>
