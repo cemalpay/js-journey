@@ -2,8 +2,9 @@
     
     
 section  
-    border: 1px solid $secondaryColor
+    
 .x-text
+    position: relative
     font-family: $secondaryFont
     font-size: $fontSize
     line-height: 1.4
@@ -12,11 +13,12 @@ section
     padding: $mainPadding $paddingLarge
     border-radius: 16px
     display: flex
-    align-items: center
+    align-items: flex-start
     justify-content: space-between
     gap: $marginSmall
     white-space: wrap
     overflow: hidden
+    max-height: 140px
 
 .disputed
     color: #ef4444
@@ -61,8 +63,15 @@ section
     font-size: $fontSizeLarge
     font-weight: 700
     color: $secondaryColor
-    opacity: 0.8
 
+.read-more
+    position: absolute
+    right: $paddingLarge 
+    bottom: $paddingLarge
+    font-size: $fontSizeSmall
+    background-color: transparent 
+    color: $secondaryColor
+    border: none
 @media (max-width: $tabletWidth)
     .main
         grid-template-columns: 1fr

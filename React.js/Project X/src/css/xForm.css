@@ -27,6 +27,9 @@
 .x-form input:first-child, .x-form select:first-child {
   flex-grow: 1;
 }
+.x-form option {
+  font-size: 1rem;
+}
 .x-form span {
   font-weight: 700;
   font-size: 1rem;

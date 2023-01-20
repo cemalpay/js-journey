@@ -3,11 +3,8 @@
 /* Fonts */
 /* Font sizes */
 /* Margins and paddings */
-section {
-  border: 1px solid #f4f4f5;
-}
-
 .x-text {
+  position: relative;
   font-family: "Sono", sans-serif;
   font-size: 1.2rem;
   line-height: 1.4;
@@ -16,11 +13,12 @@ section {
   padding: 1rem 2rem;
   border-radius: 16px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
   white-space: wrap;
   overflow: hidden;
+  max-height: 140px;
 }
 
 .disputed {
@@ -76,7 +74,16 @@ section {
   font-size: 1.8rem;
   font-weight: 700;
   color: #f4f4f5;
-  opacity: 0.8;
+}
+
+.read-more {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #f4f4f5;
+  border: none;
 }
 
 @media (max-width: 1024px) {

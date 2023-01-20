@@ -43,6 +43,7 @@ function XContent({ xItem, setX }) {
           🦄 {xItem.votesUnicorn}
         </button>
       </div>
+      <button className="read-more">Read more!</button>
     </li>
   );
 }
