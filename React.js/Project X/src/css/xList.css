@@ -24,6 +24,18 @@
   max-height: 100%;
 }
 
+.opacity02 {
+  opacity: 0.2;
+}
+
+.opacity100 {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
 .title {
   margin-bottom: 1rem;
 }

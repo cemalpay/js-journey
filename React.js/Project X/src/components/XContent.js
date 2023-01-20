@@ -27,7 +27,7 @@ function XContent({ xItem, setX }) {
       setIsBigger140(true);
       return (
         <>
-          <div className="read-more">
+          <div className={`read-more ${isActive ? "hidden" : ""}`}>
             <button onClick={handleToggle} className="read-more__btn">
               READ MORE
             </button>
@@ -44,7 +44,9 @@ function XContent({ xItem, setX }) {
             {" "}
             {xItem.title}
           </h3>
-          <p style={{ opacity: 0.2 }}>{xItem.text}</p>
+          <p className={`opacity02 ${isActive ? "opacity100" : ""}`}>
+            {xItem.text}
+          </p>
         </div>
       ) : (
         <p>
