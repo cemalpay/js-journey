@@ -67,13 +67,22 @@ section
 
 .read-more
     position: absolute
-    right: $paddingLarge 
-    bottom: $paddingLarge
+    top: 80%
+    left: 50%
+    transform: translate(-50%, -50%)
     .read-more__btn
         font-size: $fontSizeSmall
+        font-weight: 700
         background-color: transparent 
         color: $secondaryColor
-        border: none
+        border: 1px solid $secondaryColor
+        padding: 8px 16px
+        cursor: pointer
+        transition: 0.3s
+        &:hover
+            background-color: $secondaryColor
+            color: $mainColor
+            border: 1px solid transparent
 
 
 

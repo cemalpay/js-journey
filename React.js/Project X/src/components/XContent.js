@@ -3,6 +3,7 @@ import { useState } from "react";
 
 function XContent({ xItem, setX }) {
   const [isUpdating, setIsUpdating] = useState(false);
+  const [isBigger140, setIsBigger140] = useState(false);
   const isDisputed = xItem.votesUnicorn < xItem.votesFalse;
   async function handleVote(columnName) {
     setIsUpdating(true);
@@ -18,11 +19,12 @@ function XContent({ xItem, setX }) {
       );
   }
   function ReadMore() {
-    if (xItem.text.length > 100) {
+    if (xItem.text.length > 140) {
+      setIsBigger140(true);
       return (
         <>
           <div className="read-more">
-            <button className="read-more__btn">Read more</button>
+            <button className="read-more__btn">READ MORE</button>
           </div>
         </>
       );
@@ -32,7 +34,12 @@ function XContent({ xItem, setX }) {
   return (
     <li className="x-text">
       {isDisputed ? <span className="disputed"> [⛔Disputed]</span> : null}
-      {xItem.text}
+      {}
+      {isBigger140 ? (
+        <div style={{ opacity: 0.2 }}>{xItem.text}</div>
+      ) : (
+        xItem.text
+      )}
 
       <a className="source" href={xItem.source}>
         (Source)
