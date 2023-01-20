@@ -32,6 +32,8 @@
   font-size: 1rem;
   font-weight: 700;
   padding: 5px 10px;
+  min-width: 120px;
+  text-align: center;
 }
 
 .vote-buttons {
@@ -43,6 +45,7 @@
 .vote-buttons button {
   border: 1px solid transparent;
   background-color: #262626;
+  min-width: 70px;
   font-size: 1rem;
   font-weight: 700;
   padding: 6px 12px;

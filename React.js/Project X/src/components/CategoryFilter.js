@@ -6,7 +6,7 @@ const Categories = [
   { name: "github" },
   { name: "vscode" },
   { name: "javascript" },
-  { name: "google cloud" },
+  { name: "gcloud" },
   { name: "docker" },
   { name: "starters" },
 ];
