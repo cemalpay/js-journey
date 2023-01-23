@@ -57,19 +57,18 @@ function NewXForm({ setX, setShowForm }) {
         onChange={(e) => setTitle(e.target.value)}
         disabled={isUploading}
       />
-      <input
-        id="text"
-        type="text"
-        placeholder="Write here..."
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        disabled={isUploading}
-      />
-      <button
-        className="btn btn-post"
-        type="button"
-        onClick={() => addNewInput()}
-      >
+      <div className="input-group">
+        <input
+          id="text"
+          className="inputText"
+          type="text"
+          placeholder="Write here..."
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          disabled={isUploading}
+        />
+      </div>
+      <button className="btn-input" type="button" onClick={() => addNewInput()}>
         +
       </button>
       <input
@@ -107,15 +106,16 @@ function isValidHttpUrl(string) {
   }
   return url.protocol === "http:" || url.protocol === "https:";
 }
-let inputCount = 1;
+let inputCount = 2;
 function addNewInput() {
   const i = inputCount;
   let input = document.createElement("input");
   console.log("input ekledim");
   input.type = "text";
-  input.placeholder = "Write here...";
+  input.placeholder = "Step" + i + "...";
   input.id = "text" + i;
-  document.querySelector(".x-form").appendChild(input);
+  input.className = "inputText";
+  document.querySelector(".input-group").appendChild(input);
   inputCount++;
 }
 
