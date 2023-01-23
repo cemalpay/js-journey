@@ -107,16 +107,16 @@ function isValidHttpUrl(string) {
   }
   return url.protocol === "http:" || url.protocol === "https:";
 }
+let inputCount = 1;
 function addNewInput() {
-  var newInput = document.createElement("input");
-  console.log("addNewInput");
-  for (let i = 1; i < 10; i++) {
-    console.log(i);
-    newInput.id = "text" + i;
-    newInput.type = "text";
-    newInput.placeholder = "Write here...";
-    document.querySelector(".x-form").appendChild(newInput);
-  }
+  const i = inputCount;
+  let input = document.createElement("input");
+  console.log("input ekledim");
+  input.type = "text";
+  input.placeholder = "Write here...";
+  input.id = "text" + i;
+  document.querySelector(".x-form").appendChild(input);
+  inputCount++;
 }
 
 export default NewXForm;
