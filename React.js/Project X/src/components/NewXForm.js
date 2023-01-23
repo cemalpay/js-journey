@@ -65,6 +65,13 @@ function NewXForm({ setX, setShowForm }) {
         onChange={(e) => setText(e.target.value)}
         disabled={isUploading}
       />
+      <button
+        className="btn btn-post"
+        type="button"
+        onClick={() => addNewInput()}
+      >
+        +
+      </button>
       <input
         id="source"
         value={source}
@@ -100,4 +107,12 @@ function isValidHttpUrl(string) {
   }
   return url.protocol === "http:" || url.protocol === "https:";
 }
+function addNewInput() {
+  var newInput = document.createElement("input");
+  newInput.type = "text";
+  newInput.placeholder = "Write here...";
+  newInput.id = "text";
+  document.getElementById("text").appendChild(newInput);
+}
+
 export default NewXForm;
