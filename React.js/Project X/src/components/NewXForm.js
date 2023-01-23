@@ -109,10 +109,14 @@ function isValidHttpUrl(string) {
 }
 function addNewInput() {
   var newInput = document.createElement("input");
-  newInput.type = "text";
-  newInput.placeholder = "Write here...";
-  newInput.id = "text";
-  document.getElementById("text").appendChild(newInput);
+  console.log("addNewInput");
+  for (let i = 1; i < 10; i++) {
+    console.log(i);
+    newInput.id = "text" + i;
+    newInput.type = "text";
+    newInput.placeholder = "Write here...";
+    document.querySelector(".x-form").appendChild(newInput);
+  }
 }
 
 export default NewXForm;
