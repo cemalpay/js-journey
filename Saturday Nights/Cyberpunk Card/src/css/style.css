@@ -22,4 +22,25 @@ body {
   overflow: hidden;
   position: relative;
   z-index: 10;
+}
+
+.screen-overlay {
+  background: linear-gradient(rgba(33, 150, 243, 0.1), rgba(33, 150, 243, 0.1) 3px, transparent 3px, transparent 9px);
+  background-size: 100% 9px;
+  height: 100%;
+  width: 100%;
+  animation: pan-overlay 18s infinite linear;
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+@keyframes pan-overlay {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -100px;
+  }
 }/*# sourceMappingURL=style.css.map */
