@@ -35,6 +35,7 @@ h1 {
   overflow: hidden;
   position: relative;
   z-index: 10;
+  align-items: flex-end;
 }
 
 .screen-overlay {
@@ -70,7 +71,7 @@ h1 {
 }
 .screen-image {
   background-image: url("/src/img/cem.jpg");
-  height: 60%;
+  height: 65%;
   width: 100%;
   position: absolute;
   z-index: 1;
@@ -88,7 +89,7 @@ h1 {
   align-items: center;
   justify-content: flex-end;
   z-index: 1;
-  gap: 3rem;
+  gap: 0.6rem;
   margin: 2rem;
   width: 100%;
 }
@@ -107,6 +108,10 @@ h1 {
 
 .personal-info {
   margin: 0.5rem;
+}
+
+.wanted {
+  color: rgb(55, 0, 255);
 }
 
 .personal-q {
