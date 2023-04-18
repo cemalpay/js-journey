@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@font-face {
+  font-family: "cyberpunk";
+  src: url("/src/fonts/cyberpunk.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
 * {
   box-sizing: border-box;
 }
@@ -15,17 +21,17 @@ body {
 .screen {
   width: 500px;
   display: flex;
-  border: 3px solid rgba(33, 150, 243, 0.2);
+  border: 3px solid rgb(217, 255, 0);
   aspect-ratio: 10/16;
   border-radius: 1rem;
-  background-color: rgba(29, 30, 34, 0.85);
+  background-color: rgb(217, 255, 0);
   overflow: hidden;
   position: relative;
   z-index: 10;
 }
 
 .screen-overlay {
-  background: linear-gradient(rgba(33, 150, 243, 0.1), rgba(33, 150, 243, 0.1) 3px, transparent 3px, transparent 9px);
+  background: linear-gradient(rgba(243, 33, 138, 0.1), rgba(243, 33, 198, 0.1) 3px, transparent 3px, transparent 9px);
   background-size: 100% 9px;
   height: 100%;
   width: 100%;
@@ -65,7 +71,7 @@ body {
   top: 0;
   background-size: 180%;
   background-position: 0% 0%;
-  opacity: 0.8;
+  opacity: 1;
   animation: pan-image 18s infinite linear;
 }
 
@@ -74,8 +80,29 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  z-index: 3;
+  z-index: 1;
   gap: 3rem;
   margin: 2rem;
   width: 100%;
+}
+.screen-content i {
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.personal-info-group {
+  font-size: 1.5rem;
+  font-family: "cyberpunk", sans-serif;
+  color: black;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.personal-info {
+  margin: 0.5rem;
+}
+
+.personal-q {
+  font-weight: 600;
 }/*# sourceMappingURL=style.css.map */
