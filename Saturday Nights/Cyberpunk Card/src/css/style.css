@@ -7,7 +7,19 @@ body {
   height: 100vh;
   display: grid;
   place-items: center;
-  background-color: rgb(var(--background-color));
+  background-color: rgb(29, 30, 34);
   margin: 0rem;
   overflow: hidden;
+}
+
+.screen {
+  width: 500px;
+  display: flex;
+  border: 3px solid rgba(33, 150, 243, 0.2);
+  aspect-ratio: 10/16;
+  border-radius: 1rem;
+  background-color: rgba(29, 30, 34, 0.85);
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
 }/*# sourceMappingURL=style.css.map */
