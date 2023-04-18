@@ -44,14 +44,38 @@ body {
     background-position: 0 -100px;
   }
 }
+@keyframes pan-image {
+  0% {
+    background-position: 30% 40%;
+  }
+  50% {
+    background-position: 50% 60%;
+  }
+  100% {
+    background-position: 30% 40%;
+  }
+}
 .screen-image {
-  background-image: url("https://images.unsplash.com/photo-1660054908224-ad1ebfea2559?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
-  height: 100%;
+  background-image: url("/src/img/cem.jpg");
+  height: 60%;
   width: 100%;
   position: absolute;
   z-index: 1;
   left: 0;
   top: 0;
-  background-size: cover;
-  background-position: center;
+  background-size: 180%;
+  background-position: 0% 0%;
+  opacity: 0.8;
+  animation: pan-image 18s infinite linear;
+}
+
+.screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 3;
+  gap: 3rem;
+  margin: 2rem;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
