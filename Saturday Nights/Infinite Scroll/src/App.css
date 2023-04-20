@@ -1,42 +1,60 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+:root {
+  font-size: 14px;
+  --color-text: #0004ff;
+  --color-bg: #131313;
+  --color-link: #aaa;
+  --color-link-hover: #fff;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+body {
+  margin: 0;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+}
+
+.frame {
+  color: var(--color-title);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 100%;
+  justify-content: start;
+  grid-gap: 0.5rem;
+  align-items: start;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  justify-items: end;
+  z-index: 500;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.grid__item {
+  height: 100vh;
+  place-items: center;
+  display: grid;
+  width: 96vw;
+  font-size: 96px;
+}
+
+@media screen and (min-width: 53em) {
+  .frame {
+    grid-template-columns: auto auto 1fr;
+    grid-template-rows: auto;
+    justify-items: start;
+    grid-gap: 2rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
