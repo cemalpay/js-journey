@@ -1,4 +1,4 @@
-# myJavaScriptJourney
+#js journey
 
 zero to one
 
