@@ -45,10 +45,21 @@ function Friend({ friend }) {
   return (
     <li friend={friend} key={friend.id}>
       <img src={friend.image} alt={friend.name} />
-      <div className="friend-info">
-        <h2>{friend.name}</h2>
-        <span>{friend.balance} TL</span>
-      </div>
+
+      <h3>{friend.name}</h3>
+      {friend.balance < 0 && (
+        <p className="red">
+          You owe{friend.name} {Math.abs(friend.balance)} TL{" "}
+        </p>
+      )}
+      {friend.balance > 0 && (
+        <p className="green">
+          {friend.name} owes you {friend.balance} TL
+        </p>
+      )}
+      {friend.balance === 0 && (
+        <p className="blue">You and {friend.name} are even</p>
+      )}
     </li>
   );
 }
