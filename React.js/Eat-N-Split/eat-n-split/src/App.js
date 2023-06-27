@@ -37,7 +37,8 @@ export default function App() {
   }
 
   function handleSelection(friend) {
-    setSelectedFriend(friend);
+    setSelectedFriend((cur) => (cur?.id === friend.id ? null : friend));
+    setShowAddFriend(false);
   }
 
   return (
@@ -81,7 +82,7 @@ function FriendsList({ friends, onSelection, selectedFriend }) {
 }
 
 function Friend({ friend, onSelection, selectedFriend }) {
-  const isSelected = selectedFriend && selectedFriend.id === friend.id;
+  const isSelected = selectedFriend && selectedFriend?.id === friend.id;
 
   return (
     <li
@@ -105,7 +106,9 @@ function Friend({ friend, onSelection, selectedFriend }) {
       {friend.balance === 0 && (
         <p className="blue">You and {friend.name} are even</p>
       )}
-      <Button onClick={() => onSelection(friend)}>Settle Up</Button>
+      <Button onClick={() => onSelection(friend)}>
+        {isSelected ? "Cancel" : "Select"}
+      </Button>
     </li>
   );
 }
