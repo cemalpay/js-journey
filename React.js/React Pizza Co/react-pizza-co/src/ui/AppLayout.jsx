@@ -10,9 +10,11 @@ function AppLayout() {
     <div className="grid h-screen grid-rows-[auto_1fr_auto]">
       {isLoading && <Loader />}
       <Header />
-      <main className="overflow-scroll">
-        <Outlet />
-      </main>
+      <div className="overflow-scroll">
+        <main className="mx-auto max-w-3xl bg-red-500">
+          <Outlet />
+        </main>
+      </div>
       <CartOverview />
     </div>
   );
