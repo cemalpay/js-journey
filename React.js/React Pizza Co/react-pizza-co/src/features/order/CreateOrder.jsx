@@ -2,12 +2,15 @@ import { useState } from "react";
 import { Form, redirect, useNavigate, useActionData } from "react-router-dom";
 import { createOrder } from "../../services/apiRestaurant";
 import Button from "../../ui/Button";
+
+// Regular expression to validate phone numbers
 // https://uibakery.io/regex-library/phone-number
 const isValidPhone = (str) =>
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/.test(
     str,
   );
 
+// Sample data for the cart
 const fakeCart = [
   {
     pizzaId: 12,
@@ -33,12 +36,17 @@ const fakeCart = [
 ];
 
 function CreateOrder() {
+  // Getting the navigate function from react-router-dom for navigation.
   const navigation = useNavigate();
+  // Checking if the form is currently submitting.
   const isSubmitting = navigation.state === "submitting";
 
+  // Getting form errors from useActionData hook.
   const formErrors = useActionData();
 
-  // const [withPriority, setWithPriority] = useState(false);
+  // const [withPriority, setWithPriority] = useState(false); // State for tracking the priority option.
+
+  // Assigning the fakeCart data to the 'cart' variable.
   const cart = fakeCart;
 
   return (
@@ -100,29 +108,30 @@ function CreateOrder() {
   );
 }
 
+// The action function is called when the form is submitted
 export async function action({ request }) {
-  const formData = await request.formData();
-  const data = Object.fromEntries(formData);
+  const formData = await request.formData(); // Getting the form data from the request
+  const data = Object.fromEntries(formData); // Converting form data to a plain object
 
   const order = {
     ...data,
     cart: JSON.parse(data.cart),
-    priority: data.priority === "on",
+    priority: data.priority === "on", // Converting the priority checkbox value to a boolean
   };
 
-  console.log(order);
+  console.log(order); // Logging the order data to the console
 
-  const newOrder = await createOrder(order);
+  const newOrder = await createOrder(order); // Creating the order using the createOrder function from the API
 
   const errors = {};
   if (!isValidPhone(order.phone)) {
-    errors.phone = "Invalid phone number";
+    errors.phone = "Invalid phone number"; // Validating the phone number and setting an error message if it's invalid
   }
   if (Object.keys(errors).length > 0) {
-    return errors;
+    return errors; // Returning the error object if there are any validation errors
   }
 
-  return redirect(`/order/${newOrder.id}`);
+  return redirect(`/order/${newOrder.id}`); // Redirecting to the order confirmation page after successful order creation
 }
 
-export default CreateOrder;
+export default CreateOrder; // Exporting the CreateOrder component as the default export.

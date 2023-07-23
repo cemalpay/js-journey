@@ -10,7 +10,7 @@ import {
 } from "../../utils/helpers";
 
 function Order() {
-  const order = useLoaderData();
+  const order = useLoaderData(); // Getting the order data using the useLoaderData hook provided by react-router-dom.
   // Everyone can search for all orders, so for privacy reasons we're gonna gonna exclude names or address, these are only for the restaurant staff
   const {
     id,
@@ -20,8 +20,8 @@ function Order() {
     orderPrice,
     estimatedDelivery,
     cart,
-  } = order;
-  const deliveryIn = calcMinutesLeft(estimatedDelivery);
+  } = order; // Destructuring the 'order' object to get its properties.
+  const deliveryIn = calcMinutesLeft(estimatedDelivery); // Calculating the time left for delivery using the estimated delivery time.
 
   return (
     <div className="space-y-8 px-4 py-6">

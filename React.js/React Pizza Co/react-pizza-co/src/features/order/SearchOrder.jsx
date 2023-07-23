@@ -2,13 +2,17 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function SearchOrder() {
-  const [query, setQuery] = useState("");
-  const navigate = useNavigate();
+  const [query, setQuery] = useState(""); // State to hold the search query.
+  const navigate = useNavigate(); // Getting the navigate function from react-router-dom for navigation.
+
   function handleSubmit(e) {
-    e.preventDefault();
-    if (!query) return;
+    e.preventDefault(); // Preventing the default form submission behavior.
+    if (!query) return; // If the search query is empty, return (do nothing).
+
+    // If the search query is not empty, navigate to the specified order ID page.
     navigate(`/order/${query}`);
-    setQuery("");
+
+    setQuery(""); // Resetting the search query state after navigation.
   }
   return (
     <form onSubmit={handleSubmit}>

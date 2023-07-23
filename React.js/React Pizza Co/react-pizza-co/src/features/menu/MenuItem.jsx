@@ -2,6 +2,7 @@ import { formatCurrency } from "../../utils/helpers";
 import Button from "../../ui/Button";
 
 function MenuItem({ pizza }) {
+  // Destructuring the 'pizza' object to get its properties.
   const { id, name, unitPrice, ingredients, soldOut, imageUrl } = pizza;
 
   return (
@@ -20,9 +21,7 @@ function MenuItem({ pizza }) {
           ) : (
             <p className="text-sm font-semibold uppercase">Sold out</p>
           )}
-
           <Button type="small" disabled={soldOut} onClick={() => {}}>
-            {" "}
             Add to cart
           </Button>
         </div>

@@ -2,12 +2,12 @@ import { useState } from "react";
 import Button from "../../ui/Button";
 
 function CreateUser() {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState(""); // State to hold the user's entered username.
 
   function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault(); // Preventing the default form submission behavior.
+    // The form submission is not implemented here, so this function currently does nothing.
   }
-
   return (
     <form onSubmit={handleSubmit}>
       <p className="mb-4 text-sm text-stone-600 md:text-base">
