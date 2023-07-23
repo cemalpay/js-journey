@@ -2,6 +2,7 @@ import Button from "../../ui/Button";
 import { formatCurrency } from "../../utils/helpers";
 
 function CartItem({ item }) {
+  // Destructuring the 'item' object to get 'pizzaId', 'name', 'quantity', and 'totalPrice'.
   const { pizzaId, name, quantity, totalPrice } = item;
 
   return (

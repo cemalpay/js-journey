@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
 import LinkButton from "../../ui/LinkButton";
 import Button from "../../ui/Button";
 import CartItem from "./CartItem";
 
+// Sample data for the cart
 const fakeCart = [
   {
     pizzaId: 12,
@@ -28,6 +28,7 @@ const fakeCart = [
 ];
 
 function Cart() {
+  // Assigning the fakeCart data to the 'cart' variable.
   const cart = fakeCart;
 
   return (
