@@ -1,4 +1,4 @@
-function getPosition() {
+/*function getPosition() {
   // This function returns a promise that resolves to the user's geolocation position.
   // The navigator.geolocation.getCurrentPosition() method is used to get the position.
   return new Promise(function (resolve, reject) {
@@ -24,3 +24,8 @@ async function fetchAddress() {
   // The returned data can be used to display the address in an order form so that the user can confirm or correct it if needed.
   return { position, address };
 }
+*/
+
+const initialState = {
+  username: "",
+};
