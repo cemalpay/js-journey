@@ -1,12 +1,18 @@
 import { useState } from "react";
 import Button from "../../ui/Button";
+import { useDispatch } from "react-redux";
+import { updateName } from "./userSlice";
 
 function CreateUser() {
   const [username, setUsername] = useState(""); // State to hold the user's entered username.
-
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   function handleSubmit(e) {
     e.preventDefault(); // Preventing the default form submission behavior.
-    // The form submission is not implemented here, so this function currently does nothing.
+
+    if (!username) return;
+    dispatch(updateName(username));
+    navigate("/menu");
   }
   return (
     <form onSubmit={handleSubmit}>
