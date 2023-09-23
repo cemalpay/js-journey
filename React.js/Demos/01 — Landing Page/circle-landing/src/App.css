@@ -18,8 +18,10 @@
   box-sizing: border-box;
 }
 
-p {
-  font-family: "Vanitas";
+h1 {
+  font-family: "Vanitas Regular";
+  font-weight: 300;
+  letter-spacing: 0.5rem;
   font-size: 4rem;
   color: #fff;
 }
@@ -27,8 +29,11 @@ p {
 .App {
   width: 100vw;
   height: 100vh;
-  background-color: #131313;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
 }

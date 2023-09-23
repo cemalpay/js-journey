@@ -6,10 +6,14 @@ function App() {
 
   return (
     <>
-      <div className="App">
-        <p>
+      <div className="App" 
+      style={{
+        backgroundImage: `url("src/images/cappadocia.jpg")`,
+      }}
+      >
+        <h1>
          Cappadocia
-        </p>
+        </h1>
       </div>
     </>
   )
