@@ -14,23 +14,20 @@ function App() {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0); // Başlangıçta ilk öğeyi göster
-  const controls = useAnimation(); // Animasyon kontrolleri
-  const controlsReverse = useAnimation(); // Animasyon kontrolleri
+  const [currentIndex, setCurrentIndex] = useState(0); 
+  const controls = useAnimation(); 
+  const controlsReverse = useAnimation(); 
 
   const handleNext = async () => {
-    // İki animasyonu aynı anda başlat
     await Promise.all([
-      controls.start({ rotate: 360 }),
-      controlsReverse.start({ rotate: -360 }),
+      controls.start({ rotate: 360, opacity: 0.7 }), // Rotate ve opacity ekleyerek geçişi daha smooth hale getirin
+      controlsReverse.start({ rotate: -360, opacity: 0.7 }),
     ]);
 
-    // Resmi değiştir
     setCurrentIndex((prevIndex) => (prevIndex + 1) % content.length);
 
-    // Başlangıç konumuna geri döndür
-    controls.set({ rotate: 0 });
-    controlsReverse.set({ rotate: 0 });
+    controls.set({ rotate: 0, opacity: 1 }); // Başlangıç konumuna geri döndür
+    controlsReverse.set({ rotate: 0, opacity: 1 });
   };
 
   const currentContent = content[currentIndex];
@@ -43,23 +40,23 @@ function App() {
           style={{
             backgroundImage: `url(${currentContent.url})`,
           }}
-          initial={{ rotate: 0 }}
-          animate={controls} // Animasyon kontrollerini kullan
-          transition={{ duration: 1 }}
+          initial={{ rotate: 0, opacity: 1 }} // Başlangıç opacity değeri ekleyin
+          animate={controls} 
+          transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
         ></motion.div>
         <motion.div
-         className="imageRing" 
-         style={{ backgroundImage: `url(${currentContent.url})` }}
-          initial={{ rotate: 0 }}
-          animate={controlsReverse} // Animasyon kontrollerini kullan
-          transition={{ duration: 1 }}
-         ></motion.div>
-        <motion.div 
-        className="imageOuter" 
-        style={{ backgroundImage: `url(${currentContent.url})` }}
-          initial={{ rotate: 0 }}
-          animate={controls} // Animasyon kontrollerini kullan
-          transition={{ duration: 2 }}
+          className="imageRing"
+          style={{ backgroundImage: `url(${currentContent.url})` }}
+          initial={{ rotate: 0, opacity: 1 }}
+          animate={controlsReverse}
+          transition={{ duration: 1, ease: "easeInOut", delay: 0.5 }}
+        ></motion.div>
+        <motion.div
+          className="imageOuter"
+          style={{ backgroundImage: `url(${currentContent.url})` }}
+          initial={{ rotate: 0, opacity: 1 }}
+          animate={controls}
+          transition={{ duration: 2, ease: "easeInOut", delay: 0.5 }}
         ></motion.div>
         <div className="container">
           <h1>{currentContent.title}</h1>
