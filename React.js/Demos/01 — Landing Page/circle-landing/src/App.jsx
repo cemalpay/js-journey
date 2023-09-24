@@ -16,14 +16,21 @@ function App() {
 
   const [currentIndex, setCurrentIndex] = useState(0); // Başlangıçta ilk öğeyi göster
   const controls = useAnimation(); // Animasyon kontrolleri
+  const controlsReverse = useAnimation(); // Animasyon kontrolleri
 
   const handleNext = async () => {
-    // Resmi döndür
-    await controls.start({ rotate: 360 });
+    // İki animasyonu aynı anda başlat
+    await Promise.all([
+      controls.start({ rotate: 360 }),
+      controlsReverse.start({ rotate: -360 }),
+    ]);
+
     // Resmi değiştir
     setCurrentIndex((prevIndex) => (prevIndex + 1) % content.length);
+
     // Başlangıç konumuna geri döndür
     controls.set({ rotate: 0 });
+    controlsReverse.set({ rotate: 0 });
   };
 
   const currentContent = content[currentIndex];
@@ -40,7 +47,13 @@ function App() {
           animate={controls} // Animasyon kontrollerini kullan
           transition={{ duration: 1 }}
         ></motion.div>
-        <motion.div className="imageRing" style={{ backgroundImage: `url(${currentContent.url})` }}></motion.div>
+        <motion.div
+         className="imageRing" 
+         style={{ backgroundImage: `url(${currentContent.url})` }}
+          initial={{ rotate: 0 }}
+          animate={controlsReverse} // Animasyon kontrollerini kullan
+          transition={{ duration: 1 }}
+         ></motion.div>
         <motion.div className="imageOuter" style={{ backgroundImage: `url(${currentContent.url})` }}></motion.div>
         <div className="container">
           <h1>{currentContent.title}</h1>
