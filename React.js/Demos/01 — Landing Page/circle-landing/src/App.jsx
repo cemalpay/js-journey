@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useState } from 'react';
 import './App.css';
 
@@ -15,10 +15,15 @@ function App() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0); // Başlangıçta ilk öğeyi göster
+  const controls = useAnimation(); // Animasyon kontrolleri
 
   const handleNext = async () => {
+    // Resmi döndür
+    await controls.start({ rotate: 360 });
     // Resmi değiştir
     setCurrentIndex((prevIndex) => (prevIndex + 1) % content.length);
+    // Başlangıç konumuna geri döndür
+    controls.set({ rotate: 0 });
   };
 
   const currentContent = content[currentIndex];
@@ -32,18 +37,18 @@ function App() {
             backgroundImage: `url(${currentContent.url})`,
           }}
           initial={{ rotate: 0 }}
-          animate={{ rotate: 360 }}
-          transition={{ duration: 1, repeat: null}}
+          animate={controls} // Animasyon kontrollerini kullan
+          transition={{ duration: 1 }}
         ></motion.div>
         <motion.div className="imageRing" style={{ backgroundImage: `url(${currentContent.url})` }}></motion.div>
         <motion.div className="imageOuter" style={{ backgroundImage: `url(${currentContent.url})` }}></motion.div>
         <div className="container">
           <h1>{currentContent.title}</h1>
           <div className='buttons'>
-          <button className="btn btn_next" onClick={handleNext}>
-            Next
-          </button>
-          <button className="btn btn_prev">Prev</button>
+            <button className="btn btn_next" onClick={handleNext}>
+              Next
+            </button>
+            <button className="btn btn_prev">Prev</button>
           </div>
         </div>
       </div>
