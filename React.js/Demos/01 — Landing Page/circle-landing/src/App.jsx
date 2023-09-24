@@ -6,14 +6,17 @@ function App() {
 
   return (
     <>
-      <div className="App" 
-      style={{
+      <div className="App" >
+        <h1>Cappadocia</h1>
+        <div className="imageCenter" style={{
         backgroundImage: `url("src/images/cappadocia.jpg")`,
-      }}
-      >
-        <h1>
-         Cappadocia
-        </h1>
+      }}></div>
+        <div className="imageRing" style={{
+        backgroundImage: `url("src/images/cappadocia.jpg")`,
+      }}></div>
+        <div className="imageOuter" style={{
+        backgroundImage: `url("src/images/cappadocia.jpg")`,
+      }}></div>
       </div>
     </>
   )
