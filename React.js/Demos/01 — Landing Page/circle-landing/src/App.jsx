@@ -36,7 +36,7 @@ function App() {
   const currentContent = content[currentIndex];
 
   return (
-    <>
+    <div className='main'>
       <div className="App">
         <motion.div
           className="imageCenter"
@@ -54,7 +54,13 @@ function App() {
           animate={controlsReverse} // Animasyon kontrollerini kullan
           transition={{ duration: 1 }}
          ></motion.div>
-        <motion.div className="imageOuter" style={{ backgroundImage: `url(${currentContent.url})` }}></motion.div>
+        <motion.div 
+        className="imageOuter" 
+        style={{ backgroundImage: `url(${currentContent.url})` }}
+          initial={{ rotate: 0 }}
+          animate={controls} // Animasyon kontrollerini kullan
+          transition={{ duration: 2 }}
+        ></motion.div>
         <div className="container">
           <h1>{currentContent.title}</h1>
           <div className='buttons'>
@@ -65,7 +71,7 @@ function App() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

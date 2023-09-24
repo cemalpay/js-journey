@@ -40,36 +40,35 @@ h1 {
 .imageCenter {
   z-index: 0;
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 200vw;
+  height: 200vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  clip-path: circle(20% at center);
-  transform: rotate(0deg);
+  clip-path: circle(10% at center);
   border: 1px solid #fff;
 }
 .imageRing {
   z-index: -1;
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 200vw;
+  height: 200vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  clip-path: circle(40% at center);
+  clip-path: circle(20% at center);
   filter: grayscale(70%);
-
 }
 .imageOuter {
   z-index: -2;
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 200vw;
+  height: 200vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   clip-path: circle(100% at center);
+  overflow: hidden;
 }
 
 .container {
